@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://qb5q1tomqvjr"]
+
+[ext_resource type="Script" uid="uid://b6lbfkvibcj5y" path="res://laser.gd" id="1_r1bh0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mou6w"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3pc01"]
+material = SubResource("StandardMaterial3D_mou6w")
+radius = 0.05
+height = 1.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c8ure"]
+radius = 0.05
+height = 0.4
+
+[node name="Laser" type="Area3D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_r1bh0")
+
+[node name="Node3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_3pc01")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_c8ure")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
