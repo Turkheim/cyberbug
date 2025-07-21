@@ -18,6 +18,7 @@ config/icon="res://Scenes/icon.svg"
 [global_group]
 
 Player=""
+Enemy=""
 
 [rendering]
 

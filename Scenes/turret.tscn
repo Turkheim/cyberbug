@@ -23,7 +23,7 @@ top_radius = 0.2
 bottom_radius = 0.2
 height = 1.0
 
-[node name="Turret" type="StaticBody3D"]
+[node name="Turret" type="StaticBody3D" groups=["Enemy"]]
 collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_fcprl")
@@ -32,7 +32,7 @@ script = ExtResource("1_fcprl")
 mesh = SubResource("CylinderMesh_vonw3")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Enemy"]]
 shape = SubResource("CylinderShape3D_oi3di")
 
 [node name="KillSwitch" type="Area3D" parent="."]

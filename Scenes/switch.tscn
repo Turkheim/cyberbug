@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://di6jug457l4fu"]
+
+[ext_resource type="Script" uid="uid://cc72rabjpc403" path="res://Scenes/switch.gd" id="1_hinho"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8c0lf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_754fn"]
+albedo_color = Color(2.31028e-06, 0.485842, 0.527816, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bvt00"]
+size = Vector3(1, 0.1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oqgf2"]
+albedo_color = Color(5.29438e-06, 0.913923, 0.685199, 1)
+
+[node name="Switch" type="Area3D"]
+script = ExtResource("1_hinho")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_8c0lf")
+
+[node name="SwitchOff" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_754fn")
+mesh = SubResource("BoxMesh_bvt00")
+
+[node name="SwitchOn" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_oqgf2")
+mesh = SubResource("BoxMesh_bvt00")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

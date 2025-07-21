@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkf5tgeuv57s6"]
+[gd_scene load_steps=6 format=3 uid="uid://bkf5tgeuv57s6"]
 
 [ext_resource type="Script" uid="uid://btxivxy8uw8ge" path="res://Scripts/disipador.gd" id="1_pc1w5"]
 
@@ -10,7 +10,10 @@ albedo_color = Color(1, 0.329412, 0.121569, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_754fn"]
 material = SubResource("StandardMaterial3D_8c0lf")
 
-[node name="Disipador" type="Area3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_pc1w5"]
+size = Vector3(0.9, 0.9, 0.9)
+
+[node name="Disipador" type="Area3D" groups=["Enemy"]]
 collision_layer = 4
 script = ExtResource("1_pc1w5")
 
@@ -18,7 +21,11 @@ script = ExtResource("1_pc1w5")
 shape = SubResource("BoxShape3D_0f350")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 mesh = SubResource("BoxMesh_754fn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["Enemy"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["Enemy"]]
+shape = SubResource("BoxShape3D_pc1w5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
