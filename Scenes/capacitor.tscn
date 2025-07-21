@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://ciukhcxkmbhud"]
+
+[ext_resource type="Script" uid="uid://2byso83ikux5" path="res://Scripts/capacitor.gd" id="1_vns1j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8c0lf"]
+size = Vector3(3, 1.5, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_754fn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vns1j"]
+albedo_color = Color(0.174355, 0.200409, 0, 1)
+emission_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_oqgf2"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_vns1j")
+
+[sub_resource type="Animation" id="Animation_qxfql"]
+resource_name = "Blink"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/MeshInstance3D:mesh:material:emission")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(3, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ha31o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody3D/MeshInstance3D:mesh:material:emission")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pa6b8"]
+_data = {
+&"Blink": SubResource("Animation_qxfql"),
+&"RESET": SubResource("Animation_ha31o")
+}
+
+[node name="Capacitor" type="Area3D"]
+script = ExtResource("1_vns1j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+shape = SubResource("BoxShape3D_8c0lf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_754fn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_oqgf2")
+
+[node name="BombTimer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pa6b8")
+}
+movie_quit_on_finish = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="BombTimer" to="." method="_on_bomb_timer_timeout"]

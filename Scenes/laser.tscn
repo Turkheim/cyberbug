@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://qb5q1tomqvjr"]
 
-[ext_resource type="Script" uid="uid://b6lbfkvibcj5y" path="res://laser.gd" id="1_r1bh0"]
+[ext_resource type="Script" uid="uid://b6lbfkvibcj5y" path="res://Scripts/laser.gd" id="1_r1bh0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mou6w"]
 shading_mode = 0
