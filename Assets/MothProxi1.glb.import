@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ohh8qku1lvbh"
-path="res://.godot/imported/MothProxi.glb-25ba46f827d3a1f6156b931348a234f0.scn"
+uid="uid://bcgra3n1juf1v"
+path="res://.godot/imported/MothProxi1.glb-3acfebf67594deef323d360f52474e1d.scn"
 
 [deps]
 
-source_file="res://Assets/MothProxi.glb"
-dest_files=["res://.godot/imported/MothProxi.glb-25ba46f827d3a1f6156b931348a234f0.scn"]
+source_file="res://Assets/MothProxi1.glb"
+dest_files=["res://.godot/imported/MothProxi1.glb-3acfebf67594deef323d360f52474e1d.scn"]
 
 [params]
 

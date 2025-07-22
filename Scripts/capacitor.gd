@@ -5,8 +5,8 @@ const BLAST_AREA = preload("res://Scenes/blast_area.tscn")
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
-		$StaticBody3D/MeshInstance3D.visible = true
-		$StaticBody3D/Capacitor_Inactive.visible = false
+		$CapacitorOn.visible = true
+		$CapacitorOff.visible = false
 		var animation_player: AnimationPlayer = $AnimationPlayer
 		animation_player.play("Blink")
 		bomb_timer.start()
