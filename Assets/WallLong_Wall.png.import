@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://d1lfl6bsybdqy"
+path.s3tc="res://.godot/imported/WallLong_Wall.png-031d35a97bcc6f6011e534c6abaeeaee.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "89224626337a3a73c4b1c72ba33b04dc"
+}
+
+[deps]
+
+source_file="res://Assets/WallLong_Wall.png"
+dest_files=["res://.godot/imported/WallLong_Wall.png-031d35a97bcc6f6011e534c6abaeeaee.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

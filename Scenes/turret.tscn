@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0brvqlhys372"]
+[gd_scene load_steps=7 format=3 uid="uid://d0brvqlhys372"]
 
 [ext_resource type="Script" uid="uid://dr7n8hla2phqt" path="res://Scripts/turret.gd" id="1_fcprl"]
 [ext_resource type="PackedScene" uid="uid://bq6b4atua3bo7" path="res://Assets/LaserTurret.glb" id="2_hskch"]
@@ -8,6 +8,19 @@ height = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n6hdu"]
 size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hskch"]
+albedo_color = Color(0.997947, 0.715896, 0.670485, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6spbj"]
+material = SubResource("StandardMaterial3D_hskch")
+top_radius = 0.11
+bottom_radius = 0.11
+height = 0.21
+radial_segments = 16
 
 [node name="Turret" type="StaticBody3D" groups=["Enemy"]]
 collision_layer = 2
@@ -34,5 +47,15 @@ autostart = true
 [node name="SpawnPoint" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2)
 
+[node name="TimerLight" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="ButtonLight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.5)
+mesh = SubResource("CylinderMesh_6spbj")
+skeleton = NodePath("../KillSwitch/CollisionShape3D")
+
 [connection signal="body_entered" from="KillSwitch" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="TimerLaser" to="." method="_on_timer_laser_timeout"]
+[connection signal="timeout" from="TimerLight" to="." method="_on_timer_light_timeout"]

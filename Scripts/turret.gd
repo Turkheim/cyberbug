@@ -5,6 +5,7 @@ extends StaticBody3D
 const LASER = preload("res://Scenes/laser.tscn")
 @onready var timer_laser: Timer = $TimerLaser
 
+var light_visible = true
 
 func _process(delta):
 	rotate(Vector3.UP,deg_to_rad(rotation_speed) * delta)
@@ -26,3 +27,12 @@ func _fire_laser():
 func _on_timer_laser_timeout() -> void:
 	_fire_laser()
 	timer_laser.start()
+
+
+func _on_timer_light_timeout() -> void:
+	if light_visible:
+		light_visible = false
+		$ButtonLight.visible = false
+	else:
+		light_visible = true
+		$ButtonLight.visible = true

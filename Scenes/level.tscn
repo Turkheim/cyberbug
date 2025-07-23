@@ -1,8 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://btsg3docvgbyo"]
+[gd_scene load_steps=20 format=3 uid="uid://btsg3docvgbyo"]
 
 [ext_resource type="Texture2D" uid="uid://c26fhe60u5ehp" path="res://Scenes/GridSmall.png" id="1_6phgx"]
+[ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_ha31o"]
+[ext_resource type="PackedScene" uid="uid://c4des1o4sspp7" path="res://Scenes/wall_long.tscn" id="2_qxfql"]
 [ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_wqkje"]
 [ext_resource type="PackedScene" uid="uid://d0brvqlhys372" path="res://Scenes/turret.tscn" id="3_81xng"]
+[ext_resource type="PackedScene" uid="uid://u05x500bowe6" path="res://Scenes/wall_a.tscn" id="3_ha31o"]
+[ext_resource type="PackedScene" uid="uid://pg8287wb4urq" path="res://Scenes/wall_b.tscn" id="4_pa6b8"]
 [ext_resource type="PackedScene" uid="uid://bkf5tgeuv57s6" path="res://Scenes/Heatsink.tscn" id="5_0f350"]
 [ext_resource type="PackedScene" uid="uid://ciukhcxkmbhud" path="res://Scenes/capacitor.tscn" id="6_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://di6jug457l4fu" path="res://Scenes/switch.tscn" id="6_754fn"]
@@ -36,16 +40,11 @@ size = Vector2(20, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ainy"]
 size = Vector3(20, 1, 20)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0b4ue"]
-albedo_color = Color(0, 1, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_vonw3"]
-material = SubResource("StandardMaterial3D_0b4ue")
-
 [sub_resource type="BoxMesh" id="BoxMesh_oi3di"]
 size = Vector3(10, 1, 1)
 
 [node name="Level" type="Node3D"]
+script = ExtResource("1_ha31o")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0b4ue")
@@ -65,105 +64,33 @@ transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 63.7507
 fov = 15.0
 size = 19.0
 
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.163194, 0.461816, -0.871834, 0.12941, 0.866025, 0.482963, 0.97807, -0.19164, 0.0815664, -14.1733, 5.5424, 1.73981)
+light_color = Color(0.833719, 0.842697, 0.954708, 1)
+light_energy = 20.0
+shadow_enabled = true
+shadow_reverse_cull_face = true
+spot_range = 19.5
+spot_angle = 52.7365
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="."]
+transform = Transform3D(0.0678624, -0.633539, 0.770729, -0.353553, 0.707107, 0.612372, -0.932949, -0.314051, -0.176004, 10.8307, 10.0658, -0.34289)
+light_color = Color(0.873325, 0.797356, 0.571085, 1)
+light_energy = 20.0
+shadow_enabled = true
+shadow_reverse_cull_face = true
+spot_range = 18.0
+spot_angle = 48.4274
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.577247, 0.461816, -0.673433, -0.12941, 0.866025, 0.482963, 0.80625, -0.19164, 0.559674, -9.07185, 8.40136, 8.68972)
+light_color = Color(0.216723, 0.555139, 0.783638, 1)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.625798, -0.242551, 0.741314, 0.0244025, 0.956043, 0.292209, -0.779603, -0.164774, 0.604209, 11.9489, 5.39513, 1.79185)
+light_color = Color(0.624278, 0.508981, 0.247576, 1)
+
 [node name="LevelDesign" type="Node3D" parent="."]
-
-[node name="Box4" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.5, 4.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box5" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, 4.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box6" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, 4.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box9" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -0.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box15" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 4.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box7" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, 5.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box8" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, 6.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box11" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 5.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box13" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 8.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box14" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 9.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box16" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, -7.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box17" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -7.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box2" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 1.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
-
-[node name="Box3" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, -3.5)
-use_collision = true
-collision_layer = 4
-collision_mask = 7
-mesh = SubResource("BoxMesh_vonw3")
 
 [node name="wall" type="CSGMesh3D" parent="LevelDesign"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, -10.5)
@@ -221,43 +148,46 @@ collision_layer = 4
 collision_mask = 7
 mesh = SubResource("BoxMesh_oi3di")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="LevelDesign"]
-transform = Transform3D(0.38328, 0.461816, -0.799889, -1.49012e-08, 0.866025, 0.5, 0.923632, -0.19164, 0.331931, -10.6362, 5.31886, 9.25345)
-light_color = Color(0.833719, 0.842697, 0.954708, 1)
-light_energy = 20.0
-shadow_enabled = true
-shadow_reverse_cull_face = true
-spot_range = 15.6587
-spot_angle = 39.2703
+[node name="WallLong" parent="LevelDesign" instance=ExtResource("2_qxfql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 4.5)
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="LevelDesign"]
-transform = Transform3D(-0.412548, 0.235768, -0.879897, 7.45058e-09, 0.965926, 0.258819, 0.910936, 0.106775, -0.398491, -9.63076, 4.25071, -8.66908)
-light_color = Color(0.873325, 0.797356, 0.571085, 1)
-light_energy = 20.0
-shadow_enabled = true
-shadow_reverse_cull_face = true
-spot_range = 15.6587
-spot_angle = 39.2703
+[node name="WallLong2" parent="LevelDesign" instance=ExtResource("2_qxfql")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.5, 0, 9)
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="LevelDesign"]
-transform = Transform3D(-0.819152, -0.286788, 0.496731, 0, 0.866025, 0.5, -0.573576, 0.409576, -0.709406, 7.42543, 4.56886, -13.0355)
-light_color = Color(0.833719, 0.842697, 0.954708, 1)
-light_energy = 20.0
-shadow_enabled = true
-shadow_reverse_cull_face = true
-spot_range = 15.6587
-spot_angle = 39.2703
+[node name="WallLong3" parent="LevelDesign" instance=ExtResource("2_qxfql")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 0, -0.5)
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="LevelDesign"]
-transform = Transform3D(0.444135, -0.633539, 0.633539, 0, 0.707107, 0.707107, -0.89596, -0.314051, 0.314051, 9.09986, 6.31886, 7.44904)
-light_color = Color(0.873325, 0.797356, 0.571085, 1)
-light_energy = 20.0
-shadow_enabled = true
-shadow_reverse_cull_face = true
-spot_range = 15.6587
-spot_angle = 39.2703
+[node name="WallLong4" parent="LevelDesign" instance=ExtResource("2_qxfql")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2, 0, -7.5)
 
-[node name="PlayerCharacter" parent="LevelDesign" instance=ExtResource("2_wqkje")]
+[node name="WallA" parent="LevelDesign" instance=ExtResource("3_ha31o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 4.5)
+
+[node name="WallA2" parent="LevelDesign" instance=ExtResource("3_ha31o")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, 9.5)
+
+[node name="WallA3" parent="LevelDesign" instance=ExtResource("3_ha31o")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.5, 0, -3.5)
+
+[node name="WallA4" parent="LevelDesign" instance=ExtResource("3_ha31o")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.5, 0, 5.5)
+
+[node name="WallB" parent="LevelDesign" instance=ExtResource("4_pa6b8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 5.5)
+
+[node name="WallB2" parent="LevelDesign" instance=ExtResource("4_pa6b8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, 6.5)
+
+[node name="WallB3" parent="LevelDesign" instance=ExtResource("4_pa6b8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 4.5)
+
+[node name="WallB5" parent="LevelDesign" instance=ExtResource("4_pa6b8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.5, 0, 1.5)
+
+[node name="WallB4" parent="LevelDesign" instance=ExtResource("4_pa6b8")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -3.5, 0, -1.5)
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 9)
 
 [node name="Turret2" parent="." instance=ExtResource("3_81xng")]
@@ -269,7 +199,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -6.5)
 rotation_speed = 300
 
 [node name="Turret4" parent="." instance=ExtResource("3_81xng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 7.5)
 rotation_speed = 300
 
 [node name="Disipador" parent="." instance=ExtResource("5_0f350")]
@@ -278,23 +208,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, -9.5)
 [node name="Disipador3" parent="." instance=ExtResource("5_0f350")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -9.5)
 
-[node name="Disipador4" parent="." instance=ExtResource("5_0f350")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, -2.5)
+[node name="Disipador5" parent="." instance=ExtResource("5_0f350")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 1.5)
 
-[node name="Disipador2" parent="." instance=ExtResource("5_0f350")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, -2.5)
+[node name="Disipador6" parent="." instance=ExtResource("5_0f350")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 1.5)
+
+[node name="Disipador7" parent="." instance=ExtResource("5_0f350")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 1.5)
+
+[node name="Disipador8" parent="." instance=ExtResource("5_0f350")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 1.5)
 
 [node name="Capacitor" parent="." instance=ExtResource("6_8c0lf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 2.5)
 
 [node name="Capacitor3" parent="." instance=ExtResource("6_8c0lf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, -6.5)
 
 [node name="Switch" parent="." instance=ExtResource("6_754fn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 7.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, 7.5)
 
 [node name="Switch2" parent="." instance=ExtResource("6_754fn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 3.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 3.5)
 
 [node name="Door" parent="." instance=ExtResource("7_bvt00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 4.5)
@@ -303,13 +239,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 4.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 1.5)
 
 [node name="LaserBase2" parent="." instance=ExtResource("8_754fn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 7.5)
 
 [node name="LaserBase4" parent="." instance=ExtResource("8_754fn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.05, -6.5)
 
 [node name="LaserBase3" parent="." instance=ExtResource("8_754fn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -3.5)
 
+[node name="Environment" type="Node3D" parent="."]
+
+[connection signal="tree_exited" from="Turret2" to="." method="_on_turret_tree_exited"]
+[connection signal="tree_exited" from="Turret3" to="." method="_on_turret_tree_exited"]
+[connection signal="tree_exited" from="Turret4" to="." method="_on_turret_tree_exited"]
 [connection signal="body_entered" from="Switch" to="Door" method="_on_body_entered"]
 [connection signal="body_entered" from="Switch2" to="Door2" method="_on_body_entered"]
