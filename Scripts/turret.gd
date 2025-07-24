@@ -7,13 +7,14 @@ const LASER = preload("res://Scenes/laser.tscn")
 
 var light_visible = true
 
+signal turret_killed
+
 func _process(delta):
 	rotate(Vector3.UP,deg_to_rad(rotation_speed) * delta)
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	queue_free()
-	
+	_kill_turret()
 	
 func _fire_laser():
 	if LASER:
@@ -36,3 +37,6 @@ func _on_timer_light_timeout() -> void:
 	else:
 		light_visible = true
 		$ButtonLight.visible = true
+func _kill_turret():
+	turret_killed.emit()
+	queue_free()

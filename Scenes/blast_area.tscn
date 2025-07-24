@@ -76,7 +76,7 @@ gradient = SubResource("Gradient_rf0wk")
 use_hdr = true
 
 [sub_resource type="Curve" id="Curve_opq6n"]
-_data = [Vector2(0, 0.443614), 0.0, 0.0, 0, 0, Vector2(0.230769, 0.973505), 0.0, 0.0, 0, 0, Vector2(0.745819, 0.902853), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.443614), 0.0, 0.0, 0, 0, Vector2(0.230769, 0.973505), 0.0, 0.0, 0, 0, Vector2(0.528967, 0.936893), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_labbc"]
@@ -88,6 +88,8 @@ initial_velocity_min = 5.0
 initial_velocity_max = 5.0
 scale_curve = SubResource("CurveTexture_labbc")
 color_ramp = SubResource("GradientTexture1D_fgscc")
+hue_variation_min = -0.02
+hue_variation_max = 0.11
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nu5x1"]
 shading_mode = 0
