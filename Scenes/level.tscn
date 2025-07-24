@@ -47,6 +47,8 @@ glow_enabled = true
 [node name="Level" type="Node3D"]
 script = ExtResource("1_ha31o")
 
+[node name="DeadTimer" type="Timer" parent="."]
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 63.7507, 36.5403)
 fov = 15.0
@@ -264,6 +266,8 @@ light_energy = 0.5
 environment = SubResource("Environment_0b4ue")
 
 [connection signal="level_up" from="." to="LevelUp" method="_level_up"]
+[connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]
+[connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]
 [connection signal="turret_killed" from="Turret2" to="." method="_on_turret_turret_killed"]
 [connection signal="turret_killed" from="Turret3" to="." method="_on_turret_turret_killed"]
 [connection signal="turret_killed" from="Turret4" to="." method="_on_turret_turret_killed"]

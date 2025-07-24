@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@onready var moth: MeshInstance3D = $SK_Moth2/SK_Moth/Skeleton3D/Moth
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -8,6 +9,8 @@ const JUMP_VELOCITY = 4.5
 @export var BACK_SPEED = 1.0
 @export var TURN_SPEED = 0.1
 var Vec3Z = Vector3.ZERO
+signal player_killed
+var can_walk = true
 
 func _physics_process(delta):
 	#
@@ -35,15 +38,22 @@ func _physics_process(delta):
 	#else:
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
 		#velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	var forwardVector = -Vector3.FORWARD.rotated(Vector3.UP, rotation.y)
-	velocity = -forwardVector * FORWARD_SPEED
-	if Input.is_action_pressed("ui_left"):
-		rotation.z += Vec3Z.y - TURN_SPEED
-		rotation.z = clamp(rotation.x, -50, 90)
-		rotation.y += Vec3Z.y + TURN_SPEED 
-	if Input.is_action_pressed("ui_right"):
-		rotation.z += Vec3Z.y + TURN_SPEED
-		rotation.z = clamp(rotation.x, -50, 90)
-		rotation.y += Vec3Z.y - TURN_SPEED 
+	if can_walk:
+		var forwardVector = -Vector3.FORWARD.rotated(Vector3.UP, rotation.y)
+		velocity = -forwardVector * FORWARD_SPEED
+		if Input.is_action_pressed("ui_left"):
+			rotation.z += Vec3Z.y - TURN_SPEED
+			rotation.z = clamp(rotation.x, -50, 90)
+			rotation.y += Vec3Z.y + TURN_SPEED 
+		if Input.is_action_pressed("ui_right"):
+			rotation.z += Vec3Z.y + TURN_SPEED
+			rotation.z = clamp(rotation.x, -50, 90)
+			rotation.y += Vec3Z.y - TURN_SPEED 
 	move_and_slide()
+func _kill_player():
+	can_walk = false
+	velocity = Vector3.ZERO
+	player_killed.emit()
+	$SK_Moth2.visible = false
+	$Moth2.visible = true
+	$Moth2/Death.play("Death")
