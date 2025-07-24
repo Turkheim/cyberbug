@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://btsg3docvgbyo"]
+[gd_scene load_steps=20 format=3 uid="uid://btsg3docvgbyo"]
 
 [ext_resource type="Texture2D" uid="uid://c26fhe60u5ehp" path="res://Scenes/GridSmall.png" id="1_6phgx"]
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_ha31o"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cajd4tl3cp1v3" path="res://Scenes/door.tscn" id="7_bvt00"]
 [ext_resource type="PackedScene" uid="uid://ovetpaulfpm" path="res://Assets/LaserBase.glb" id="8_754fn"]
 [ext_resource type="PackedScene" uid="uid://cylst2gpaimub" path="res://Scenes/level_up.tscn" id="8_pa6b8"]
+[ext_resource type="PackedScene" uid="uid://bw7b4nw6lhmlb" path="res://Scenes/fan.tscn" id="14_crh0w"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_oi3di"]
 size = Vector3(10, 1, 1)
@@ -29,18 +30,10 @@ size = Vector2(20, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ainy"]
 size = Vector3(20, 1, 20)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vonw3"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-
-[sub_resource type="Sky" id="Sky_oi3di"]
-sky_material = SubResource("ProceduralSkyMaterial_vonw3")
-
 [sub_resource type="Environment" id="Environment_0b4ue"]
-background_mode = 2
-sky = SubResource("Sky_oi3di")
+background_mode = 1
 ambient_light_source = 2
-ambient_light_color = Color(0.270507, 0.0800252, 0.331798, 1)
+ambient_light_energy = 0.0
 tonemap_mode = 2
 glow_enabled = true
 
@@ -105,7 +98,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 3.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 4.5)
 
 [node name="LevelUp" parent="." instance=ExtResource("8_pa6b8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -10.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -10.5)
 
 [node name="Door2" parent="." instance=ExtResource("7_bvt00")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 1.5)
@@ -122,7 +115,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -3.5)
 [node name="LevelDesign" type="Node3D" parent="."]
 
 [node name="wall" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.5, -10.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.5, -10.5)
+visible = false
 use_collision = true
 collision_layer = 4
 collision_mask = 7
@@ -130,6 +124,7 @@ mesh = SubResource("BoxMesh_oi3di")
 
 [node name="wall3" type="CSGMesh3D" parent="LevelDesign"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.5, 0.5, -5)
+visible = false
 use_collision = true
 collision_layer = 4
 collision_mask = 7
@@ -137,6 +132,7 @@ mesh = SubResource("BoxMesh_oi3di")
 
 [node name="wall4" type="CSGMesh3D" parent="LevelDesign"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.5, 0.5, 5)
+visible = false
 use_collision = true
 collision_layer = 4
 collision_mask = 7
@@ -144,6 +140,7 @@ mesh = SubResource("BoxMesh_oi3di")
 
 [node name="wall5" type="CSGMesh3D" parent="LevelDesign"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.5, 0.5, -5)
+visible = false
 use_collision = true
 collision_layer = 4
 collision_mask = 7
@@ -151,13 +148,15 @@ mesh = SubResource("BoxMesh_oi3di")
 
 [node name="wall6" type="CSGMesh3D" parent="LevelDesign"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.5, 0.5, 5)
+visible = false
 use_collision = true
 collision_layer = 4
 collision_mask = 7
 mesh = SubResource("BoxMesh_oi3di")
 
 [node name="wall2" type="CSGMesh3D" parent="LevelDesign"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -10.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, -10.5)
+visible = false
 use_collision = true
 collision_layer = 4
 collision_mask = 7
@@ -229,28 +228,48 @@ shape = SubResource("BoxShape3D_1ainy")
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Environment"]
-transform = Transform3D(0.410776, 0.39648, -0.821016, 0.12941, 0.866025, 0.482963, 0.902505, -0.304637, 0.304434, -10.6733, 5.5424, 3.73981)
+transform = Transform3D(0.457397, 0.491482, -0.741103, -0.191909, 0.868308, 0.457397, 0.868308, -0.0669873, 0.491481, -8.00016, 2.99942, 8.9994)
 light_color = Color(0.347051, 0.490634, 0.278333, 1)
-light_energy = 20.0
+light_energy = 50.0
 shadow_enabled = true
-shadow_bias = 1.0
-shadow_reverse_cull_face = true
-shadow_opacity = 0.8
-shadow_blur = 3.0
-spot_range = 19.5
-spot_angle = 52.7365
-
-[node name="SpotLight3D4" type="SpotLight3D" parent="Environment"]
-transform = Transform3D(0.0678624, -0.633539, 0.770729, -0.353553, 0.707107, 0.612372, -0.93295, -0.314051, -0.176004, 9.8307, 10.0658, 0.15711)
-light_color = Color(0.603762, 0.355985, 0.610599, 1)
-light_energy = 20.0
-shadow_enabled = true
-shadow_bias = 1.0
 shadow_reverse_cull_face = true
 shadow_opacity = 0.8
 shadow_blur = 3.0
 spot_range = 18.0
-spot_angle = 48.4274
+spot_angle = 47.3896
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Environment"]
+transform = Transform3D(-0.290558, 0.394897, -0.871569, -0.191909, 0.868308, 0.457397, 0.937415, 0.300163, -0.176509, -8.00016, 2.99942, -4.5006)
+light_color = Color(0.616335, 0.285092, 0.655235, 1)
+light_energy = 50.0
+shadow_enabled = true
+shadow_reverse_cull_face = true
+shadow_opacity = 0.8
+shadow_blur = 3.0
+spot_range = 18.0
+spot_angle = 47.3896
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Environment"]
+transform = Transform3D(0.523278, -0.303753, 0.796187, -0.191909, 0.868308, 0.457397, -0.830272, -0.392142, 0.396074, 9.49984, 3.49942, -0.000600815)
+light_color = Color(0.347051, 0.490634, 0.278333, 1)
+light_energy = 50.0
+shadow_enabled = true
+shadow_reverse_cull_face = true
+shadow_opacity = 0.8
+shadow_blur = 3.0
+spot_range = 18.0
+spot_angle = 47.3896
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Environment"]
+transform = Transform3D(0.523278, -0.303753, 0.796187, -0.191909, 0.868308, 0.457397, -0.830271, -0.392142, 0.396074, 10.4998, 3.49942, 7.9994)
+light_color = Color(0.616335, 0.285092, 0.655235, 1)
+light_energy = 50.0
+shadow_enabled = true
+shadow_reverse_cull_face = true
+shadow_opacity = 0.8
+shadow_blur = 3.0
+spot_range = 18.0
+spot_angle = 47.3896
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
 transform = Transform3D(0.577247, 0.461816, -0.673433, -0.12941, 0.866025, 0.482963, 0.80625, -0.19164, 0.559674, -9.07185, 8.40136, 8.68972)
@@ -264,6 +283,45 @@ light_energy = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
 environment = SubResource("Environment_0b4ue")
+
+[node name="Fan2" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 10)
+
+[node name="Fan3" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 6)
+
+[node name="Fan4" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, 2)
+
+[node name="Fan5" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, -2)
+
+[node name="Fan6" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 0, -6)
+
+[node name="Fan12" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -10)
+
+[node name="Fan13" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -10)
+
+[node name="Fan14" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -10)
+
+[node name="Fan7" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 0, -10)
+
+[node name="Fan8" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 0, -6)
+
+[node name="Fan9" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 0, -2)
+
+[node name="Fan10" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 0, 2)
+
+[node name="Fan11" parent="." instance=ExtResource("14_crh0w")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 6, 0, 6)
 
 [connection signal="level_up" from="." to="LevelUp" method="_level_up"]
 [connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]
