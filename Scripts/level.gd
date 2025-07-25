@@ -4,11 +4,11 @@ extends Node3D
 
 signal level_up
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_pressed("ui_cancel"):
-		get_tree().quit()
+		$PauseMenu._pause()
 
-func _on_turret_turret_killed() -> void:
+func _on_turret_killed() -> void:
 	print(turrets)
 	turrets = turrets - 1
 	if turrets <= 0:
@@ -20,5 +20,4 @@ func _player_killed() -> void:
 	$DeadTimer.start()
 
 func _on_dead_timer_timeout() -> void:
-	print("playerKilled")
-	get_tree().reload_current_scene()
+	$LoseMenu._lose_menu()

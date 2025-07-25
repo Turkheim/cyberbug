@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=4 uid="uid://di6jug457l4fu"]
 
-[ext_resource type="Script" uid="uid://cc72rabjpc403" path="res://Scenes/switch.gd" id="1_hinho"]
+[ext_resource type="Script" uid="uid://cc72rabjpc403" path="res://Scripts/switch.gd" id="1_hinho"]
 [ext_resource type="Texture2D" uid="uid://k35kc0umn4eq" path="res://Assets/Switch_Door.png" id="2_v71cw"]
 [ext_resource type="Texture2D" uid="uid://dmwla1ek63wy4" path="res://Assets/WallE.png" id="3_og4gy"]
 

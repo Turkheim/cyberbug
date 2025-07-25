@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cajd4tl3cp1v3"]
 
-[ext_resource type="Script" uid="uid://c0r7qw6fm7f4l" path="res://Scenes/door.gd" id="1_w6aom"]
+[ext_resource type="Script" uid="uid://c0r7qw6fm7f4l" path="res://Scripts/door.gd" id="1_w6aom"]
 [ext_resource type="PackedScene" uid="uid://np8q7urreb1a" path="res://Assets/Door.glb" id="2_fahql"]
 [ext_resource type="PackedScene" uid="uid://c08d2i0n3tyuh" path="res://Assets/DoorBase.glb" id="3_ab4ky"]
 

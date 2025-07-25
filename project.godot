@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Cyberbug"
-run/main_scene="uid://btsg3docvgbyo"
+run/main_scene="uid://dh52p56gttmyi"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://Scenes/icon.svg"
+boot_splash/bg_color=Color(0.237285, 0.48821, 0.281427, 1)
+config/icon="res://Assets/icon.svg"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1080
+window/size/mode=3
+window/size/borderless=true
 
 [global_group]
 
