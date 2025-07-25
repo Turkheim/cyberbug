@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cjflo0iahtqno"]
+[gd_scene load_steps=18 format=3 uid="uid://cjflo0iahtqno"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_34g67"]
 [ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_5qict"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://di6jug457l4fu" path="res://Scenes/switch.tscn" id="14_5n0mu"]
 [ext_resource type="PackedScene" uid="uid://cajd4tl3cp1v3" path="res://Scenes/door.tscn" id="15_nouoh"]
 [ext_resource type="PackedScene" uid="uid://ciukhcxkmbhud" path="res://Scenes/capacitor.tscn" id="16_ttr6d"]
+[ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="17_nouoh"]
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_34g67")
@@ -148,6 +149,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 2.5)
 
 [node name="Capacitor2" parent="." instance=ExtResource("16_ttr6d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, -6.5)
+
+[node name="TurretDead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_nouoh")
 
 [connection signal="level_up" from="." to="LevelUp" method="_level_up"]
 [connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgj2lq42nx04c"]
+[gd_scene load_steps=14 format=3 uid="uid://cgj2lq42nx04c"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_bmcj7"]
 [ext_resource type="PackedScene" uid="uid://bu736srt4cyr4" path="res://Scenes/environment.tscn" id="2_j5tiy"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://tdg1kfe8onid" path="res://Scenes/pause_menu.tscn" id="9_qelns"]
 [ext_resource type="PackedScene" uid="uid://j38wnr2kxoaw" path="res://Scenes/LoseMenu.tscn" id="10_j0t0u"]
 [ext_resource type="PackedScene" uid="uid://c1x8kt3rd6c21" path="res://Scenes/WinMenu.tscn" id="11_j0t0u"]
+[ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="13_ge2ro"]
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_bmcj7")
@@ -81,6 +82,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0
 [node name="WinMenu" parent="." instance=ExtResource("11_j0t0u")]
 
 [node name="DeadTimer" type="Timer" parent="."]
+
+[node name="TurretDead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_ge2ro")
 
 [connection signal="level_up" from="." to="LevelUp" method="_level_up"]
 [connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cylst2gpaimub"]
+[gd_scene load_steps=10 format=3 uid="uid://cylst2gpaimub"]
 
 [ext_resource type="Script" uid="uid://c5nw0oxk30xkk" path="res://Scripts/LevelUp.gd" id="1_cv3ws"]
+[ext_resource type="AudioStream" uid="uid://rp4sd13u36rk" path="res://Assets/Sounds/LevelUp.wav" id="2_mrog8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_754fn"]
 size = Vector3(2, 1, 1)
@@ -11,6 +12,21 @@ albedo_color = Color(0.18208, 0.64, 0.1216, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_cv3ws"]
 material = SubResource("StandardMaterial3D_cv3ws")
 size = Vector3(2, 1, 1)
+
+[sub_resource type="Animation" id="Animation_mrog8"]
+resource_name = "FinalDoor"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_burcv"]
 length = 0.001
@@ -55,21 +71,6 @@ tracks/0/keys = {
 "values": [Vector3(0, -0.05, 0), Vector3(0, -0.95, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_mrog8"]
-resource_name = "FinalDoor"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kj2pw"]
 _data = {
 &"FinalDoor": SubResource("Animation_mrog8"),
@@ -98,5 +99,8 @@ root_node = NodePath("../Door")
 libraries = {
 &"": SubResource("AnimationLibrary_kj2pw")
 }
+
+[node name="LevelUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mrog8")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

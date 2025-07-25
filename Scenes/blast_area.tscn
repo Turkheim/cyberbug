@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://iwahnyaabkrj"]
+[gd_scene load_steps=14 format=3 uid="uid://iwahnyaabkrj"]
 
 [ext_resource type="Script" uid="uid://c31ekdmw6kmls" path="res://Scripts/blast_area.gd" id="1_cvv4h"]
+[ext_resource type="AudioStream" uid="uid://bmm8vt8k8vrfu" path="res://Assets/Sounds/explosion.wav" id="2_2nfe6"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tlxcb"]
 height = 1.0
@@ -126,6 +127,10 @@ draw_pass_1 = SubResource("SphereMesh_sci5w")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_energy = 0.0
+
+[node name="Explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2nfe6")
+autoplay = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

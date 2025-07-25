@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://do7boend11msr"]
+[gd_scene load_steps=17 format=3 uid="uid://do7boend11msr"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_34g67"]
 [ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_5qict"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bkf5tgeuv57s6" path="res://Scenes/Heatsink.tscn" id="13_lr23y"]
 [ext_resource type="PackedScene" uid="uid://di6jug457l4fu" path="res://Scenes/switch.tscn" id="14_5qict"]
 [ext_resource type="PackedScene" uid="uid://cajd4tl3cp1v3" path="res://Scenes/door.tscn" id="15_lshqn"]
+[ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="16_0yyqy"]
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_34g67")
@@ -138,6 +139,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 8.5)
 
 [node name="Door" parent="." instance=ExtResource("15_lshqn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 4.5)
+
+[node name="TurretDead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_0yyqy")
 
 [connection signal="level_up" from="." to="LevelUp" method="_level_up"]
 [connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]

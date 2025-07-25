@@ -7,3 +7,4 @@ func _on_body_entered(body: Node3D) -> void:
 		$SwitchOff.visible = false
 		$SwitchOn.visible = true
 		$CollisionShape3D.queue_free()
+		$Switch.play()

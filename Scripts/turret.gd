@@ -18,6 +18,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	
 func _fire_laser():
 	if LASER:
+		$Laser.play()
 		var new_laser: Area3D = LASER.instantiate()
 		if new_laser:
 			new_laser.set_as_top_level(true)

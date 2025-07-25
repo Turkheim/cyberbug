@@ -10,6 +10,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_turret_killed() -> void:
 	print(turrets)
+	$TurretDead.play()
 	turrets = turrets - 1
 	if turrets <= 0:
 		level_up.emit()

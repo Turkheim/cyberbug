@@ -51,6 +51,8 @@ func _physics_process(delta):
 			rotation.y += Vec3Z.y - TURN_SPEED 
 	move_and_slide()
 func _kill_player():
+	$Footsteps.stop()
+	$PlayerDead.play()
 	can_walk = false
 	velocity = Vector3.ZERO
 	player_killed.emit()
