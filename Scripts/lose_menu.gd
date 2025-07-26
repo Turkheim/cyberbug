@@ -11,7 +11,7 @@ func _lose_menu():
 	visible = true
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+	$SongLose.play()
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 

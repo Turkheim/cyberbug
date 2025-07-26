@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu736srt4cyr4"]
+[gd_scene load_steps=9 format=3 uid="uid://bu736srt4cyr4"]
 
 [ext_resource type="PackedScene" uid="uid://bw7b4nw6lhmlb" path="res://Scenes/fan.tscn" id="1_km3fo"]
 [ext_resource type="Texture2D" uid="uid://c26fhe60u5ehp" path="res://Assets/GridSmall.png" id="2_mfu5p"]
+[ext_resource type="AudioStream" uid="uid://bj02pbynka17f" path="res://Assets/Sounds/SongGameplay.wav" id="3_a65fu"]
 
 [sub_resource type="Environment" id="Environment_0b4ue"]
 background_mode = 1
@@ -196,3 +197,7 @@ shape = SubResource("BoxShape3D_a65fu")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("PlaneMesh_vpl2n")
+
+[node name="SongGameplay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_a65fu")
+autoplay = true

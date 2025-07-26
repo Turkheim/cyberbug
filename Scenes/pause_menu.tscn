@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://tdg1kfe8onid"]
+[gd_scene load_steps=6 format=3 uid="uid://tdg1kfe8onid"]
+
+[ext_resource type="AudioStream" uid="uid://cm3xi6psupm4h" path="res://Assets/Sounds/SongMenu.wav" id="1_emv3i"]
 
 [sub_resource type="GDScript" id="GDScript_y2c35"]
 script/source = "extends ColorRect
@@ -7,13 +9,13 @@ func _unpause():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
 	visible = false
-	
+	$SongMenu.stop()
 	
 func _pause():
 	visible = true
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+	$SongMenu.play()
 func _on_restart_button_pressed() -> void:
 	_unpause()
 	get_tree().reload_current_scene()
@@ -100,6 +102,9 @@ size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
 text = "QUIT"
+
+[node name="SongMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_emv3i")
 
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

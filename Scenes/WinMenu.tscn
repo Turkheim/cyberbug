@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1x8kt3rd6c21"]
+[gd_scene load_steps=4 format=3 uid="uid://c1x8kt3rd6c21"]
 
 [ext_resource type="Script" uid="uid://cjlyiyw7pcl8m" path="res://Scripts/WinMenu.gd" id="1_l763u"]
+[ext_resource type="AudioStream" uid="uid://bawghljfwfwou" path="res://Assets/Sounds/SongWin.wav" id="2_q7l2s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y2c35"]
 font_size = 92
@@ -16,6 +17,9 @@ grow_vertical = 2
 color = Color(0.627, 0, 0.314, 0.779)
 script = ExtResource("1_l763u")
 metadata/_edit_use_anchors_ = true
+
+[node name="SongWin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_q7l2s")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
