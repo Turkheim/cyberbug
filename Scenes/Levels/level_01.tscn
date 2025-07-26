@@ -16,7 +16,7 @@
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_bmcj7")
-turrets = 2
+turrets = 1
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_qelns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 9)
@@ -31,49 +31,67 @@ fov = 20.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -10.5)
 
 [node name="LaserBase2" parent="." instance=ExtResource("5_g38v2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 4.5)
-
-[node name="LaserBase3" parent="." instance=ExtResource("5_g38v2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, -5.5)
 
 [node name="Turret" parent="." instance=ExtResource("4_j0t0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.6, 4.5)
-
-[node name="Turret2" parent="." instance=ExtResource("4_j0t0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.6, -4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.6, -5.5)
 
 [node name="WallLong" parent="." instance=ExtResource("7_flehy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 6.5)
 
+[node name="WallLong6" parent="." instance=ExtResource("7_flehy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 6.5)
+
 [node name="WallA" parent="." instance=ExtResource("6_ge2ro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 6.5)
+
+[node name="WallA7" parent="." instance=ExtResource("6_ge2ro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
 
 [node name="WallB" parent="." instance=ExtResource("8_fj6kk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 7.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 7.5)
+
+[node name="WallB5" parent="." instance=ExtResource("8_fj6kk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 2.5)
 
 [node name="WallLong2" parent="." instance=ExtResource("7_flehy")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.5, 0, 2)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, -9)
 
 [node name="WallLong3" parent="." instance=ExtResource("7_flehy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4.5)
+
+[node name="WallLong5" parent="." instance=ExtResource("7_flehy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0.5)
+
+[node name="WallLong4" parent="." instance=ExtResource("7_flehy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5, 0, 3)
 
 [node name="WallA2" parent="." instance=ExtResource("6_ge2ro")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, -2.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, -5.5)
 
 [node name="WallA4" parent="." instance=ExtResource("6_ge2ro")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.5, 0, -6.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5, 0, -7.5)
+
+[node name="WallA5" parent="." instance=ExtResource("6_ge2ro")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 1.5)
+
+[node name="WallA6" parent="." instance=ExtResource("6_ge2ro")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0, -2.5)
 
 [node name="WallA3" parent="." instance=ExtResource("6_ge2ro")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0, 5.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.5, 0, -2.5)
 
 [node name="WallB2" parent="." instance=ExtResource("8_fj6kk")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.5, 0, 0.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, -3.5)
 
 [node name="WallB4" parent="." instance=ExtResource("8_fj6kk")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.5, 0, -5.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.5, 0, -1.5)
+
+[node name="WallB6" parent="." instance=ExtResource("8_fj6kk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, 3.5)
 
 [node name="WallB3" parent="." instance=ExtResource("8_fj6kk")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0, 4.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, -1.5)
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_qelns")]
 
@@ -90,5 +108,4 @@ stream = ExtResource("13_ge2ro")
 [connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]
 [connection signal="_win_menu" from="LevelUp" to="WinMenu" method="_win_menu"]
 [connection signal="turret_killed" from="Turret" to="." method="_on_turret_killed"]
-[connection signal="turret_killed" from="Turret2" to="." method="_on_turret_killed"]
 [connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]

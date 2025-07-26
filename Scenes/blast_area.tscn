@@ -20,7 +20,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.5, 1.5]
+"values": [0.5, 2.52]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -77,7 +77,7 @@ gradient = SubResource("Gradient_rf0wk")
 use_hdr = true
 
 [sub_resource type="Curve" id="Curve_opq6n"]
-_data = [Vector2(0, 0.443614), 0.0, 0.0, 0, 0, Vector2(0.230769, 0.973505), 0.0, 0.0, 0, 0, Vector2(0.528967, 0.936893), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.443614), 0.0, 0.0, 0, 0, Vector2(0.230769, 0.973505), 0.0, 0.0, 0, 0, Vector2(0.687657, 0.963415), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_labbc"]
@@ -85,8 +85,9 @@ curve = SubResource("Curve_opq6n")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_blydi"]
 direction = Vector3(0, 1, 0)
-initial_velocity_min = 5.0
-initial_velocity_max = 5.0
+spread = 90.0
+initial_velocity_min = 6.0
+initial_velocity_max = 6.0
 scale_curve = SubResource("CurveTexture_labbc")
 color_ramp = SubResource("GradientTexture1D_fgscc")
 hue_variation_min = -0.02
@@ -116,7 +117,7 @@ autoplay = "BlastGrow"
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 emitting = false
-amount = 32
+amount = 48
 lifetime = 0.5
 one_shot = true
 speed_scale = 2.0
