@@ -1,70 +1,81 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh52p56gttmyi"]
+[gd_scene load_steps=7 format=3 uid="uid://dh52p56gttmyi"]
 
 [ext_resource type="Script" uid="uid://dtqtt5wylhxo5" path="res://Scripts/start_menu.gd" id="1_dvnd1"]
+[ext_resource type="Texture2D" uid="uid://b48u0fyl3wnnv" path="res://UI/startbutton.png" id="2_ujd4t"]
 [ext_resource type="AudioStream" uid="uid://cm3xi6psupm4h" path="res://Assets/Sounds/SongMenu.wav" id="2_xtte2"]
+[ext_resource type="Texture2D" uid="uid://cdapwq6lm41iy" path="res://UI/menu.png" id="3_dl0pg"]
+[ext_resource type="Texture2D" uid="uid://b2cvgffkrbsm6" path="res://UI/quitbutton.png" id="3_ql1sk"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_y2c35"]
-font_size = 92
+[sub_resource type="FontFile" id="FontFile_dibtv"]
+cache/0/96/0/ascent = 0.0
+cache/0/96/0/descent = 0.0
+cache/0/96/0/underline_position = 0.0
+cache/0/96/0/underline_thickness = 0.0
+cache/0/96/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
 
 [node name="StartMenu" type="ColorRect"]
 process_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.11732, 0.271498, 0.174279, 0.779)
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 1.1
+color = Color(0.783893, 0.841442, 0.872858, 0.779)
 script = ExtResource("1_dvnd1")
 metadata/_edit_use_anchors_ = true
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.00104167
+anchor_top = 0.750278
+anchor_right = 0.00104167
+anchor_bottom = 0.750278
+offset_left = 585.0
+offset_top = -183.3
+offset_right = 1640.0
+offset_bottom = 96.7
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+action_mode = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
-custom_minimum_size = Vector2(1280, 756)
+[node name="QuitButton" type="Button" parent="."]
 layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "CYBERBUG"
-label_settings = SubResource("LabelSettings_y2c35")
-horizontal_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="StartButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
+anchor_left = -0.656482
+anchor_top = 0.511111
+anchor_right = -0.656482
+anchor_bottom = 0.511111
+offset_left = 2812.44
+offset_top = -187.0
+offset_right = 2916.44
+offset_bottom = -87.0001
 size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0, 0.827936, 1.92523e-06, 1)
+theme_override_fonts/font = SubResource("FontFile_dibtv")
 theme_override_font_sizes/font_size = 96
+theme_override_icons/icon = ExtResource("3_ql1sk")
 action_mode = 0
-text = "START"
-
-[node name="QuitButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 96
-action_mode = 0
-text = "QUIT"
 
 [node name="SongMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xtte2")
 autoplay = true
 
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(343, 132)
+scale = Vector2(0.838659, 0.778195)
+texture = ExtResource("3_dl0pg")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Startbutton" type="Sprite2D" parent="."]
+process_mode = 4
+position = Vector2(1132, 761)
+scale = Vector2(1.38194, 1.38194)
+texture = ExtResource("2_ujd4t")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
