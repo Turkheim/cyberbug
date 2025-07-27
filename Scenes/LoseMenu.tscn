@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://j38wnr2kxoaw"]
+[gd_scene load_steps=6 format=3 uid="uid://j38wnr2kxoaw"]
 
 [ext_resource type="Script" uid="uid://imkij5f1044l" path="res://Scripts/lose_menu.gd" id="1_0jnk0"]
 [ext_resource type="AudioStream" uid="uid://d25xcni23o2oc" path="res://Assets/Sounds/SongLose.wav" id="2_b3kgp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y2c35"]
 font_size = 92
+
+[sub_resource type="InputEventAction" id="InputEventAction_b3kgp"]
+action = &"ui_accept"
+
+[sub_resource type="Shortcut" id="Shortcut_atr7c"]
+events = [SubResource("InputEventAction_b3kgp")]
 
 [node name="LoseMenu" type="ColorRect"]
 process_mode = 3
@@ -54,6 +60,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
+shortcut = SubResource("Shortcut_atr7c")
 text = "RELOAD"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]

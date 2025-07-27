@@ -5,19 +5,26 @@ extends StaticBody3D
 const LASER = preload("res://Scenes/laser.tscn")
 @onready var timer_laser: Timer = $TimerLaser
 
+var rotation_target = 0
+
 var light_visible = true
 
 signal turret_killed
 
-func _process(delta):
-	rotate(Vector3.UP,deg_to_rad(rotation_speed) * delta)
+#func _process(delta):
+	#rotate(Vector3.UP,deg_to_rad(rotation_speed) * delta)
 
-
+func _rotate_turret():
+	get_tree().create_tween().tween_property(self,"rotation:y", rotation_target, 0.3)
+	
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	_kill_turret()
+	if body.is_in_group("Player"):
+		_kill_turret()
 	
 func _fire_laser():
 	if LASER:
+		$Laser.volume_db = randf_range(-5,5)
+		$Laser.pitch_scale = randf_range(0.5,1.5)
 		$Laser.play()
 		var new_laser: Area3D = LASER.instantiate()
 		if new_laser:
@@ -27,6 +34,8 @@ func _fire_laser():
 
 
 func _on_timer_laser_timeout() -> void:
+	rotation_target = rotation_target + deg_to_rad(45)
+	_rotate_turret()
 	_fire_laser()
 	timer_laser.start()
 
