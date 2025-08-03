@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c4des1o4sspp7" path="res://Scenes/wall_long.tscn" id="9_awu86"]
 [ext_resource type="PackedScene" uid="uid://bkf5tgeuv57s6" path="res://Scenes/Heatsink.tscn" id="11_a7ihy"]
 [ext_resource type="PackedScene" uid="uid://c3w6vw2oo8n6f" path="res://Assets/SK_Moth.glb" id="11_hll0a"]
-[ext_resource type="PackedScene" uid="uid://dh52p56gttmyi" path="res://Scenes/StartMenu.tscn" id="16_pqqe5"]
+[ext_resource type="PackedScene" uid="uid://tdg1kfe8onid" path="res://Scenes/pause_menu.tscn" id="16_pqqe5"]
 
 [sub_resource type="Environment" id="Environment_0b4ue"]
 background_mode = 1

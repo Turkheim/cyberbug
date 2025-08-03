@@ -1,0 +1,128 @@
+<<<<<<< Updated upstream
+[gd_scene load_steps=7 format=3 uid="uid://dh52p56gttmyi"]
+
+[ext_resource type="Script" uid="uid://dtqtt5wylhxo5" path="res://Scripts/start_menu.gd" id="1_dvnd1"]
+
+@@ -5,6 +6,16 @@
+[ext_resource type="AudioStream" uid="uid://cm3xi6psupm4h" path="res://Assets/Sounds/SongMenu.wav" id="2_xtte2"]
+[ext_resource type="Texture2D" uid="uid://cdapwq6lm41iy" path="res://UI/menu.png" id="3_dl0pg"]
+[ext_resource type="Texture2D" uid="uid://b2cvgffkrbsm6" path="res://UI/quitbutton.png" id="3_ql1sk"]
+=======
+[gd_scene load_steps=8 format=3 uid="uid://dh52p56gttmyi"]
+
+[ext_resource type="Script" uid="uid://dtqtt5wylhxo5" path="res://Scripts/start_menu.gd" id="1_dvnd1"]
+[ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="2_ujd4t"]
+[ext_resource type="AudioStream" uid="uid://cm3xi6psupm4h" path="res://Assets/Sounds/SongMenu.wav" id="2_xtte2"]
+[ext_resource type="Texture2D" uid="uid://b1j2ueob5407c" path="res://Assets/Sprites/quitbutton.png" id="4_ql1sk"]
+[ext_resource type="Texture2D" uid="uid://cbnge4s5ot841" path="res://Assets/Sprites/startbutton.png" id="5_dibtv"]
+[ext_resource type="Texture2D" uid="uid://cd722xhph34iu" path="res://Assets/Sprites/titlecyberbug.png" id="6_ql1sk"]
+>>>>>>> Stashed changes
+
+[sub_resource type="FontFile" id="FontFile_dibtv"]
+cache/0/96/0/ascent = 0.0
+
+@@ -20,14 +31,31 @@ cache/0/16/0/scale = 1.0
+
+[node name="StartMenu" type="ColorRect"]
+process_mode = 3
+<<<<<<< Updated upstream
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 0
+size_flags_stretch_ratio = 1.1
+color = Color(0.783893, 0.841442, 0.872858, 0.779)
+=======
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.11732, 0.271498, 0.174279, 0.779)
+>>>>>>> Stashed changes
+script = ExtResource("1_dvnd1")
+metadata/_edit_use_anchors_ = true
+
+<<<<<<< Updated upstream
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.00104167
+
+
+@@ -59,11 +87,17 @@ theme_override_fonts/font = SubResource("FontFile_dibtv")
+theme_override_font_sizes/font_size = 96
+theme_override_icons/icon = ExtResource("3_ql1sk")
+action_mode = 0
+=======
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(970, 549)
+texture = ExtResource("2_ujd4t")
+>>>>>>> Stashed changes
+
+[node name="SongMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xtte2")
+autoplay = true
+
+<<<<<<< Updated upstream
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(343, 132)
+scale = Vector2(0.838659, 0.778195)
+
+@@ -76,6 +110,50 @@ process_mode = 4
+position = Vector2(1132, 761)
+scale = Vector2(1.38194, 1.38194)
+texture = ExtResource("2_ujd4t")
+=======
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 843.0
+offset_right = 1439.0
+offset_bottom = 1038.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+action_mode = 0
+flat = true
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1614.0
+offset_top = 333.0
+offset_right = 1718.0
+offset_bottom = 433.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+action_mode = 0
+icon = ExtResource("4_ql1sk")
+flat = true
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 823.0
+offset_top = 496.0
+offset_right = 1302.0
+offset_bottom = 622.0
+text = "CYBERBUG"
+label_settings = SubResource("LabelSettings_y2c35")
+horizontal_alignment = 1
+
+[node name="Startbutton" type="Sprite2D" parent="."]
+position = Vector2(1052, 947)
+texture = ExtResource("5_dibtv")
+
+[node name="Titlecyberbug" type="Sprite2D" parent="."]
+position = Vector2(1026, 659)
+scale = Vector2(1.22619, 1.22619)
+texture = ExtResource("6_ql1sk")
+>>>>>>> Stashed changes
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
