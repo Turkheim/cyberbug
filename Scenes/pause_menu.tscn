@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://tdg1kfe8onid"]
+[gd_scene load_steps=9 format=3 uid="uid://tdg1kfe8onid"]
 
+[ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="1_bpi0q"]
 [ext_resource type="AudioStream" uid="uid://cm3xi6psupm4h" path="res://Assets/Sounds/SongMenu.wav" id="1_emv3i"]
+[ext_resource type="Texture2D" uid="uid://c4nvjwkokaj5l" path="res://Assets/Sprites/restart.png" id="3_vmyb1"]
+[ext_resource type="Texture2D" uid="uid://bvet1viec0ii8" path="res://Assets/Sprites/resumebutton.png" id="4_myy0f"]
 
 [sub_resource type="GDScript" id="GDScript_y2c35"]
 script/source = "extends ColorRect
@@ -31,6 +34,8 @@ func _on_resume_button_pressed() -> void:
 
 [sub_resource type="LabelSettings" id="LabelSettings_y2c35"]
 font_size = 92
+shadow_color = Color(0, 0, 0, 0.435294)
+shadow_offset = Vector2(4.89, 7.18)
 
 [sub_resource type="InputEventAction" id="InputEventAction_y2c35"]
 action = &"ui_cancel"
@@ -42,70 +47,80 @@ events = [SubResource("InputEventAction_y2c35")]
 [node name="PauseMenu" type="ColorRect"]
 process_mode = 3
 visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = -640.0
+offset_right = 960.0
+offset_bottom = 640.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 color = Color(0.527764, 0.191404, 0.599385, 0.519)
 script = SubResource("GDScript_y2c35")
-metadata/_edit_use_anchors_ = true
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
-custom_minimum_size = Vector2(1280, 756)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "PAUSE"
-label_settings = SubResource("LabelSettings_y2c35")
-horizontal_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="ResumeButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 96
-shortcut = SubResource("Shortcut_emv3i")
-text = "RESUME"
-
-[node name="RestartButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 96
-action_mode = 0
-text = "RESTART"
-
-[node name="QuitButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 96
-action_mode = 0
-text = "QUIT"
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(994, 619)
+texture = ExtResource("1_bpi0q")
 
 [node name="SongMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_emv3i")
 
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 929.0
+offset_top = 628.0
+offset_right = 1217.0
+offset_bottom = 754.0
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_y2c35")
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 624.0
+offset_top = 878.0
+offset_right = 1013.0
+offset_bottom = 1018.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+shortcut = SubResource("Shortcut_emv3i")
+flat = true
+
+[node name="RestartButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1223.0
+offset_top = 876.0
+offset_right = 1632.0
+offset_bottom = 1016.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+action_mode = 0
+flat = true
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1625.0
+offset_top = 383.0
+offset_right = 1755.0
+offset_bottom = 523.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+action_mode = 0
+flat = true
+
+[node name="Restart" type="Sprite2D" parent="."]
+position = Vector2(1404, 953)
+texture = ExtResource("3_vmyb1")
+
+[node name="Resumebutton" type="Sprite2D" parent="."]
+position = Vector2(826, 953)
+texture = ExtResource("4_myy0f")
+
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

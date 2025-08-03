@@ -23,7 +23,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	
 func _fire_laser():
 	if LASER:
-		$Laser.volume_db = randf_range(-5,5)
 		$Laser.pitch_scale = randf_range(0.5,1.5)
 		$Laser.play()
 		var new_laser: Area3D = LASER.instantiate()

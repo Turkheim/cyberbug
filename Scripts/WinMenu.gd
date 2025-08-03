@@ -30,4 +30,4 @@ func _on_next_level_button_pressed() -> void:
 	elif level == 5:
 		get_tree().change_scene_to_file("res://Scenes/Levels/level_06.tscn")
 	elif level == 6:
-		get_tree().change_scene_to_file("res://Scenes/StartMenu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/EndMenu.tscn")
