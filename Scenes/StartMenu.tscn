@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=7 format=3 uid="uid://dh52p56gttmyi"]
 
 [ext_resource type="Script" uid="uid://dtqtt5wylhxo5" path="res://Scripts/start_menu.gd" id="1_dvnd1"]
@@ -8,6 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://b2cvgffkrbsm6" path="res://UI/quitbutton.png" id="3_ql1sk"]
 =======
 [gd_scene load_steps=8 format=3 uid="uid://dh52p56gttmyi"]
+=======
+[gd_scene load_steps=8 format=3 uid="uid://dh52p56gttmyi"]
+
+[ext_resource type="Script" uid="uid://dtqtt5wylhxo5" path="res://Scripts/start_menu.gd" id="1_dvnd1"]
+[ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="2_ujd4t"]
+[ext_resource type="AudioStream" uid="uid://cm3xi6psupm4h" path="res://Assets/Sounds/SongMenu.wav" id="2_xtte2"]
+[ext_resource type="Texture2D" uid="uid://b1j2ueob5407c" path="res://Assets/Sprites/quitbutton.png" id="4_ql1sk"]
+[ext_resource type="Texture2D" uid="uid://cbnge4s5ot841" path="res://Assets/Sprites/startbutton.png" id="5_dibtv"]
+[ext_resource type="Texture2D" uid="uid://cd722xhph34iu" path="res://Assets/Sprites/titlecyberbug.png" id="6_ql1sk"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://dtqtt5wylhxo5" path="res://Scripts/start_menu.gd" id="1_dvnd1"]
 [ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="2_ujd4t"]
@@ -32,12 +43,15 @@ cache/0/16/0/scale = 1.0
 [node name="StartMenu" type="ColorRect"]
 process_mode = 3
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 offset_right = 1920.0
 offset_bottom = 1080.0
 size_flags_horizontal = 0
 size_flags_stretch_ratio = 1.1
 color = Color(0.783893, 0.841442, 0.872858, 0.779)
 =======
+=======
+>>>>>>> Stashed changes
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -55,6 +69,7 @@ color = Color(0.11732, 0.271498, 0.174279, 0.779)
 >>>>>>> Stashed changes
 script = ExtResource("1_dvnd1")
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 2
@@ -92,11 +107,17 @@ action_mode = 0
 position = Vector2(970, 549)
 texture = ExtResource("2_ujd4t")
 >>>>>>> Stashed changes
+=======
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(970, 549)
+texture = ExtResource("2_ujd4t")
+>>>>>>> Stashed changes
 
 [node name="SongMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_xtte2")
 autoplay = true
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 [node name="Menu" type="Sprite2D" parent="."]
 position = Vector2(343, 132)
@@ -111,6 +132,8 @@ position = Vector2(1132, 761)
 scale = Vector2(1.38194, 1.38194)
 texture = ExtResource("2_ujd4t")
 =======
+=======
+>>>>>>> Stashed changes
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 641.0
@@ -153,6 +176,9 @@ texture = ExtResource("5_dibtv")
 position = Vector2(1026, 659)
 scale = Vector2(1.22619, 1.22619)
 texture = ExtResource("6_ql1sk")
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
