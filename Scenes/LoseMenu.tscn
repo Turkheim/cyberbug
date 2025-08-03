@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://j38wnr2kxoaw"]
+[gd_scene load_steps=9 format=3 uid="uid://j38wnr2kxoaw"]
 
 [ext_resource type="Script" uid="uid://imkij5f1044l" path="res://Scripts/lose_menu.gd" id="1_0jnk0"]
 [ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="2_78sj7"]
 [ext_resource type="AudioStream" uid="uid://d25xcni23o2oc" path="res://Assets/Sounds/SongLose.wav" id="2_b3kgp"]
+[ext_resource type="Texture2D" uid="uid://ckq0g1f45t02o" path="res://UI/failmenu.png" id="2_wov3g"]
 [ext_resource type="Texture2D" uid="uid://c4nvjwkokaj5l" path="res://Assets/Sprites/restart.png" id="4_wov3g"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_b3kgp"]
@@ -32,7 +33,12 @@ color = Color(0.627, 0, 0.314, 0.779)
 script = ExtResource("1_0jnk0")
 metadata/_edit_use_anchors_ = true
 
+[node name="Failmenu" type="Sprite2D" parent="."]
+position = Vector2(1002, 607)
+texture = ExtResource("2_wov3g")
+
 [node name="Menu" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(983, 616)
 texture = ExtResource("2_78sj7")
 
@@ -41,10 +47,10 @@ stream = ExtResource("2_b3kgp")
 
 [node name="ReloadButton" type="Button" parent="."]
 layout_mode = 2
-offset_left = 494.0
-offset_top = 738.0
-offset_right = 1742.0
-offset_bottom = 1037.0
+offset_left = 485.0
+offset_top = 787.0
+offset_right = 1733.0
+offset_bottom = 1086.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
@@ -63,6 +69,7 @@ action_mode = 0
 flat = true
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 847.0
 offset_top = 523.0
@@ -72,7 +79,7 @@ text = "You Lose"
 label_settings = SubResource("LabelSettings_l1hfb")
 
 [node name="Restart" type="Sprite2D" parent="."]
-position = Vector2(1052, 856)
+position = Vector2(1060, 965)
 texture = ExtResource("4_wov3g")
 
 [connection signal="pressed" from="ReloadButton" to="." method="_on_reload_button_pressed"]

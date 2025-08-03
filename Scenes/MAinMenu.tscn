@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c4des1o4sspp7" path="res://Scenes/wall_long.tscn" id="9_awu86"]
 [ext_resource type="PackedScene" uid="uid://bkf5tgeuv57s6" path="res://Scenes/Heatsink.tscn" id="11_a7ihy"]
 [ext_resource type="PackedScene" uid="uid://c3w6vw2oo8n6f" path="res://Assets/SK_Moth.glb" id="11_hll0a"]
-[ext_resource type="PackedScene" uid="uid://tdg1kfe8onid" path="res://Scenes/pause_menu.tscn" id="16_pqqe5"]
+[ext_resource type="PackedScene" uid="uid://bmt07lr676os1" path="res://Scenes/StartMenu.tscn" id="16_8k4x3"]
 
 [sub_resource type="Environment" id="Environment_0b4ue"]
 background_mode = 1
@@ -470,8 +470,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, -6.5)
 [node name="SK_Moth2" parent="." instance=ExtResource("11_hll0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5.5)
 
-[node name="StartMenu" parent="." instance=ExtResource("16_pqqe5")]
-color = Color(1, 1, 1, 0)
+[node name="StartMenu" parent="." instance=ExtResource("16_8k4x3")]
+offset_left = -979.0
+offset_top = -607.0
+offset_right = -979.0
+offset_bottom = -607.0
 
 [connection signal="body_entered" from="Turret/KillSwitch" to="Turret" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Turret/TimerLaser" to="Turret" method="_on_timer_laser_timeout"]
