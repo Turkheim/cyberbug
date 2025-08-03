@@ -9,7 +9,8 @@ func _unpause():
 	
 func _ready() -> void:
 	visible = true
-	get_tree().paused = true
+	get_tree().paused = false
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_quit_button_pressed() -> void:
