@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://do7boend11msr"]
+[gd_scene load_steps=19 format=3 uid="uid://do7boend11msr"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_34g67"]
 [ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_5qict"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c4des1o4sspp7" path="res://Scenes/wall_long.tscn" id="7_2fied"]
 [ext_resource type="PackedScene" uid="uid://u05x500bowe6" path="res://Scenes/wall_a.tscn" id="8_i4385"]
 [ext_resource type="PackedScene" uid="uid://pg8287wb4urq" path="res://Scenes/wall_b.tscn" id="9_j8haw"]
+[ext_resource type="PackedScene" uid="uid://btc14mw3f5o28" path="res://Scenes/UI.tscn" id="10_3cvb6"]
 [ext_resource type="PackedScene" uid="uid://tdg1kfe8onid" path="res://Scenes/pause_menu.tscn" id="10_iddqe"]
 [ext_resource type="PackedScene" uid="uid://j38wnr2kxoaw" path="res://Scenes/LoseMenu.tscn" id="11_attkd"]
 [ext_resource type="PackedScene" uid="uid://c1x8kt3rd6c21" path="res://Scenes/WinMenu.tscn" id="12_6jd25"]
@@ -82,6 +83,8 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0
 
 [node name="WallB3" parent="." instance=ExtResource("9_j8haw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0, 4.5)
+
+[node name="UI" parent="." instance=ExtResource("10_3cvb6")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("10_iddqe")]
 
