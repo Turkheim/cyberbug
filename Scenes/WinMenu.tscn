@@ -6,72 +6,78 @@
 [ext_resource type="Texture2D" uid="uid://5gf1utgqp40t" path="res://Assets/Sprites/nextbutton.png" id="4_fu86e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y2c35"]
-font_size = 92
+font_size = 56
 shadow_color = Color(0, 0, 0, 0.498039)
 shadow_offset = Vector2(8.775, 10.72)
 
 [node name="WinMenu" type="ColorRect"]
 process_mode = 3
 visible = false
-custom_minimum_size = Vector2(1920, 1280)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -640.0
-offset_right = 960.0
-offset_bottom = 640.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.627, 0, 0.314, 0.779)
 script = ExtResource("1_l763u")
-
-[node name="Menu" type="Sprite2D" parent="."]
-position = Vector2(974, 640)
-texture = ExtResource("2_rnswt")
+metadata/_edit_use_anchors_ = true
 
 [node name="SongWin" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_q7l2s")
 
-[node name="Label" type="Label" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.482639
+anchor_top = 0.469136
+anchor_right = 0.517361
+anchor_bottom = 0.530864
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Sprite2D" parent="Control"]
+position = Vector2(-2, -17)
+scale = Vector2(0.325188, 0.325188)
+texture = ExtResource("2_rnswt")
+
+[node name="Label" type="Label" parent="Control"]
 layout_mode = 2
-offset_left = 437.0
-offset_top = 595.0
-offset_right = 1685.0
-offset_bottom = 721.0
+offset_left = -174.0
+offset_top = -47.0
+offset_right = 232.0
+offset_bottom = 79.0
 text = "YOU WIN"
 label_settings = SubResource("LabelSettings_y2c35")
 horizontal_alignment = 1
 
-[node name="NextLevelButton" type="Button" parent="."]
+[node name="NextLevelButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = 460.0
-offset_top = 763.0
-offset_right = 1708.0
-offset_bottom = 1062.0
+offset_left = -89.0
+offset_top = 32.0
+offset_right = 129.0
+offset_bottom = 126.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
 flat = true
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="QuitButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = 1614.0
-offset_top = 411.0
-offset_right = 1734.0
-offset_bottom = 539.0
+offset_left = 197.0
+offset_top = -93.0
+offset_right = 253.0
+offset_bottom = -40.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
 flat = true
 
-[node name="Nextbutton" type="Sprite2D" parent="."]
-position = Vector2(1060, 901)
+[node name="Nextbutton" type="Sprite2D" parent="Control"]
+position = Vector2(24, 77)
+scale = Vector2(0.533784, 0.533784)
 texture = ExtResource("4_fu86e")
 
-[connection signal="pressed" from="NextLevelButton" to="." method="_on_next_level_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]

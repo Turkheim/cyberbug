@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cjflo0iahtqno"]
+[gd_scene load_steps=19 format=3 uid="uid://cjflo0iahtqno"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_34g67"]
 [ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_5qict"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cajd4tl3cp1v3" path="res://Scenes/door.tscn" id="15_nouoh"]
 [ext_resource type="PackedScene" uid="uid://ciukhcxkmbhud" path="res://Scenes/capacitor.tscn" id="16_ttr6d"]
 [ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="17_nouoh"]
+[ext_resource type="PackedScene" uid="uid://c03wxnu2ofknh" path="res://Scenes/camera_node.tscn" id="18_ea2rn"]
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_34g67")
@@ -25,10 +26,6 @@ script = ExtResource("1_34g67")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 9)
 
 [node name="Environment" parent="." instance=ExtResource("3_lshqn")]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 53, 29.5)
-fov = 20.0
 
 [node name="LevelUp" parent="." instance=ExtResource("4_0yyqy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -10.5)
@@ -149,6 +146,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, -5.5)
 
 [node name="TurretDead" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_nouoh")
+
+[node name="CameraNode" parent="." instance=ExtResource("18_ea2rn")]
 
 [connection signal="level_up" from="." to="LevelUp" method="_level_up"]
 [connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]

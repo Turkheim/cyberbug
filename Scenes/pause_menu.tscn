@@ -9,16 +9,16 @@
 script/source = "extends ColorRect
 
 func _unpause():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
 	visible = false
-	$SongMenu.stop()
+	$Control/SongMenu.stop()
 	
 func _pause():
 	visible = true
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	$SongMenu.play()
+	$Control/SongMenu.play()
 func _on_restart_button_pressed() -> void:
 	_unpause()
 	get_tree().reload_current_scene()
@@ -33,7 +33,7 @@ func _on_resume_button_pressed() -> void:
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_y2c35"]
-font_size = 92
+font_size = 56
 shadow_color = Color(0, 0, 0, 0.435294)
 shadow_offset = Vector2(4.89, 7.18)
 
@@ -47,80 +47,89 @@ events = [SubResource("InputEventAction_y2c35")]
 [node name="PauseMenu" type="ColorRect"]
 process_mode = 3
 visible = false
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -640.0
-offset_right = 960.0
-offset_bottom = 640.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.527764, 0.191404, 0.599385, 0.519)
 script = SubResource("GDScript_y2c35")
+metadata/_edit_use_anchors_ = true
 
-[node name="Menu" type="Sprite2D" parent="."]
-position = Vector2(994, 619)
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Sprite2D" parent="Control"]
+position = Vector2(24, -23)
+scale = Vector2(0.390038, 0.390038)
 texture = ExtResource("1_bpi0q")
 
-[node name="SongMenu" type="AudioStreamPlayer" parent="."]
+[node name="SongMenu" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("1_emv3i")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="Control"]
 layout_mode = 2
-offset_left = 929.0
-offset_top = 628.0
-offset_right = 1217.0
-offset_bottom = 754.0
+offset_left = -100.0
+offset_top = -67.0
+offset_right = 188.0
+offset_bottom = 59.0
 text = "PAUSE"
 label_settings = SubResource("LabelSettings_y2c35")
 horizontal_alignment = 1
 
-[node name="ResumeButton" type="Button" parent="."]
+[node name="ResumeButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = 624.0
-offset_top = 878.0
-offset_right = 1013.0
-offset_bottom = 1018.0
+offset_left = -200.0
+offset_top = 65.0
+offset_right = 38.0
+offset_bottom = 178.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 shortcut = SubResource("Shortcut_emv3i")
 flat = true
 
-[node name="RestartButton" type="Button" parent="."]
+[node name="RestartButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = 1223.0
-offset_top = 876.0
-offset_right = 1632.0
-offset_bottom = 1016.0
+offset_left = 93.0
+offset_top = 68.0
+offset_right = 318.0
+offset_bottom = 165.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
 flat = true
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="QuitButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = 1625.0
-offset_top = 383.0
-offset_right = 1755.0
-offset_bottom = 523.0
+offset_left = 268.0
+offset_top = -120.0
+offset_right = 324.0
+offset_bottom = -60.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
 flat = true
 
-[node name="Restart" type="Sprite2D" parent="."]
-position = Vector2(1404, 953)
+[node name="Restart" type="Sprite2D" parent="Control"]
+position = Vector2(207, 119)
+scale = Vector2(0.631757, 0.631757)
 texture = ExtResource("3_vmyb1")
 
-[node name="Resumebutton" type="Sprite2D" parent="."]
-position = Vector2(826, 953)
+[node name="Resumebutton" type="Sprite2D" parent="Control"]
+position = Vector2(-57.9999, 118)
+scale = Vector2(0.635811, 0.635811)
 texture = ExtResource("4_myy0f")
 
-[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Control/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]

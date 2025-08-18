@@ -1,78 +1,83 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmt07lr676os1"]
+[gd_scene load_steps=6 format=3 uid="uid://bmt07lr676os1"]
 
 [ext_resource type="Script" uid="uid://dtqtt5wylhxo5" path="res://Scripts/start_menu.gd" id="1_dvnd1"]
 [ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="2_ujd4t"]
 [ext_resource type="AudioStream" uid="uid://cm3xi6psupm4h" path="res://Assets/Sounds/SongMenu.wav" id="2_xtte2"]
-[ext_resource type="Texture2D" uid="uid://b1j2ueob5407c" path="res://Assets/Sprites/quitbutton.png" id="4_ql1sk"]
 [ext_resource type="Texture2D" uid="uid://cbnge4s5ot841" path="res://Assets/Sprites/startbutton.png" id="5_dibtv"]
-[ext_resource type="Texture2D" uid="uid://cd722xhph34iu" path="res://Assets/Sprites/titlecyberbug.png" id="6_ql1sk"]
+[ext_resource type="Texture2D" uid="uid://i02v7tiip3im" path="res://Assets/Sprites/titlecyberbugv4.png" id="6_ql1sk"]
 
 [node name="StartMenu" type="ColorRect"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 6
+size_flags_vertical = 6
 color = Color(0.11732, 0.271498, 0.174279, 0.779)
 script = ExtResource("1_dvnd1")
+metadata/_edit_use_anchors_ = true
 
-[node name="Menu" type="Sprite2D" parent="."]
-position = Vector2(970, 549)
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.482639
+anchor_top = 0.469136
+anchor_right = 0.517361
+anchor_bottom = 0.530864
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Menu" type="Sprite2D" parent="Control"]
+position = Vector2(33.5, 14)
+scale = Vector2(0.411654, 0.411654)
 texture = ExtResource("2_ujd4t")
 
-[node name="SongMenu" type="AudioStreamPlayer" parent="."]
+[node name="SongMenu" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("2_xtte2")
 autoplay = true
 
-[node name="StartButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 641.0
-offset_top = 843.0
-offset_right = 1439.0
-offset_bottom = 1038.0
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 96
-action_mode = 0
-flat = true
-
-[node name="QuitButton" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = 1614.0
-offset_top = 333.0
-offset_right = 1718.0
-offset_bottom = 433.0
+offset_left = -46.0
+offset_top = 112.0
+offset_right = 160.0
+offset_bottom = 188.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
-icon = ExtResource("4_ql1sk")
 flat = true
 
-[node name="Label" type="Label" parent="."]
+[node name="QuitButton" type="Button" parent="Control"]
+layout_mode = 2
+offset_left = 297.0
+offset_top = -81.0
+offset_right = 350.0
+offset_bottom = -29.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+action_mode = 0
+flat = true
+
+[node name="Label" type="Label" parent="Control"]
 visible = false
 layout_mode = 2
-offset_left = 823.0
-offset_top = 496.0
-offset_right = 1302.0
-offset_bottom = 622.0
+offset_left = 496.0
+offset_top = 252.0
+offset_right = 580.0
+offset_bottom = 275.0
 text = "CYBERBUG"
 horizontal_alignment = 1
 
-[node name="Startbutton" type="Sprite2D" parent="."]
-position = Vector2(1052, 947)
+[node name="Startbutton" type="Sprite2D" parent="Control"]
+position = Vector2(63.5, 152)
+scale = Vector2(0.618056, 0.618056)
 texture = ExtResource("5_dibtv")
 
-[node name="Titlecyberbug" type="Sprite2D" parent="."]
-position = Vector2(1026, 659)
-scale = Vector2(1.22619, 1.22619)
+[node name="Titlecyberbug" type="Sprite2D" parent="Control"]
+position = Vector2(49.4882, 26)
+scale = Vector2(0.333333, 0.333333)
 texture = ExtResource("6_ql1sk")
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cgj2lq42nx04c"]
+[gd_scene load_steps=16 format=3 uid="uid://cgj2lq42nx04c"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_bmcj7"]
+[ext_resource type="PackedScene" uid="uid://c03wxnu2ofknh" path="res://Scenes/camera_node.tscn" id="2_flehy"]
 [ext_resource type="PackedScene" uid="uid://bu736srt4cyr4" path="res://Scenes/environment.tscn" id="2_j5tiy"]
 [ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="3_qelns"]
 [ext_resource type="PackedScene" uid="uid://d0brvqlhys372" path="res://Scenes/turret.tscn" id="4_j0t0u"]
@@ -13,19 +14,18 @@
 [ext_resource type="PackedScene" uid="uid://j38wnr2kxoaw" path="res://Scenes/LoseMenu.tscn" id="10_j0t0u"]
 [ext_resource type="PackedScene" uid="uid://c1x8kt3rd6c21" path="res://Scenes/WinMenu.tscn" id="11_j0t0u"]
 [ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="13_ge2ro"]
+[ext_resource type="Script" uid="uid://bin2wtwti8qci" path="res://Scenes/Levels/UI.gd" id="15_fj6kk"]
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_bmcj7")
 turrets = 1
 
+[node name="CameraNode" parent="." instance=ExtResource("2_flehy")]
+
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_qelns")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 9)
 
 [node name="Environment" parent="." instance=ExtResource("2_j5tiy")]
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 53, 29.5)
-fov = 20.0
 
 [node name="LevelUp" parent="." instance=ExtResource("4_wf6s8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -10.5)
@@ -93,6 +93,37 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0
 [node name="WallB3" parent="." instance=ExtResource("8_fj6kk")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, -1.5)
 
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("15_fj6kk")
+metadata/_edit_use_anchors_ = true
+
+[node name="HSplitContainer" type="HSplitContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftButton" type="Button" parent="UI/HSplitContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RightButton" type="Button" parent="UI/HSplitContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="PauseMenu" parent="." instance=ExtResource("9_qelns")]
 
 [node name="LoseMenu" parent="." instance=ExtResource("10_j0t0u")]
@@ -108,4 +139,8 @@ stream = ExtResource("13_ge2ro")
 [connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]
 [connection signal="_win_menu" from="LevelUp" to="WinMenu" method="_win_menu"]
 [connection signal="turret_killed" from="Turret" to="." method="_on_turret_killed"]
+[connection signal="button_down" from="UI/HSplitContainer/LeftButton" to="UI" method="_on_left_button_button_down"]
+[connection signal="button_up" from="UI/HSplitContainer/LeftButton" to="UI" method="_on_left_button_button_up"]
+[connection signal="button_down" from="UI/HSplitContainer/RightButton" to="UI" method="_on_right_button_button_down"]
+[connection signal="button_up" from="UI/HSplitContainer/RightButton" to="UI" method="_on_right_button_button_up"]
 [connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]

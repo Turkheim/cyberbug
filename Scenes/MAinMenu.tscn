@@ -320,9 +320,6 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, -1, 0, -1.31134e-07, -2, 0,
 mesh = SubResource("PlaneMesh_osnen")
 surface_material_override/0 = SubResource("StandardMaterial3D_djr8b")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.866025, -0.25, 0.433013, 7.45058e-09, 0.866025, 0.5, -0.5, -0.433013, 0.75, 3.80589, 2.94889, 7.66378)
-
 [node name="LevelUp" parent="." instance=ExtResource("2_m7aql")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -10)
 
@@ -471,10 +468,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, -6.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5.5)
 
 [node name="StartMenu" parent="." instance=ExtResource("16_8k4x3")]
-offset_left = -979.0
-offset_top = -607.0
-offset_right = -979.0
-offset_bottom = -607.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.866025, -0.25, 0.433013, 7.45058e-09, 0.866025, 0.5, -0.5, -0.433013, 0.75, 3.80589, 2.94889, 7.66378)
 
 [connection signal="body_entered" from="Turret/KillSwitch" to="Turret" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Turret/TimerLaser" to="Turret" method="_on_timer_laser_timeout"]
