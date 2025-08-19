@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciqj2ahcalwbn"
 path.s3tc="res://.godot/imported/LaserTurret_Laser.png-b5ac46d3421e921866f37e31814febbb.s3tc.ctex"
+path.etc2="res://.godot/imported/LaserTurret_Laser.png-b5ac46d3421e921866f37e31814febbb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/LaserTurret_Laser.png"
-dest_files=["res://.godot/imported/LaserTurret_Laser.png-b5ac46d3421e921866f37e31814febbb.s3tc.ctex"]
+dest_files=["res://.godot/imported/LaserTurret_Laser.png-b5ac46d3421e921866f37e31814febbb.s3tc.ctex", "res://.godot/imported/LaserTurret_Laser.png-b5ac46d3421e921866f37e31814febbb.etc2.ctex"]
 
 [params]
 

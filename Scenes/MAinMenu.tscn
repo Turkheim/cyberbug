@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c3qx1qgeikqle"]
+[gd_scene load_steps=30 format=3 uid="uid://c3qx1qgeikqle"]
 
 [ext_resource type="PackedScene" uid="uid://bw7b4nw6lhmlb" path="res://Scenes/fan.tscn" id="1_8k4x3"]
 [ext_resource type="Texture2D" uid="uid://c26fhe60u5ehp" path="res://Assets/GridSmall.png" id="2_awu86"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://bkf5tgeuv57s6" path="res://Scenes/Heatsink.tscn" id="11_a7ihy"]
 [ext_resource type="PackedScene" uid="uid://c3w6vw2oo8n6f" path="res://Assets/SK_Moth.glb" id="11_hll0a"]
 [ext_resource type="PackedScene" uid="uid://bmt07lr676os1" path="res://Scenes/StartMenu.tscn" id="16_8k4x3"]
+[ext_resource type="PackedScene" uid="uid://bpccl7rjn0thf" path="res://Scenes/moth_2.tscn" id="17_awu86"]
+[ext_resource type="PackedScene" uid="uid://iwahnyaabkrj" path="res://Scenes/blast_area.tscn" id="18_y0eaw"]
 
 [sub_resource type="Environment" id="Environment_0b4ue"]
 background_mode = 1
@@ -474,9 +476,21 @@ size_flags_vertical = 3
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.866025, -0.25, 0.433013, 7.45058e-09, 0.866025, 0.5, -0.5, -0.433013, 0.75, 3.80589, 2.94889, 7.66378)
 
+[node name="Moth2" parent="." instance=ExtResource("17_awu86")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 12.5, 1.5, 6)
+visible = true
+
+[node name="BlastArea" parent="." instance=ExtResource("18_y0eaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 12.5)
+
+[node name="Explosion" parent="BlastArea" index="4"]
+autoplay = false
+
 [connection signal="body_entered" from="Turret/KillSwitch" to="Turret" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Turret/TimerLaser" to="Turret" method="_on_timer_laser_timeout"]
 [connection signal="timeout" from="Turret/TimerLight" to="Turret" method="_on_timer_light_timeout"]
 [connection signal="body_entered" from="Turret2/KillSwitch" to="Turret2" method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="Turret2/TimerLaser" to="Turret2" method="_on_timer_laser_timeout"]
 [connection signal="timeout" from="Turret2/TimerLight" to="Turret2" method="_on_timer_light_timeout"]
+
+[editable path="BlastArea"]

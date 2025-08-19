@@ -1,6 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw7b4nw6lhmlb"]
+[gd_scene load_steps=6 format=3 uid="uid://bw7b4nw6lhmlb"]
 
 [ext_resource type="PackedScene" uid="uid://ba4d0vkmxp7oy" path="res://Assets/Fan.glb" id="1_rog72"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rog72"]
+top_radius = 0.4
+bottom_radius = 0.4
+height = 0.001
+radial_segments = 12
+rings = 0
+cap_bottom = false
 
 [sub_resource type="Animation" id="Animation_j6bxr"]
 length = 0.001
@@ -40,6 +48,10 @@ _data = {
 }
 
 [node name="Fan2" instance=ExtResource("1_rog72")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FanBlades" index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_rog72")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 libraries = {

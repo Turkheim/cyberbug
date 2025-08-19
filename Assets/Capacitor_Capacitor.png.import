@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwgjo75eda6yw"
 path.s3tc="res://.godot/imported/Capacitor_Capacitor.png-79ec8f7c1b21742185f0418cfd17b76f.s3tc.ctex"
+path.etc2="res://.godot/imported/Capacitor_Capacitor.png-79ec8f7c1b21742185f0418cfd17b76f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Capacitor_Capacitor.png"
-dest_files=["res://.godot/imported/Capacitor_Capacitor.png-79ec8f7c1b21742185f0418cfd17b76f.s3tc.ctex"]
+dest_files=["res://.godot/imported/Capacitor_Capacitor.png-79ec8f7c1b21742185f0418cfd17b76f.s3tc.ctex", "res://.godot/imported/Capacitor_Capacitor.png-79ec8f7c1b21742185f0418cfd17b76f.etc2.ctex"]
 
 [params]
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dudpolswpqbkp"
 path.s3tc="res://.godot/imported/SK_Moth_Moth_V1.png-7668f47cfcf223e6b5c9531b6fb5d939.s3tc.ctex"
+path.etc2="res://.godot/imported/SK_Moth_Moth_V1.png-7668f47cfcf223e6b5c9531b6fb5d939.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/SK_Moth_Moth_V1.png"
-dest_files=["res://.godot/imported/SK_Moth_Moth_V1.png-7668f47cfcf223e6b5c9531b6fb5d939.s3tc.ctex"]
+dest_files=["res://.godot/imported/SK_Moth_Moth_V1.png-7668f47cfcf223e6b5c9531b6fb5d939.s3tc.ctex", "res://.godot/imported/SK_Moth_Moth_V1.png-7668f47cfcf223e6b5c9531b6fb5d939.etc2.ctex"]
 
 [params]
 

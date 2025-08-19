@@ -255,11 +255,4 @@ material_override = SubResource("StandardMaterial3D_e48ox")
 mesh = SubResource("ArrayMesh_ivbut")
 skeleton = NodePath("")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(-1, -1.77636e-15, 8.74228e-08, 2.26267e-08, 0.965926, 0.258819, -8.44439e-08, 0.258819, -0.965926, 0, 2.1, -5.1)
-light_energy = 10.0
-shadow_enabled = true
-spot_range = 16.6
-spot_angle = 9.4164
-
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -11,6 +11,7 @@ ambient_light_source = 2
 ambient_light_energy = 0.0
 tonemap_mode = 2
 glow_enabled = true
+glow_blend_mode = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_oi3di"]
 size = Vector3(10, 1, 1)
@@ -41,9 +42,6 @@ transform = Transform3D(0.457397, 0.491482, -0.741103, -0.191909, 0.868308, 0.45
 light_color = Color(0.347051, 0.490634, 0.278333, 1)
 light_energy = 50.0
 shadow_enabled = true
-shadow_reverse_cull_face = true
-shadow_opacity = 0.8
-shadow_blur = 3.0
 spot_range = 18.0
 spot_angle = 47.3896
 
@@ -52,9 +50,6 @@ transform = Transform3D(-0.290558, 0.394897, -0.871569, -0.191909, 0.868308, 0.4
 light_color = Color(0.616335, 0.285092, 0.655235, 1)
 light_energy = 50.0
 shadow_enabled = true
-shadow_reverse_cull_face = true
-shadow_opacity = 0.8
-shadow_blur = 3.0
 spot_range = 18.0
 spot_angle = 47.3896
 
@@ -63,9 +58,6 @@ transform = Transform3D(0.523278, -0.303753, 0.796187, -0.191909, 0.868308, 0.45
 light_color = Color(0.347051, 0.490634, 0.278333, 1)
 light_energy = 50.0
 shadow_enabled = true
-shadow_reverse_cull_face = true
-shadow_opacity = 0.8
-shadow_blur = 3.0
 spot_range = 18.0
 spot_angle = 47.3896
 
@@ -74,9 +66,6 @@ transform = Transform3D(0.523278, -0.303753, 0.796187, -0.191909, 0.868308, 0.45
 light_color = Color(0.616335, 0.285092, 0.655235, 1)
 light_energy = 50.0
 shadow_enabled = true
-shadow_reverse_cull_face = true
-shadow_opacity = 0.8
-shadow_blur = 3.0
 spot_range = 18.0
 spot_angle = 47.3896
 

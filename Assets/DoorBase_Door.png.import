@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://hqoyybkqmtcd"
 path.s3tc="res://.godot/imported/DoorBase_Door.png-d72336fde4c9eb706ea2bc830b40feac.s3tc.ctex"
+path.etc2="res://.godot/imported/DoorBase_Door.png-d72336fde4c9eb706ea2bc830b40feac.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/DoorBase_Door.png"
-dest_files=["res://.godot/imported/DoorBase_Door.png-d72336fde4c9eb706ea2bc830b40feac.s3tc.ctex"]
+dest_files=["res://.godot/imported/DoorBase_Door.png-d72336fde4c9eb706ea2bc830b40feac.s3tc.ctex", "res://.godot/imported/DoorBase_Door.png-d72336fde4c9eb706ea2bc830b40feac.etc2.ctex"]
 
 [params]
 

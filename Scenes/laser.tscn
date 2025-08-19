@@ -57,8 +57,4 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_r1bh0")
 draw_pass_1 = SubResource("SphereMesh_c8ure")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-light_color = Color(3, 0.3, 2, 1)
-omni_range = 1.80875
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

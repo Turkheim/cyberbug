@@ -1,15 +1,16 @@
-[gd_scene load_steps=10 format=4 uid="uid://bx75p5vjbt2jd"]
+[gd_scene load_steps=11 format=4 uid="uid://bpccl7rjn0thf"]
 
-[ext_resource type="Script" uid="uid://c3gnp4op5gfc0" path="res://Scripts/player_character.gd" id="1_cmdk4"]
-[ext_resource type="PackedScene" uid="uid://c3w6vw2oo8n6f" path="res://Assets/SK_Moth.glb" id="2_o0f8b"]
-[ext_resource type="Texture2D" uid="uid://dudpolswpqbkp" path="res://Assets/SK_Moth_Moth_V1.png" id="3_wko77"]
-[ext_resource type="PackedScene" uid="uid://bpccl7rjn0thf" path="res://Scenes/moth_2.tscn" id="4_ons1q"]
-[ext_resource type="AudioStream" uid="uid://brar3b3rligd" path="res://Assets/Sounds/Footsteps.wav" id="6_ons1q"]
-[ext_resource type="AudioStream" uid="uid://byb3e2nr2nh2d" path="res://Assets/Sounds/PlayerDead.wav" id="7_ajo0r"]
+[ext_resource type="Shader" uid="uid://b246jje6x0mkd" path="res://Assets/Materials/player_character.tres" id="1_6yryj"]
+[ext_resource type="Texture2D" uid="uid://y66c7yc6wejy" path="res://Assets/MothProxi1_Untitled.png" id="2_btndn"]
+[ext_resource type="Texture2D" uid="uid://dudpolswpqbkp" path="res://Assets/SK_Moth_Moth_V1.png" id="3_mob4k"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n6hdu"]
-radius = 0.4
-height = 1.5
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pb3n0"]
+render_priority = 0
+shader = ExtResource("1_6yryj")
+shader_parameter/Albedo = ExtResource("2_btndn")
+shader_parameter/Strength = 5.0
+shader_parameter/LightColor = Color(1.5, 1, 0, 1)
+shader_parameter/Opacity = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pb3n0"]
 resource_name = "Moth"
@@ -18,7 +19,7 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_wko77")
+albedo_texture = ExtResource("3_mob4k")
 roughness = 0.0
 texture_filter = 2
 
@@ -42,60 +43,131 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="PlayerCharacter" type="CharacterBody3D" groups=["Player"]]
-collision_mask = 7
-axis_lock_linear_y = true
-script = ExtResource("1_cmdk4")
+[sub_resource type="Skin" id="Skin_i3f4a"]
+resource_name = "Skin"
+bind_count = 25
+bind/0/name = &"Root"
+bind/0/bone = -1
+bind/0/pose = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+bind/1/name = &"Body"
+bind/1/bone = -1
+bind/1/pose = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.1, -0.6)
+bind/2/name = &"LegB1_L"
+bind/2/bone = -1
+bind/2/pose = Transform3D(0.501346, 0.865198, 0.00919306, 0.843459, -0.491063, 0.217793, 0.192949, -0.101436, -0.975952, -0.519835, -0.105164, -0.188157)
+bind/3/name = &"LegB2_L"
+bind/3/bone = -1
+bind/3/pose = Transform3D(0.969899, 0.243478, 0.00379634, 0.234164, -0.928293, -0.288858, -0.0668063, 0.281052, -0.957364, -0.626677, 0.080602, -0.137336)
+bind/4/name = &"LegB1_R"
+bind/4/bone = -1
+bind/4/pose = Transform3D(0.501346, -0.865198, -0.00919306, -0.843459, -0.491063, 0.217793, -0.192949, -0.101436, -0.975952, 0.519835, -0.105164, -0.188157)
+bind/5/name = &"LegB2_R"
+bind/5/bone = -1
+bind/5/pose = Transform3D(0.969899, -0.243478, -0.00379634, -0.234164, -0.928293, -0.288858, 0.0668063, 0.281052, -0.957364, 0.626677, 0.080602, -0.137336)
+bind/6/name = &"Tail"
+bind/6/bone = -1
+bind/6/pose = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.35, -0.6)
+bind/7/name = &"LegC1_L"
+bind/7/bone = -1
+bind/7/pose = Transform3D(0.377135, 0.925136, 0.0435038, 0.917838, -0.367052, -0.151152, -0.123868, 0.0969341, -0.987553, -0.427267, -0.146847, -0.397345)
+bind/8/name = &"LegC2_L"
+bind/8/bone = -1
+bind/8/pose = Transform3D(0.950829, 0.30551, 0.0508685, 0.237751, -0.614726, -0.752055, -0.19849, 0.72717, -0.657135, -0.571245, -0.301228, -0.375664)
+bind/9/name = &"LegC1_R"
+bind/9/bone = -1
+bind/9/pose = Transform3D(0.377135, -0.925136, -0.0435038, -0.917838, -0.367052, -0.151152, 0.123868, 0.0969341, -0.987553, 0.427267, -0.146847, -0.397345)
+bind/10/name = &"LegC2_R"
+bind/10/bone = -1
+bind/10/pose = Transform3D(0.950829, -0.30551, -0.0508685, -0.237751, -0.614726, -0.752055, 0.19849, 0.72717, -0.657135, 0.571245, -0.301228, -0.375664)
+bind/11/name = &"Wing1_L"
+bind/11/bone = -1
+bind/11/pose = Transform3D(-0.324769, -0.510204, -0.796377, 0.433131, 0.668304, -0.604788, 0.840787, -0.541352, 0.00394081, 0.468222, -0.855475, 0.3358)
+bind/12/name = &"Wing2_L"
+bind/12/bone = -1
+bind/12/pose = Transform3D(-0.420628, -0.259852, -0.869223, 0.707279, 0.506115, -0.493563, 0.56818, -0.82239, -0.0290987, 0.173671, -1.06905, 0.773871)
+bind/13/name = &"Wing1_R"
+bind/13/bone = -1
+bind/13/pose = Transform3D(-0.324769, 0.510204, 0.796377, -0.433131, 0.668304, -0.604788, -0.840787, -0.541352, 0.00394081, -0.468222, -0.855475, 0.3358)
+bind/14/name = &"Wing2_R"
+bind/14/bone = -1
+bind/14/pose = Transform3D(-0.420628, 0.259852, 0.869223, -0.707279, 0.506115, -0.493563, -0.56818, -0.82239, -0.0290987, -0.173671, -1.06905, 0.773871)
+bind/15/name = &"Torax"
+bind/15/bone = -1
+bind/15/pose = Transform3D(-1, 0, 0, 0, 0, 1, 0, 1, 0, 0, -0.1, -0.6)
+bind/16/name = &"LegA1_L"
+bind/16/bone = -1
+bind/16/pose = Transform3D(0.533345, 0.844751, 0.0440354, 0.759138, -0.500958, 0.415633, 0.373166, -0.188247, -0.908466, -0.531369, -0.154877, 0.0411398)
+bind/17/name = &"LegA2_L"
+bind/17/bone = -1
+bind/17/pose = Transform3D(0.994171, -0.0614891, 0.0885654, -0.072171, -0.989785, 0.122951, 0.0801006, -0.128627, -0.988453, -0.532328, 0.291142, 0.19754)
+bind/18/name = &"LegA1_R"
+bind/18/bone = -1
+bind/18/pose = Transform3D(0.533345, -0.844751, -0.0440354, -0.759138, -0.500958, 0.415633, -0.373166, -0.188247, -0.908466, 0.531369, -0.154877, 0.0411398)
+bind/19/name = &"LegA2_R"
+bind/19/bone = -1
+bind/19/pose = Transform3D(0.994171, 0.0614891, -0.0885654, 0.072171, -0.989785, 0.122951, -0.0801006, -0.128627, -0.988453, 0.532328, 0.291142, 0.19754)
+bind/20/name = &"Head"
+bind/20/bone = -1
+bind/20/pose = Transform3D(-1, 0, 0, 0, 0, 1, 0, 1, 0, 0, -0.4, -0.6)
+bind/21/name = &"Antena1_L"
+bind/21/bone = -1
+bind/21/pose = Transform3D(-0.254735, -0.125283, -0.958861, 0.537361, 0.806041, -0.248073, 0.803961, -0.578447, -0.138005, 0.713545, -0.630329, 0.523009)
+bind/22/name = &"Antena2_L"
+bind/22/bone = -1
+bind/22/pose = Transform3D(-0.241731, -0.233009, -0.941951, 0.846778, 0.423389, -0.32204, 0.47385, -0.87547, 0.09496, 0.83033, -0.59861, 0.860201)
+bind/23/name = &"Antena1_R"
+bind/23/bone = -1
+bind/23/pose = Transform3D(-0.254735, 0.125283, 0.958861, -0.537361, 0.806041, -0.248073, -0.803961, -0.578447, -0.138005, -0.713545, -0.630329, 0.523009)
+bind/24/name = &"Antena2_R"
+bind/24/bone = -1
+bind/24/pose = Transform3D(-0.241731, 0.233009, 0.941951, -0.846778, 0.423389, -0.32204, -0.47385, -0.87547, 0.09496, -0.83033, -0.59861, 0.860201)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 2.18557e-08)
-shape = SubResource("CapsuleShape3D_n6hdu")
+[sub_resource type="Animation" id="Animation_wko77"]
+resource_name = "Death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Moth2:material_override:shader_parameter/Opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
 
-[node name="SK_Moth2" parent="." instance=ExtResource("2_o0f8b")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.5, 0)
+[sub_resource type="Animation" id="Animation_pb3n0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Moth2:material_override:shader_parameter/Opacity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
-[node name="Skeleton3D" parent="SK_Moth2/SK_Moth" index="0"]
-bones/1/position = Vector3(0, -0.1, 0.570828)
-bones/2/rotation = Quaternion(-0.760897, -0.301565, -0.283665, 0.499628)
-bones/3/rotation = Quaternion(-0.0115779, -0.0781076, 0.233714, 0.969094)
-bones/4/rotation = Quaternion(-0.636032, 0.378919, 0.344048, 0.577507)
-bones/5/rotation = Quaternion(0.288862, 0.0648187, -0.387191, 0.873178)
-bones/6/rotation = Quaternion(0.00441195, -0.000345629, -0.0189297, 0.999811)
-bones/7/rotation = Quaternion(-0.442534, -0.529204, -0.3108, 0.653843)
-bones/8/rotation = Quaternion(0.250899, 0.225449, 0.320736, 0.885071)
-bones/9/rotation = Quaternion(-0.581613, 0.335901, 0.440551, 0.59566)
-bones/10/rotation = Quaternion(0.191453, -0.305509, -0.318824, 0.876562)
-bones/11/rotation = Quaternion(0.377566, 0.758479, 0.234628, 0.476555)
-bones/12/rotation = Quaternion(0.0952681, 0.0824555, 0.0675308, 0.98973)
-bones/13/rotation = Quaternion(-0.370278, 0.743681, 0.245968, -0.499332)
-bones/14/rotation = Quaternion(0.0654185, -0.0628484, -0.0673382, 0.993598)
-bones/15/rotation = Quaternion(-1.09387e-17, 0.0268782, 0.999639, -6.81823e-27)
-bones/16/rotation = Quaternion(-0.425886, 0.646793, -0.557137, -0.299797)
-bones/17/rotation = Quaternion(0.169367, -0.0588804, 0.398807, 0.899334)
-bones/18/rotation = Quaternion(0.00442491, 0.804311, -0.416186, 0.424092)
-bones/19/rotation = Quaternion(-0.0150325, 0.0216211, -0.153019, 0.987872)
-bones/20/rotation = Quaternion(-0.0291169, -0.0408457, 0.0259542, 0.998404)
-bones/21/rotation = Quaternion(0.742947, -0.494118, -0.358441, 0.274586)
-bones/22/rotation = Quaternion(0.350154, -0.227426, 0.0914366, 0.904051)
-bones/23/rotation = Quaternion(0.742947, 0.494118, 0.358441, 0.274586)
-bones/24/rotation = Quaternion(0.264545, 0.102494, 0.0856476, 0.955079)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ons1q"]
+_data = {
+&"Death": SubResource("Animation_wko77"),
+&"RESET": SubResource("Animation_pb3n0")
+}
 
-[node name="Moth" parent="SK_Moth2/SK_Moth/Skeleton3D" index="0"]
+[node name="Moth2" type="MeshInstance3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_pb3n0")
 mesh = SubResource("ArrayMesh_ons1q")
+skin = SubResource("Skin_i3f4a")
+skeleton = NodePath("../SK_Moth2/SK_Moth/Skeleton3D")
 
-[node name="AnimationPlayer" parent="SK_Moth2" index="1"]
-autoplay = "Walking"
-speed_scale = 3.0
-
-[node name="Moth2" parent="." instance=ExtResource("4_ons1q")]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, -0.5, 0)
-
-[node name="Footsteps" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_ons1q")
-autoplay = true
-
-[node name="PlayerDead" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_ajo0r")
-
-[editable path="SK_Moth2"]
-[editable path="Moth2"]
+[node name="Death" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_ons1q")
+}
