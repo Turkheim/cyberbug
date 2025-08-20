@@ -4,10 +4,8 @@ extends Node3D
 
 signal level_up
 
-func _unhandled_input(event: InputEvent) -> void:
-	if Input.is_action_pressed("ui_cancel"):
-		$PauseMenu._pause()
 
+	
 func _on_turret_killed() -> void:
 	print(turrets)
 	$TurretDead.play()

@@ -490,8 +490,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CenterContainer" type="CenterContainer" parent="StartMenu"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = -0.208333
+anchor_right = 1.20988
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -517,7 +518,8 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="StartMenu/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "tank you for playing"
+text = "tank you 
+for playing"
 label_settings = SubResource("LabelSettings_y2c35")
 horizontal_alignment = 1
 

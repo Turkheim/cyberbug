@@ -323,7 +323,7 @@ mesh = SubResource("PlaneMesh_osnen")
 surface_material_override/0 = SubResource("StandardMaterial3D_djr8b")
 
 [node name="LevelUp" parent="." instance=ExtResource("2_m7aql")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, -10)
 
 [node name="Turret" type="StaticBody3D" parent="." groups=["Enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, 2.5)
@@ -412,19 +412,6 @@ volume_db = -50.0
 [node name="Capacitor" parent="." instance=ExtResource("5_8tds4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 2.5)
 
-[node name="Capacitor2" parent="." instance=ExtResource("5_8tds4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, -8.5)
-
-[node name="AnimationPlayer" parent="Capacitor2" index="3"]
-autoplay = "Blink"
-
-[node name="CapacitorOn" parent="Capacitor2" index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, -0.5, 6)
-visible = true
-
-[node name="CapacitorOff" parent="Capacitor2" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, 0)
-
 [node name="Door" parent="." instance=ExtResource("6_aj8il")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, 6.5)
 
@@ -480,7 +467,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.5, -6.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, -6.5)
 
 [node name="SK_Moth2" parent="." instance=ExtResource("11_hll0a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83491, 4.76837e-07, 5.89106)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 5.5)
 
 [node name="StartMenu" parent="." instance=ExtResource("16_8k4x3")]
 size_flags_horizontal = 3
@@ -496,9 +483,6 @@ visible = true
 [node name="BlastArea" parent="." instance=ExtResource("18_y0eaw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -9)
 
-[node name="AnimationPlayer" parent="BlastArea" index="1"]
-autoplay = ""
-
 [node name="Explosion" parent="BlastArea" index="4"]
 autoplay = false
 
@@ -509,5 +493,4 @@ autoplay = false
 [connection signal="timeout" from="Turret2/TimerLaser" to="Turret2" method="_on_timer_laser_timeout"]
 [connection signal="timeout" from="Turret2/TimerLight" to="Turret2" method="_on_timer_light_timeout"]
 
-[editable path="Capacitor2"]
 [editable path="BlastArea"]

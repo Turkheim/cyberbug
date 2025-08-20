@@ -26,11 +26,10 @@ anchor_right = 0.517361
 anchor_bottom = 0.530864
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Sprite2D" parent="Control"]
-position = Vector2(33.5, 14)
-scale = Vector2(0.411654, 0.411654)
+position = Vector2(11.2499, 16.5553)
+scale = Vector2(0.394893, 0.394893)
 texture = ExtResource("2_ujd4t")
 
 [node name="SongMenu" type="AudioStreamPlayer" parent="Control"]
@@ -39,10 +38,10 @@ autoplay = true
 
 [node name="StartButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = -46.0
-offset_top = 112.0
-offset_right = 160.0
-offset_bottom = 188.0
+offset_left = -57.7501
+offset_top = 117.555
+offset_right = 148.25
+offset_bottom = 193.555
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
@@ -50,10 +49,10 @@ flat = true
 
 [node name="QuitButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = 297.0
-offset_top = -81.0
-offset_right = 350.0
-offset_bottom = -29.0
+offset_left = 264.25
+offset_top = -86.4447
+offset_right = 317.25
+offset_bottom = -34.4447
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
@@ -70,13 +69,13 @@ text = "CYBERBUG"
 horizontal_alignment = 1
 
 [node name="Startbutton" type="Sprite2D" parent="Control"]
-position = Vector2(63.5, 152)
+position = Vector2(45.2499, 160.555)
 scale = Vector2(0.618056, 0.618056)
 texture = ExtResource("5_dibtv")
 
 [node name="Titlecyberbug" type="Sprite2D" parent="Control"]
-position = Vector2(49.4882, 26)
-scale = Vector2(0.333333, 0.333333)
+position = Vector2(36.2499, 43.5553)
+scale = Vector2(0.455357, 0.455357)
 texture = ExtResource("6_ql1sk")
 
 [connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]

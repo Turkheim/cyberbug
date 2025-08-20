@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cjflo0iahtqno"]
+[gd_scene load_steps=21 format=3 uid="uid://cjflo0iahtqno"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_34g67"]
 [ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_5qict"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cajd4tl3cp1v3" path="res://Scenes/door.tscn" id="15_nouoh"]
 [ext_resource type="PackedScene" uid="uid://ciukhcxkmbhud" path="res://Scenes/capacitor.tscn" id="16_ttr6d"]
 [ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="17_nouoh"]
+[ext_resource type="PackedScene" uid="uid://iwahnyaabkrj" path="res://Scenes/blast_area.tscn" id="18_08yfy"]
 [ext_resource type="PackedScene" uid="uid://c03wxnu2ofknh" path="res://Scenes/camera_node.tscn" id="18_ea2rn"]
 
 [node name="Level01" type="Node3D"]
@@ -141,11 +142,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 3.5)
 [node name="Door2" parent="." instance=ExtResource("15_nouoh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 0.5)
 
-[node name="Capacitor" parent="." instance=ExtResource("16_ttr6d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 2.5)
-
 [node name="Capacitor2" parent="." instance=ExtResource("16_ttr6d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, -5.5)
+
+[node name="Capacitor4" parent="." instance=ExtResource("16_ttr6d")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -6.5, 0.5, 2)
+
+[node name="CapacitorOn" parent="Capacitor4" index="5"]
+visible = true
+
+[node name="CapacitorOff" parent="Capacitor4" index="6"]
+visible = false
+
+[node name="BlastArea" parent="Capacitor4" instance=ExtResource("18_08yfy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 4.5, 1)
+
+[node name="Explosion" parent="Capacitor4/BlastArea" index="4"]
+autoplay = false
+
+[node name="Capacitor3" parent="." instance=ExtResource("16_ttr6d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 2.5)
 
 [node name="TurretDead" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_nouoh")
@@ -161,3 +177,6 @@ stream = ExtResource("17_nouoh")
 [connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]
 [connection signal="body_entered" from="Switch" to="Door" method="_on_body_entered"]
 [connection signal="body_entered" from="Switch2" to="Door2" method="_on_body_entered"]
+
+[editable path="Capacitor4"]
+[editable path="Capacitor4/BlastArea"]

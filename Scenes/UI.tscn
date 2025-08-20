@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://btc14mw3f5o28"]
+[gd_scene load_steps=5 format=3 uid="uid://btc14mw3f5o28"]
 
 [ext_resource type="Script" uid="uid://bin2wtwti8qci" path="res://Scenes/Levels/UI.gd" id="1_w371h"]
+[ext_resource type="Texture2D" uid="uid://bg0o0ugxb3nel" path="res://UI/UI_mute.png" id="2_hfhsn"]
+[ext_resource type="Texture2D" uid="uid://cl4qollmmlrpx" path="res://UI/UI_unmute.png" id="3_qwshj"]
+[ext_resource type="Texture2D" uid="uid://d3hr6tdjv376k" path="res://UI/UI_settings.png" id="4_48q88"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -14,7 +17,7 @@ size_flags_vertical = 3
 script = ExtResource("1_w371h")
 metadata/_edit_use_anchors_ = true
 
-[node name="HSplitContainer" type="HSplitContainer" parent="."]
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,17 +26,53 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="LeftButton" type="Button" parent="HSplitContainer"]
+[node name="HSplitContainer2" type="HSplitContainer" parent="VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="LeftButton" type="Button" parent="VSplitContainer/HSplitContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RightButton" type="Button" parent="HSplitContainer"]
+[node name="RightButton" type="Button" parent="VSplitContainer/HSplitContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[connection signal="button_down" from="HSplitContainer/LeftButton" to="." method="_on_left_button_button_down"]
-[connection signal="button_up" from="HSplitContainer/LeftButton" to="." method="_on_left_button_button_up"]
-[connection signal="button_down" from="HSplitContainer/RightButton" to="." method="_on_right_button_button_down"]
-[connection signal="button_up" from="HSplitContainer/RightButton" to="." method="_on_right_button_button_up"]
+[node name="Mute" type="TextureButton" parent="."]
+layout_mode = 1
+offset_right = 128.0
+offset_bottom = 128.0
+toggle_mode = true
+texture_normal = ExtResource("2_hfhsn")
+texture_pressed = ExtResource("3_qwshj")
+stretch_mode = 5
+
+[node name="Settings" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(128, 128)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 128.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_48q88")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="button_down" from="VSplitContainer/HSplitContainer/LeftButton" to="." method="_on_left_button_button_down"]
+[connection signal="button_up" from="VSplitContainer/HSplitContainer/LeftButton" to="." method="_on_left_button_button_up"]
+[connection signal="button_down" from="VSplitContainer/HSplitContainer/RightButton" to="." method="_on_right_button_button_down"]
+[connection signal="button_up" from="VSplitContainer/HSplitContainer/RightButton" to="." method="_on_right_button_button_up"]
+[connection signal="pressed" from="Mute" to="." method="_on_mute_pressed"]
+[connection signal="button_down" from="Settings" to="." method="_on_settings_button_down"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

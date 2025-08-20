@@ -1,48 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://tdg1kfe8onid"]
+[gd_scene load_steps=8 format=3 uid="uid://tdg1kfe8onid"]
 
 [ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="1_bpi0q"]
 [ext_resource type="AudioStream" uid="uid://cm3xi6psupm4h" path="res://Assets/Sounds/SongMenu.wav" id="1_emv3i"]
+[ext_resource type="Script" uid="uid://bdf8akb0wwk1l" path="res://Scripts/pause_menu.gd" id="1_vmyb1"]
 [ext_resource type="Texture2D" uid="uid://c4nvjwkokaj5l" path="res://Assets/Sprites/restart.png" id="3_vmyb1"]
 [ext_resource type="Texture2D" uid="uid://bvet1viec0ii8" path="res://Assets/Sprites/resumebutton.png" id="4_myy0f"]
-
-[sub_resource type="GDScript" id="GDScript_y2c35"]
-script/source = "extends ColorRect
-
-func _unpause():
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	get_tree().paused = false
-	visible = false
-	$Control/SongMenu.stop()
-	
-func _pause():
-	visible = true
-	get_tree().paused = true
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	$Control/SongMenu.play()
-func _on_restart_button_pressed() -> void:
-	_unpause()
-	get_tree().reload_current_scene()
-
-func _on_quit_button_pressed() -> void:
-	get_tree().quit()
-
-
-
-func _on_resume_button_pressed() -> void:
-	_unpause()
-"
 
 [sub_resource type="LabelSettings" id="LabelSettings_y2c35"]
 font_size = 56
 shadow_color = Color(0, 0, 0, 0.435294)
 shadow_offset = Vector2(4.89, 7.18)
 
-[sub_resource type="InputEventAction" id="InputEventAction_y2c35"]
-action = &"ui_cancel"
-pressed = true
-
 [sub_resource type="Shortcut" id="Shortcut_emv3i"]
-events = [SubResource("InputEventAction_y2c35")]
 
 [node name="PauseMenu" type="ColorRect"]
 process_mode = 3
@@ -55,7 +24,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.527764, 0.191404, 0.599385, 0.519)
-script = SubResource("GDScript_y2c35")
+script = ExtResource("1_vmyb1")
 metadata/_edit_use_anchors_ = true
 
 [node name="Control" type="Control" parent="."]
@@ -70,8 +39,8 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Sprite2D" parent="Control"]
-position = Vector2(24, -23)
-scale = Vector2(0.390038, 0.390038)
+position = Vector2(-3.12519, -41.0835)
+scale = Vector2(0.356047, 0.356047)
 texture = ExtResource("1_bpi0q")
 
 [node name="SongMenu" type="AudioStreamPlayer" parent="Control"]
@@ -89,10 +58,10 @@ horizontal_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = -200.0
-offset_top = 65.0
-offset_right = 38.0
-offset_bottom = 178.0
+offset_left = -188.0
+offset_top = 24.0
+offset_right = 50.0
+offset_bottom = 137.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 shortcut = SubResource("Shortcut_emv3i")
@@ -100,10 +69,10 @@ flat = true
 
 [node name="RestartButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = 93.0
-offset_top = 68.0
-offset_right = 318.0
-offset_bottom = 165.0
+offset_left = 37.0
+offset_top = 36.0
+offset_right = 262.0
+offset_bottom = 133.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
@@ -111,22 +80,22 @@ flat = true
 
 [node name="QuitButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = 268.0
-offset_top = -120.0
-offset_right = 324.0
-offset_bottom = -60.0
+offset_left = 214.0
+offset_top = -130.0
+offset_right = 270.0
+offset_bottom = -70.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
 flat = true
 
 [node name="Restart" type="Sprite2D" parent="Control"]
-position = Vector2(207, 119)
+position = Vector2(156, 82)
 scale = Vector2(0.631757, 0.631757)
 texture = ExtResource("3_vmyb1")
 
 [node name="Resumebutton" type="Sprite2D" parent="Control"]
-position = Vector2(-57.9999, 118)
+position = Vector2(-62, 80)
 scale = Vector2(0.635811, 0.635811)
 texture = ExtResource("4_myy0f")
 

@@ -43,8 +43,8 @@ scale = Vector2(0.824086, 0.824086)
 metadata/_edit_use_anchors_ = true
 
 [node name="Failmenu" type="Sprite2D" parent="Control"]
-position = Vector2(63.25, 12.625)
-scale = Vector2(0.519737, 0.519737)
+position = Vector2(52.6645, 20.9926)
+scale = Vector2(0.424307, 0.424307)
 texture = ExtResource("2_wov3g")
 
 [node name="Menu" type="Sprite2D" parent="Control"]
@@ -54,6 +54,10 @@ texture = ExtResource("2_78sj7")
 
 [node name="ReloadButton" type="Button" parent="Control"]
 layout_mode = 2
+anchor_left = 1.73146
+anchor_top = -0.664727
+anchor_right = 1.73146
+anchor_bottom = -0.664727
 offset_left = -177.0
 offset_top = 142.0
 offset_right = 296.0
@@ -67,10 +71,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="QuitButton" type="Button" parent="Control"]
 layout_mode = 2
-offset_left = 378.0
-offset_top = -126.0
-offset_right = 470.0
-offset_bottom = -29.0
+anchor_left = 22.2373
+anchor_top = -2.61907
+anchor_right = 29.0519
+anchor_bottom = 0.0753708
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
@@ -88,8 +92,8 @@ text = "You Lose"
 label_settings = SubResource("LabelSettings_l1hfb")
 
 [node name="Restart" type="Sprite2D" parent="Control"]
-position = Vector2(93, 213.125)
-scale = Vector2(0.682432, 0.682432)
+position = Vector2(80.5742, 184.81)
+scale = Vector2(0.587189, 0.587189)
 texture = ExtResource("4_wov3g")
 
 [node name="SongLose" type="AudioStreamPlayer" parent="."]
