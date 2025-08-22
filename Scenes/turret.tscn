@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dr7n8hla2phqt" path="res://Scripts/turret.gd" id="1_fcprl"]
 [ext_resource type="PackedScene" uid="uid://bq6b4atua3bo7" path="res://Assets/LaserTurret.glb" id="2_hskch"]
-[ext_resource type="AudioStream" uid="uid://do5j7veqdhd66" path="res://Assets/Sounds/laserShoot.wav" id="3_6spbj"]
+[ext_resource type="AudioStream" uid="uid://61fc0sdqexcu" path="res://Assets/Sounds/LaserBolt.wav" id="3_6spbj"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_oi3di"]
 height = 1.0
