@@ -1,6 +1,7 @@
 extends ColorRect
 
-@export var level = 1
+
+@export var next_scene: String = "res://Scenes/Levels/level_01.tscn"
 
 func _unpause():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -19,15 +20,5 @@ func _on_quit_button_pressed() -> void:
 
 func _on_next_level_button_pressed() -> void:
 	_unpause()
-	if level == 1:
-		get_tree().change_scene_to_file("res://Scenes/Levels/level_02.tscn")
-	elif level == 2:
-		get_tree().change_scene_to_file("res://Scenes/Levels/level_03.tscn")
-	elif level == 3:
-		get_tree().change_scene_to_file("res://Scenes/Levels/level_04.tscn")
-	elif level == 4:
-			get_tree().change_scene_to_file("res://Scenes/Levels/level_05.tscn")
-	elif level == 5:
-		get_tree().change_scene_to_file("res://Scenes/Levels/level_06.tscn")
-	elif level == 6:
-		get_tree().change_scene_to_file("res://Scenes/EndMenu.tscn")
+
+	get_tree().change_scene_to_file(next_scene)

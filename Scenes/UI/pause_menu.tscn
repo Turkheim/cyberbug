@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://tdg1kfe8onid"]
+[gd_scene load_steps=7 format=3 uid="uid://tdg1kfe8onid"]
 
 [ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="1_bpi0q"]
 [ext_resource type="AudioStream" uid="uid://cm3xi6psupm4h" path="res://Assets/Sounds/SongMenu.wav" id="1_emv3i"]
@@ -11,11 +11,8 @@ font_size = 56
 shadow_color = Color(0, 0, 0, 0.435294)
 shadow_offset = Vector2(4.89, 7.18)
 
-[sub_resource type="Shortcut" id="Shortcut_emv3i"]
-
 [node name="PauseMenu" type="ColorRect"]
 process_mode = 3
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -64,7 +61,6 @@ offset_right = 50.0
 offset_bottom = 137.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
-shortcut = SubResource("Shortcut_emv3i")
 flat = true
 
 [node name="RestartButton" type="Button" parent="Control"]

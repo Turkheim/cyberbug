@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://c4des1o4sspp7" path="res://Scenes/wall_long.tscn" id="7_2fied"]
 [ext_resource type="PackedScene" uid="uid://u05x500bowe6" path="res://Scenes/wall_a.tscn" id="8_i4385"]
 [ext_resource type="PackedScene" uid="uid://pg8287wb4urq" path="res://Scenes/wall_b.tscn" id="9_j8haw"]
-[ext_resource type="PackedScene" uid="uid://btc14mw3f5o28" path="res://Scenes/UI.tscn" id="10_5n0mu"]
-[ext_resource type="PackedScene" uid="uid://tdg1kfe8onid" path="res://Scenes/pause_menu.tscn" id="10_iddqe"]
-[ext_resource type="PackedScene" uid="uid://j38wnr2kxoaw" path="res://Scenes/LoseMenu.tscn" id="11_attkd"]
-[ext_resource type="PackedScene" uid="uid://c1x8kt3rd6c21" path="res://Scenes/WinMenu.tscn" id="12_6jd25"]
+[ext_resource type="PackedScene" uid="uid://btc14mw3f5o28" path="res://Scenes/UI/UI.tscn" id="10_5n0mu"]
+[ext_resource type="PackedScene" uid="uid://tdg1kfe8onid" path="res://Scenes/UI/pause_menu.tscn" id="10_iddqe"]
+[ext_resource type="PackedScene" uid="uid://j38wnr2kxoaw" path="res://Scenes/UI/LoseMenu.tscn" id="11_attkd"]
+[ext_resource type="PackedScene" uid="uid://c1x8kt3rd6c21" path="res://Scenes/UI/WinMenu.tscn" id="12_6jd25"]
 [ext_resource type="PackedScene" uid="uid://bkf5tgeuv57s6" path="res://Scenes/Heatsink.tscn" id="13_lr23y"]
 [ext_resource type="PackedScene" uid="uid://c03wxnu2ofknh" path="res://Scenes/camera_node.tscn" id="15_oyhq0"]
 [ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="17_nouoh"]
@@ -80,11 +80,14 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0
 [node name="UI" parent="." instance=ExtResource("10_5n0mu")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("10_iddqe")]
+visible = false
 
 [node name="LoseMenu" parent="." instance=ExtResource("11_attkd")]
+visible = false
 
 [node name="WinMenu" parent="." instance=ExtResource("12_6jd25")]
-level = 4
+visible = false
+next_scene = "res://Scenes/Levels/level_05.tscn"
 
 [node name="DeadTimer" type="Timer" parent="."]
 

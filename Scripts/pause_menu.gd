@@ -8,9 +8,8 @@ func _init() -> void:
 	instance = self
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("Menu"):
 	#if event .is_action_pressed("ui_cancel"):
-		print("menu")
 		_pausing()
 
 func _unpause():

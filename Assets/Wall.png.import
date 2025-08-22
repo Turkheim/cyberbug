@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cl4qollmmlrpx"
-path.s3tc="res://.godot/imported/UI_unmute.png-0cf3fd81b8cd5c27b59622048f79b10b.s3tc.ctex"
-path.etc2="res://.godot/imported/UI_unmute.png-0cf3fd81b8cd5c27b59622048f79b10b.etc2.ctex"
+uid="uid://bpvy0e63edleg"
+path.bptc="res://.godot/imported/Wall.png-464e521111ad9ffd87bb54acee511680.bptc.ctex"
+path.astc="res://.godot/imported/Wall.png-464e521111ad9ffd87bb54acee511680.astc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,18 +12,18 @@ metadata={
 
 [deps]
 
-source_file="res://UI/UI_unmute.png"
-dest_files=["res://.godot/imported/UI_unmute.png-0cf3fd81b8cd5c27b59622048f79b10b.s3tc.ctex", "res://.godot/imported/UI_unmute.png-0cf3fd81b8cd5c27b59622048f79b10b.etc2.ctex"]
+source_file="res://Assets/Wall.png"
+dest_files=["res://.godot/imported/Wall.png-464e521111ad9ffd87bb54acee511680.bptc.ctex", "res://.godot/imported/Wall.png-464e521111ad9ffd87bb54acee511680.astc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -33,4 +33,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

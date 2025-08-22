@@ -41,11 +41,11 @@ func _physics_process(delta):
 	if can_walk:
 		var forwardVector = -Vector3.FORWARD.rotated(Vector3.UP, rotation.y)
 		velocity = -forwardVector * FORWARD_SPEED
-		if Input.is_action_pressed("ui_left"):
+		if Input.is_action_pressed("SteerLeft"):
 			rotation.z += Vec3Z.y - TURN_SPEED
 			rotation.z = clamp(rotation.x, -50, 90)
 			rotation.y += Vec3Z.y + TURN_SPEED 
-		if Input.is_action_pressed("ui_right"):
+		if Input.is_action_pressed("SteerRight"):
 			rotation.z += Vec3Z.y + TURN_SPEED
 			rotation.z = clamp(rotation.x, -50, 90)
 			rotation.y += Vec3Z.y - TURN_SPEED 

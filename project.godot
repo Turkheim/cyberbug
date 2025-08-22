@@ -14,7 +14,7 @@ config/name="Cyberbug"
 run/main_scene="uid://c3qx1qgeikqle"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0.237285, 0.48821, 0.281427, 1)
-config/icon="res://Assets/icon.svg"
+config/icon="res://icon.svg"
 
 [display]
 
@@ -35,7 +35,7 @@ Enemy=""
 &"compress/mode": 4
 }
 texture={
-&"compress/mode": 4
+&"detect_3d/compress_to": 0
 }
 
 [input]

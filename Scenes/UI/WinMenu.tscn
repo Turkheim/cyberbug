@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1x8kt3rd6c21"]
+[gd_scene load_steps=8 format=3 uid="uid://c1x8kt3rd6c21"]
 
 [ext_resource type="Script" uid="uid://cjlyiyw7pcl8m" path="res://Scripts/WinMenu.gd" id="1_l763u"]
 [ext_resource type="AudioStream" uid="uid://bawghljfwfwou" path="res://Assets/Sounds/SongWin.wav" id="2_q7l2s"]
@@ -10,9 +10,14 @@ font_size = 56
 shadow_color = Color(0, 0, 0, 0.498039)
 shadow_offset = Vector2(8.775, 10.72)
 
+[sub_resource type="InputEventAction" id="InputEventAction_8737j"]
+action = &"Accept"
+
+[sub_resource type="Shortcut" id="Shortcut_lsugt"]
+events = [SubResource("InputEventAction_8737j")]
+
 [node name="WinMenu" type="ColorRect"]
 process_mode = 3
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -61,6 +66,7 @@ offset_bottom = 126.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
+shortcut = SubResource("Shortcut_lsugt")
 flat = true
 
 [node name="QuitButton" type="Button" parent="Control"]

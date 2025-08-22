@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmt07lr676os1"]
+[gd_scene load_steps=8 format=3 uid="uid://bmt07lr676os1"]
 
 [ext_resource type="Script" uid="uid://dtqtt5wylhxo5" path="res://Scripts/start_menu.gd" id="1_dvnd1"]
 [ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="2_ujd4t"]
 [ext_resource type="AudioStream" uid="uid://cm3xi6psupm4h" path="res://Assets/Sounds/SongMenu.wav" id="2_xtte2"]
 [ext_resource type="Texture2D" uid="uid://cbnge4s5ot841" path="res://Assets/Sprites/startbutton.png" id="5_dibtv"]
 [ext_resource type="Texture2D" uid="uid://i02v7tiip3im" path="res://Assets/Sprites/titlecyberbugv4.png" id="6_ql1sk"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_jeo11"]
+action = &"Accept"
+
+[sub_resource type="Shortcut" id="Shortcut_kit3o"]
+events = [SubResource("InputEventAction_jeo11")]
 
 [node name="StartMenu" type="ColorRect"]
 anchors_preset = 15
@@ -45,6 +51,7 @@ offset_bottom = 193.555
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
+shortcut = SubResource("Shortcut_kit3o")
 flat = true
 
 [node name="QuitButton" type="Button" parent="Control"]
@@ -79,4 +86,3 @@ scale = Vector2(0.455357, 0.455357)
 texture = ExtResource("6_ql1sk")
 
 [connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]

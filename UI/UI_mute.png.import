@@ -3,19 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bg0o0ugxb3nel"
-path="res://.godot/imported/UI_mute.png-510f4240365e50f749ef7498372ebf9e.ctex"
+path.s3tc="res://.godot/imported/UI_mute.png-510f4240365e50f749ef7498372ebf9e.s3tc.ctex"
+path.etc2="res://.godot/imported/UI_mute.png-510f4240365e50f749ef7498372ebf9e.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://UI/UI_mute.png"
-dest_files=["res://.godot/imported/UI_mute.png-510f4240365e50f749ef7498372ebf9e.ctex"]
+dest_files=["res://.godot/imported/UI_mute.png-510f4240365e50f749ef7498372ebf9e.s3tc.ctex", "res://.godot/imported/UI_mute.png-510f4240365e50f749ef7498372ebf9e.etc2.ctex"]
 
 [params]
 
-compress/mode=4
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

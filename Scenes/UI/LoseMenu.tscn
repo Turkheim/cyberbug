@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://ckq0g1f45t02o" path="res://UI/failmenu.png" id="2_wov3g"]
 [ext_resource type="Texture2D" uid="uid://c4nvjwkokaj5l" path="res://Assets/Sprites/restart.png" id="4_wov3g"]
 
-[sub_resource type="InputEventAction" id="InputEventAction_b3kgp"]
-action = &"ui_accept"
+[sub_resource type="InputEventAction" id="InputEventAction_b6tpt"]
+action = &"Accept"
 
-[sub_resource type="Shortcut" id="Shortcut_atr7c"]
-events = [SubResource("InputEventAction_b3kgp")]
+[sub_resource type="Shortcut" id="Shortcut_nnck7"]
+events = [SubResource("InputEventAction_b6tpt")]
 
 [sub_resource type="LabelSettings" id="LabelSettings_l1hfb"]
 font_size = 96
@@ -20,7 +20,6 @@ shadow_offset = Vector2(12.295, 9.88)
 
 [node name="LoseMenu" type="ColorRect"]
 process_mode = 3
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -65,7 +64,7 @@ offset_bottom = 270.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
-shortcut = SubResource("Shortcut_atr7c")
+shortcut = SubResource("Shortcut_nnck7")
 flat = true
 metadata/_edit_use_anchors_ = true
 
@@ -77,7 +76,6 @@ anchor_right = 29.0519
 anchor_bottom = 0.0753708
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
-action_mode = 0
 flat = true
 metadata/_edit_use_anchors_ = true
 

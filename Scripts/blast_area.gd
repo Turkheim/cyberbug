@@ -4,7 +4,7 @@ extends Area3D
 func _ready() -> void:
 	$GPUParticles3D.restart()
 	$AnimationPlayer.play("BlastGrow")
-	print("boom")
+	#print("boom")
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "BlastGrow":
 		queue_free()

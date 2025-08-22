@@ -4,16 +4,16 @@ var bus_idx = AudioServer.get_bus_index("Master")
 var is_muted = false
 
 func _on_left_button_button_down() -> void:
-	Input.action_press("ui_left")
+	Input.action_press("SteerLeft")
 
 func _on_left_button_button_up() -> void:
-	Input.action_release("ui_left")
+	Input.action_release("SteerLeft")
 
 func _on_right_button_button_down() -> void:
-	Input.action_press("ui_right")
+	Input.action_press("SteerRight")
 
 func _on_right_button_button_up() -> void:
-	Input.action_release("ui_right")
+	Input.action_release("SteerRight")
 
 
 func _on_mute_pressed() -> void:
