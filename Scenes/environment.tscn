@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bw7b4nw6lhmlb" path="res://Scenes/fan.tscn" id="1_km3fo"]
 [ext_resource type="Texture2D" uid="uid://c26fhe60u5ehp" path="res://Assets/GridSmall.png" id="2_mfu5p"]
-[ext_resource type="Texture2D" uid="uid://c33jmq8qpxun2" path="res://Assets/texturebase3.png" id="3_ukl56"]
+[ext_resource type="Texture2D" uid="uid://bclx7ap8ii468" path="res://Assets/texture_floor2.png" id="3_ukl56"]
 [ext_resource type="AudioStream" uid="uid://cirddjtt1iaot" path="res://Assets/Sounds/Gameplay2.wav" id="4_ukl56"]
 
 [sub_resource type="Environment" id="Environment_0b4ue"]
