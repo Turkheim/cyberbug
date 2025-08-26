@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c26fhe60u5ehp" path="res://Assets/GridSmall.png" id="2_awu86"]
 [ext_resource type="PackedScene" uid="uid://cylst2gpaimub" path="res://Scenes/level_up.tscn" id="2_m7aql"]
 [ext_resource type="Script" uid="uid://dr7n8hla2phqt" path="res://Scripts/turret.gd" id="3_a7ihy"]
-[ext_resource type="Texture2D" uid="uid://11plp7817rjo" path="res://Assets/texture_floor.png" id="3_y0eaw"]
+[ext_resource type="Texture2D" uid="uid://bclx7ap8ii468" path="res://Assets/texture_floor2.png" id="3_y0eaw"]
 [ext_resource type="PackedScene" uid="uid://bq6b4atua3bo7" path="res://Assets/LaserTurret.glb" id="4_8tds4"]
 [ext_resource type="PackedScene" uid="uid://di6jug457l4fu" path="res://Scenes/switch.tscn" id="4_a7ihy"]
 [ext_resource type="PackedScene" uid="uid://ciukhcxkmbhud" path="res://Scenes/capacitor.tscn" id="5_8tds4"]
