@@ -21,6 +21,7 @@
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_34g67")
+turrets = 2
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_5qict")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 9)
@@ -35,9 +36,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -3.5)
 
 [node name="LaserBase3" parent="." instance=ExtResource("5_8tkhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -1.5)
-
-[node name="Turret" parent="." instance=ExtResource("6_4kuxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.6, -3.5)
 
 [node name="Turret2" parent="." instance=ExtResource("6_4kuxc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.6, -1.5)
@@ -61,7 +59,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 5.5)
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 3, 0, 0.5)
 
 [node name="WallLong3" parent="." instance=ExtResource("7_2fied")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 0, 9)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.5, 0, 9.5)
 
 [node name="WallA2" parent="." instance=ExtResource("8_i4385")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, -3.5)
@@ -151,7 +149,6 @@ stream = ExtResource("16_0yyqy")
 [connection signal="level_up" from="." to="LevelUp" method="_level_up"]
 [connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]
 [connection signal="_win_menu" from="LevelUp" to="WinMenu" method="_win_menu"]
-[connection signal="turret_killed" from="Turret" to="." method="_on_turret_killed"]
 [connection signal="turret_killed" from="Turret2" to="." method="_on_turret_killed"]
 [connection signal="turret_killed" from="Turret3" to="." method="_on_turret_killed"]
 [connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]
