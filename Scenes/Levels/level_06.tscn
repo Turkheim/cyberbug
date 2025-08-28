@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cjflo0iahtqno"]
+[gd_scene load_steps=19 format=3 uid="uid://cjflo0iahtqno"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_34g67"]
 [ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_5qict"]
@@ -14,8 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://j38wnr2kxoaw" path="res://Scenes/UI/LoseMenu.tscn" id="11_attkd"]
 [ext_resource type="PackedScene" uid="uid://c1x8kt3rd6c21" path="res://Scenes/UI/WinMenu.tscn" id="12_6jd25"]
 [ext_resource type="PackedScene" uid="uid://bkf5tgeuv57s6" path="res://Scenes/Heatsink.tscn" id="13_lr23y"]
-[ext_resource type="PackedScene" uid="uid://di6jug457l4fu" path="res://Scenes/switch.tscn" id="14_5n0mu"]
-[ext_resource type="PackedScene" uid="uid://cajd4tl3cp1v3" path="res://Scenes/door.tscn" id="15_nouoh"]
 [ext_resource type="PackedScene" uid="uid://ciukhcxkmbhud" path="res://Scenes/capacitor.tscn" id="16_ttr6d"]
 [ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="17_nouoh"]
 [ext_resource type="PackedScene" uid="uid://iwahnyaabkrj" path="res://Scenes/blast_area.tscn" id="18_08yfy"]
@@ -23,77 +21,69 @@
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_34g67")
+turrets = 2
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_5qict")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 9)
 
 [node name="Environment" parent="." instance=ExtResource("3_lshqn")]
 
+[node name="MeshInstance3D" parent="Environment/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+
 [node name="LevelUp" parent="." instance=ExtResource("4_0yyqy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -10.5)
 
-[node name="LaserBase2" parent="." instance=ExtResource("5_8tkhk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 7.5)
-
 [node name="LaserBase3" parent="." instance=ExtResource("5_8tkhk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -5.5)
 
 [node name="LaserBase4" parent="." instance=ExtResource("5_8tkhk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.01, -6.5)
-
-[node name="Turret" parent="." instance=ExtResource("6_4kuxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.6, 7.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.01, -1.5)
 
 [node name="Turret2" parent="." instance=ExtResource("6_4kuxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.6, -2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.6, -5.5)
 
 [node name="Turret3" parent="." instance=ExtResource("6_4kuxc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.6, -6.5)
-
-[node name="WallLong" parent="." instance=ExtResource("7_2fied")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.6, -1.5)
 
 [node name="WallLong4" parent="." instance=ExtResource("7_2fied")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0, 9)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.5, 0, 8)
 
 [node name="WallA" parent="." instance=ExtResource("8_i4385")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -4.5)
 
 [node name="WallA6" parent="." instance=ExtResource("8_i4385")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, 4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 5.5)
 
 [node name="WallA5" parent="." instance=ExtResource("8_i4385")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, 4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 1.5)
 
 [node name="WallB" parent="." instance=ExtResource("9_j8haw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, -4.5)
 
 [node name="WallLong2" parent="." instance=ExtResource("7_2fied")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0, 0)
-
-[node name="WallLong3" parent="." instance=ExtResource("7_2fied")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -0.5)
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -3, 0, 4.5)
 
 [node name="WallA2" parent="." instance=ExtResource("8_i4385")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, -2.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0, 1.5)
 
 [node name="WallA4" parent="." instance=ExtResource("8_i4385")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.5, 0, -7.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.5, 0, -2.5)
 
 [node name="WallA3" parent="." instance=ExtResource("8_i4385")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 4.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5, 0, -2.5)
 
 [node name="WallB5" parent="." instance=ExtResource("9_j8haw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 9.5)
 
 [node name="WallB4" parent="." instance=ExtResource("9_j8haw")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.5, 0, 0.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0, 9.5)
 
 [node name="WallB6" parent="." instance=ExtResource("9_j8haw")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.5, 0, -7.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.5, 0, -2.5)
 
 [node name="WallB3" parent="." instance=ExtResource("9_j8haw")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.5, 0, 5.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 4.5)
 
 [node name="UI" parent="." instance=ExtResource("10_gc5wd")]
 
@@ -105,48 +95,33 @@ visible = false
 
 [node name="WinMenu" parent="." instance=ExtResource("12_6jd25")]
 visible = false
-next_scene = "res://Scenes/UI/EndMenu.tscn"
+next_scene = "res://Scenes/Levels/level_07.tscn"
 
 [node name="DeadTimer" type="Timer" parent="."]
 
 [node name="Disipador" parent="." instance=ExtResource("13_lr23y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 3.5)
 
 [node name="Disipador5" parent="." instance=ExtResource("13_lr23y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, -9.5)
 
 [node name="Disipador6" parent="." instance=ExtResource("13_lr23y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, -9.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 5.5)
 
 [node name="Disipador8" parent="." instance=ExtResource("13_lr23y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, -9.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -1.5)
 
 [node name="Disipador2" parent="." instance=ExtResource("13_lr23y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, 3.5)
 
 [node name="Disipador7" parent="." instance=ExtResource("13_lr23y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 3.5)
 
 [node name="Disipador3" parent="." instance=ExtResource("13_lr23y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0.5, 3.5)
 
 [node name="Disipador4" parent="." instance=ExtResource("13_lr23y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 0.5)
-
-[node name="Switch" parent="." instance=ExtResource("14_5n0mu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 7.5)
-
-[node name="Door" parent="." instance=ExtResource("15_nouoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 4.5)
-
-[node name="Switch2" parent="." instance=ExtResource("14_5n0mu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 3.5)
-
-[node name="Door2" parent="." instance=ExtResource("15_nouoh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 0.5)
-
-[node name="Capacitor2" parent="." instance=ExtResource("16_ttr6d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, -5.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 3.5)
 
 [node name="Capacitor4" parent="." instance=ExtResource("16_ttr6d")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -6.5, 0.5, 2)
@@ -158,7 +133,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 4.5, 1)
 autoplay = false
 
 [node name="Capacitor3" parent="." instance=ExtResource("16_ttr6d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 5.5)
 
 [node name="TurretDead" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_nouoh")
@@ -168,12 +143,10 @@ stream = ExtResource("17_nouoh")
 [connection signal="level_up" from="." to="LevelUp" method="_level_up"]
 [connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]
 [connection signal="_win_menu" from="LevelUp" to="WinMenu" method="_win_menu"]
-[connection signal="turret_killed" from="Turret" to="." method="_on_turret_killed"]
 [connection signal="turret_killed" from="Turret2" to="." method="_on_turret_killed"]
 [connection signal="turret_killed" from="Turret3" to="." method="_on_turret_killed"]
 [connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]
-[connection signal="body_entered" from="Switch" to="Door" method="_on_body_entered"]
-[connection signal="body_entered" from="Switch2" to="Door2" method="_on_body_entered"]
 
+[editable path="Environment"]
 [editable path="Capacitor4"]
 [editable path="Capacitor4/BlastArea"]
