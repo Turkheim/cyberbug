@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cgj2lq42nx04c"]
+[gd_scene load_steps=18 format=3 uid="uid://cgj2lq42nx04c"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_bmcj7"]
 [ext_resource type="PackedScene" uid="uid://c03wxnu2ofknh" path="res://Scenes/camera_node.tscn" id="2_flehy"]
@@ -12,9 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://pg8287wb4urq" path="res://Scenes/wall_b.tscn" id="8_fj6kk"]
 [ext_resource type="PackedScene" uid="uid://tdg1kfe8onid" path="res://Scenes/UI/pause_menu.tscn" id="9_qelns"]
 [ext_resource type="PackedScene" uid="uid://j38wnr2kxoaw" path="res://Scenes/UI/LoseMenu.tscn" id="10_j0t0u"]
+[ext_resource type="Script" uid="uid://dmw6j8ry0t0vh" path="res://Scripts/tutorial.gd" id="11_6ag6h"]
 [ext_resource type="PackedScene" uid="uid://btc14mw3f5o28" path="res://Scenes/UI/UI.tscn" id="11_fj6kk"]
 [ext_resource type="PackedScene" uid="uid://c1x8kt3rd6c21" path="res://Scenes/UI/WinMenu.tscn" id="11_j0t0u"]
 [ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="13_ge2ro"]
+[ext_resource type="Texture2D" uid="uid://d3bp2u8sngl0d" path="res://UI/red_button.png" id="16_uvcnl"]
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_bmcj7")
@@ -90,7 +92,26 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0
 [node name="WallB3" parent="." instance=ExtResource("8_fj6kk")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, -1.5)
 
+[node name="Tutorial" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("11_6ag6h")
+metadata/_edit_use_anchors_ = true
+
+[node name="RedButton" type="Sprite2D" parent="Tutorial"]
+position = Vector2(320, 352)
+scale = Vector2(4, 4)
+texture = ExtResource("16_uvcnl")
+
 [node name="UI" parent="." instance=ExtResource("11_fj6kk")]
+
+[node name="UiRotateLeft" parent="UI" index="3"]
+visible = true
+
+[node name="UiRotateRight" parent="UI" index="4"]
+visible = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_qelns")]
 visible = false
@@ -111,6 +132,7 @@ stream = ExtResource("13_ge2ro")
 [connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]
 [connection signal="_win_menu" from="LevelUp" to="WinMenu" method="_win_menu"]
 [connection signal="turret_killed" from="Turret" to="." method="_on_turret_killed"]
+[connection signal="turret_killed" from="Turret" to="Tutorial" method="_on_turret_turret_killed"]
 [connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]
 
 [editable path="UI"]
