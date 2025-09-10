@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqqxiikak3jcx"
-path="res://.godot/imported/UI_rotate_right.png-4ffdc9a2850c7d106abcb70dc9769dbe.ctex"
+uid="uid://ckq0g1f45t02o"
+path="res://.godot/imported/failmenu.png-7e300c79c113f8769428856c1afd75b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/UI_rotate_right.png"
-dest_files=["res://.godot/imported/UI_rotate_right.png-4ffdc9a2850c7d106abcb70dc9769dbe.ctex"]
+source_file="res://Assets/UI/failmenu.png"
+dest_files=["res://.godot/imported/failmenu.png-7e300c79c113f8769428856c1afd75b8.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

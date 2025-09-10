@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2cvgffkrbsm6"
-path="res://.godot/imported/quitbutton.png-2f416b3583ba0458899e5c034410e810.ctex"
+uid="uid://d0obkiabgnhtw"
+path="res://.godot/imported/UI_rotate_left.png-24d36f3c5a03abad6d0fbab8ff0caa79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/quitbutton.png"
-dest_files=["res://.godot/imported/quitbutton.png-2f416b3583ba0458899e5c034410e810.ctex"]
+source_file="res://Assets/UI/UI_rotate_left.png"
+dest_files=["res://.godot/imported/UI_rotate_left.png-24d36f3c5a03abad6d0fbab8ff0caa79.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

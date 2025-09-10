@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnr85cin3nf76"
-path="res://.godot/imported/nextbutton.png-31dc1cbf8355c6d7d4f02d9972433796.ctex"
+uid="uid://dqqxiikak3jcx"
+path="res://.godot/imported/UI_rotate_right.png-a0d273aef77d87f456a55c6d350feeda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/nextbutton.png"
-dest_files=["res://.godot/imported/nextbutton.png-31dc1cbf8355c6d7d4f02d9972433796.ctex"]
+source_file="res://Assets/UI/UI_rotate_right.png"
+dest_files=["res://.godot/imported/UI_rotate_right.png-a0d273aef77d87f456a55c6d350feeda.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

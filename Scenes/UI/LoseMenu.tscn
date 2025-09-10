@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://imkij5f1044l" path="res://Scripts/lose_menu.gd" id="1_0jnk0"]
 [ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="2_78sj7"]
 [ext_resource type="AudioStream" uid="uid://d25xcni23o2oc" path="res://Assets/Sounds/SongLose.wav" id="2_b3kgp"]
-[ext_resource type="Texture2D" uid="uid://ckq0g1f45t02o" path="res://UI/failmenu.png" id="2_wov3g"]
+[ext_resource type="Texture2D" uid="uid://ckq0g1f45t02o" path="res://Assets/UI/failmenu.png" id="2_wov3g"]
 [ext_resource type="Texture2D" uid="uid://c4nvjwkokaj5l" path="res://Assets/Sprites/restart.png" id="4_wov3g"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_b6tpt"]

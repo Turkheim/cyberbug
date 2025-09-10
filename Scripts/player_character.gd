@@ -12,6 +12,9 @@ var Vec3Z = Vector3.ZERO
 signal player_killed
 var can_walk = true
 
+@export var push_strength = .8
+
+
 func _physics_process(delta):
 	#
 	## Add the gravity.
@@ -50,7 +53,20 @@ func _physics_process(delta):
 			rotation.z = clamp(rotation.x, -50, 90)
 			rotation.y += Vec3Z.y - TURN_SPEED 
 	move_and_slide()
+	
+	var collision_count = get_slide_collision_count()
+	for i in range(collision_count):
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+
+		if collider is RigidBody3D:
+			# Apply a push force to the RigidBody
+			var push_force = collision.get_normal() * -1 * push_strength # Push away from player
+			collider.apply_central_impulse(push_force)
+			
 func _kill_player():
+
+	$CollisionShape3D.set_deferred("disabled",true)
 	$Footsteps.stop()
 	$PlayerDead.play()
 	can_walk = false

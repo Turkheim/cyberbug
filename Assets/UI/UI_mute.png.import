@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bg0o0ugxb3nel"
-path="res://.godot/imported/UI_mute.png-510f4240365e50f749ef7498372ebf9e.ctex"
+path="res://.godot/imported/UI_mute.png-a9e4910b7dad5c2cbc8d9d95ce84758f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/UI_mute.png"
-dest_files=["res://.godot/imported/UI_mute.png-510f4240365e50f749ef7498372ebf9e.ctex"]
+source_file="res://Assets/UI/UI_mute.png"
+dest_files=["res://.godot/imported/UI_mute.png-a9e4910b7dad5c2cbc8d9d95ce84758f.ctex"]
 
 [params]
 

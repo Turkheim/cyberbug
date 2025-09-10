@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://btc14mw3f5o28" path="res://Scenes/UI/UI.tscn" id="11_fj6kk"]
 [ext_resource type="PackedScene" uid="uid://c1x8kt3rd6c21" path="res://Scenes/UI/WinMenu.tscn" id="11_j0t0u"]
 [ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="13_ge2ro"]
-[ext_resource type="Texture2D" uid="uid://d3bp2u8sngl0d" path="res://UI/red_button.png" id="16_uvcnl"]
+[ext_resource type="Texture2D" uid="uid://d3bp2u8sngl0d" path="res://Assets/UI/red_button.png" id="16_uvcnl"]
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_bmcj7")
@@ -48,7 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 6.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 6.5)
 
 [node name="WallA7" parent="." instance=ExtResource("6_ge2ro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 3.5)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.5, 0, 3.5)
 
 [node name="WallB" parent="." instance=ExtResource("8_fj6kk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 7.5)
@@ -90,13 +90,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.5, 
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, 3.5)
 
 [node name="WallB3" parent="." instance=ExtResource("8_fj6kk")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, -1.5)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.5, 0, -1.5)
 
 [node name="Tutorial" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("11_6ag6h")
 metadata/_edit_use_anchors_ = true
 
