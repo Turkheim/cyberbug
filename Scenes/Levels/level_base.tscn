@@ -132,6 +132,7 @@ skeleton = NodePath("../Environment")
 [connection signal="_win_menu" from="LevelUp" to="WinMenu" method="_win_menu"]
 [connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]
 [connection signal="body_entered" from="level_design/Switch" to="level_design/Door" method="_on_body_entered"]
+[connection signal="turret_killed" from="level_design/constantTurret" to="." method="_on_turret_killed"]
 [connection signal="turret_killed" from="level_design/Turret" to="." method="_on_turret_killed"]
 
 [editable path="CapacitorDebug"]
