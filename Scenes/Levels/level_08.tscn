@@ -1,0 +1,177 @@
+[gd_scene load_steps=27 format=3 uid="uid://xyhc3rmrci7i"]
+
+[ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_ruug7"]
+[ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_2y5wm"]
+[ext_resource type="PackedScene" uid="uid://bu736srt4cyr4" path="res://Scenes/environment.tscn" id="3_y33n0"]
+[ext_resource type="PackedScene" uid="uid://cylst2gpaimub" path="res://Scenes/level_up.tscn" id="4_p0jut"]
+[ext_resource type="PackedScene" uid="uid://btc14mw3f5o28" path="res://Scenes/UI/UI.tscn" id="5_svy10"]
+[ext_resource type="PackedScene" uid="uid://tdg1kfe8onid" path="res://Scenes/UI/pause_menu.tscn" id="6_r5wg2"]
+[ext_resource type="PackedScene" uid="uid://j38wnr2kxoaw" path="res://Scenes/UI/LoseMenu.tscn" id="7_ujxba"]
+[ext_resource type="PackedScene" uid="uid://c1x8kt3rd6c21" path="res://Scenes/UI/WinMenu.tscn" id="8_hec0i"]
+[ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="9_ehcui"]
+[ext_resource type="PackedScene" uid="uid://ciukhcxkmbhud" path="res://Scenes/capacitor.tscn" id="10_nq5d3"]
+[ext_resource type="PackedScene" uid="uid://iwahnyaabkrj" path="res://Scenes/blast_area.tscn" id="11_f7sfc"]
+[ext_resource type="PackedScene" uid="uid://c03wxnu2ofknh" path="res://Scenes/camera_node.tscn" id="12_mcinq"]
+[ext_resource type="PackedScene" uid="uid://c4des1o4sspp7" path="res://Scenes/wall_long.tscn" id="13_5bkyw"]
+[ext_resource type="PackedScene" uid="uid://u05x500bowe6" path="res://Scenes/wall_a.tscn" id="14_mt8x5"]
+[ext_resource type="PackedScene" uid="uid://pg8287wb4urq" path="res://Scenes/wall_b.tscn" id="15_eecp8"]
+[ext_resource type="PackedScene" uid="uid://bkf5tgeuv57s6" path="res://Scenes/Heatsink.tscn" id="16_boaer"]
+[ext_resource type="PackedScene" uid="uid://di6jug457l4fu" path="res://Scenes/switch.tscn" id="17_nulck"]
+[ext_resource type="PackedScene" uid="uid://cajd4tl3cp1v3" path="res://Scenes/door.tscn" id="18_gmju5"]
+[ext_resource type="PackedScene" uid="uid://b778r3cvdpapi" path="res://Scenes/moving_platform.tscn" id="19_7qkl0"]
+[ext_resource type="Texture2D" uid="uid://c26fhe60u5ehp" path="res://Assets/GridSmall.png" id="22_7c5r6"]
+[ext_resource type="PackedScene" uid="uid://b1cw6uo34p0x7" path="res://Scenes/push_cube.tscn" id="23_sfeex"]
+[ext_resource type="PackedScene" uid="uid://dmn5qqxwkj58w" path="res://Scenes/constant_turret.tscn" id="24_id6mo"]
+[ext_resource type="PackedScene" uid="uid://dy7qfoq1jqbvh" path="res://Scenes/kill_floor.tscn" id="25_qbi2l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ab63w"]
+albedo_texture = ExtResource("22_7c5r6")
+uv1_scale = Vector3(10, 10, 5)
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ruug7"]
+material = SubResource("StandardMaterial3D_ab63w")
+size = Vector2(20, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nuxhu"]
+friction = 20.0
+
+[node name="Level01" type="Node3D"]
+script = ExtResource("1_ruug7")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_2y5wm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 9)
+
+[node name="Environment" parent="." instance=ExtResource("3_y33n0")]
+
+[node name="LevelUp" parent="." instance=ExtResource("4_p0jut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -10.5)
+
+[node name="UI" parent="." instance=ExtResource("5_svy10")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_r5wg2")]
+visible = false
+
+[node name="LoseMenu" parent="." instance=ExtResource("7_ujxba")]
+visible = false
+
+[node name="WinMenu" parent="." instance=ExtResource("8_hec0i")]
+visible = false
+next_scene = "res://Scenes/UI/EndMenu.tscn"
+
+[node name="DeadTimer" type="Timer" parent="."]
+
+[node name="TurretDead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_ehcui")
+
+[node name="CapacitorDebug" parent="." instance=ExtResource("10_nq5d3")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -6.5, 0.5, -10.8)
+
+[node name="BlastArea" parent="CapacitorDebug" instance=ExtResource("11_f7sfc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 4.5, 1)
+
+[node name="Explosion" parent="CapacitorDebug/BlastArea" index="4"]
+autoplay = false
+
+[node name="CameraNode" parent="." instance=ExtResource("12_mcinq")]
+
+[node name="level_design" type="Node3D" parent="."]
+
+[node name="WallLong2" parent="level_design" instance=ExtResource("13_5bkyw")]
+transform = Transform3D(-0.00397949, 0, -0.999992, 0, 1, 0, 0.999992, 0, -0.00397949, 0.0186911, 0, -1.57114)
+
+[node name="WallLong" parent="level_design" instance=ExtResource("13_5bkyw")]
+transform = Transform3D(-0.999975, 0, -0.00703356, 0, 1, 0, 0.00703356, 0, -0.999975, -3.51571, 0, -2.66972)
+
+[node name="WallA3" parent="level_design" instance=ExtResource("14_mt8x5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.0152, 0, -0.391703)
+
+[node name="WallB3" parent="level_design" instance=ExtResource("15_eecp8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.41094, 0, -1.59051)
+
+[node name="WallB6" parent="level_design/WallB3" instance=ExtResource("15_eecp8")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 3.49491, 0, -1.63357)
+
+[node name="WallB5" parent="level_design/WallB3" instance=ExtResource("15_eecp8")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.85305, 0, 0.295498)
+
+[node name="WallB4" parent="level_design/WallB3" instance=ExtResource("15_eecp8")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -9.01907, 0, -1.95211)
+
+[node name="WallB3" parent="level_design/WallB3" instance=ExtResource("15_eecp8")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.14106, 0, -0.845559)
+
+[node name="Disipador7" parent="level_design" instance=ExtResource("16_boaer")]
+transform = Transform3D(0.999966, 0, -0.00822041, 0, 1, 0, 0.00822041, 0, 0.999966, 3.1193, 0.5, -4.92078)
+
+[node name="Disipador8" parent="level_design" instance=ExtResource("16_boaer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.998873, 0.5, -0.0107609)
+
+[node name="Disipador9" parent="level_design" instance=ExtResource("16_boaer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.00989, 0.5, -2.6022)
+
+[node name="Disipador10" parent="level_design" instance=ExtResource("16_boaer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06047, 0.5, -1.27004)
+
+[node name="Switch" parent="level_design" instance=ExtResource("17_nulck")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03116, 0.5, 1.05144)
+
+[node name="Door" parent="level_design" instance=ExtResource("18_gmju5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46558, 0.5, -2.77443)
+
+[node name="Capacitor3" parent="level_design" instance=ExtResource("10_nq5d3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0858552, 0.5, -6.24989)
+
+[node name="WallLong3" parent="level_design" instance=ExtResource("13_5bkyw")]
+transform = Transform3D(0.999887, 0, -0.0149921, 0, 1, 0, 0.0149921, 0, 0.999887, -1.85957, 0, -6.5387)
+
+[node name="moving_platform" parent="." instance=ExtResource("19_7qkl0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -6.5)
+
+[node name="groundLevelDesign" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.02, 0)
+visible = false
+mesh = SubResource("QuadMesh_ruug7")
+skeleton = NodePath("../Environment")
+
+[node name="push_cube" parent="." instance=ExtResource("23_sfeex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1818, 0.56864, -3.56031)
+mass = 6.0
+physics_material_override = SubResource("PhysicsMaterial_nuxhu")
+
+[node name="push_cube2" parent="." instance=ExtResource("23_sfeex")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.726213, 1, 3.54181)
+mass = 6.0
+physics_material_override = SubResource("PhysicsMaterial_nuxhu")
+
+[node name="constantTurret" parent="." instance=ExtResource("24_id6mo")]
+transform = Transform3D(-0.00443289, 0, 0.99999, 0, 1, 0, -0.99999, 0, -0.00443289, 4.17192, 0.6, 0.761869)
+rotation_speed = 0
+
+[node name="constantTurret2" parent="." instance=ExtResource("24_id6mo")]
+transform = Transform3D(-0.00443289, 0, 0.99999, 0, 1, 0, -0.99999, 0, -0.00443289, 0.724807, 0.6, -7.95936)
+
+[node name="KillFloor" parent="." instance=ExtResource("25_qbi2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30741, 0, 2.7462)
+
+[node name="KillFloor2" parent="." instance=ExtResource("25_qbi2l")]
+transform = Transform3D(1, 0, 0, 0, 0.999547, -0.0301024, 0, 0.0301024, 0.999547, -5.31442, 0, 2.71164)
+
+[node name="KillFloor3" parent="." instance=ExtResource("25_qbi2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61155, 0, 1.15216)
+
+[node name="KillFloor4" parent="." instance=ExtResource("25_qbi2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.17068, 0, -3.02606)
+
+[node name="KillFloor5" parent="." instance=ExtResource("25_qbi2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11641, 0, -8.30138)
+
+[connection signal="level_up" from="." to="LevelUp" method="_level_up"]
+[connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]
+[connection signal="_win_menu" from="LevelUp" to="WinMenu" method="_win_menu"]
+[connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]
+[connection signal="body_entered" from="level_design/Switch" to="level_design/Door" method="_on_body_entered"]
+
+[editable path="CapacitorDebug"]
+[editable path="CapacitorDebug/BlastArea"]
+[editable path="moving_platform"]
