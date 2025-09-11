@@ -15,5 +15,6 @@ func _process(delta: float) -> void:
 			body._kill_player()
 
 		contact_point = to_local(get_collision_point())
+
 		beam.mesh.height = contact_point.y
-		beam.position.y = contact_point.y/2
+		beam.position.y = contact_point.y * .5
