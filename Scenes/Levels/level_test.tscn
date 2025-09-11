@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cri4v7ogwwubw"]
+[gd_scene load_steps=28 format=3 uid="uid://cri4v7ogwwubw"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_tu8bo"]
 [ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_2rbid"]
@@ -34,9 +34,6 @@ texture_filter = 0
 [sub_resource type="QuadMesh" id="QuadMesh_ruug7"]
 material = SubResource("StandardMaterial3D_ab63w")
 size = Vector2(20, 20)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nuxhu"]
-friction = 20.0
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_tu8bo")
@@ -111,8 +108,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0.5, -9.5)
 
 [node name="moving_platform" parent="." instance=ExtResource("19_wyhvs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0, -6.5)
+platform_direction = Vector3(1, 0, 0)
+movement_distance = 7
 
-[node name="LaserBase2" parent="moving_platform/platform" index="2" instance=ExtResource("20_jgfow")]
+[node name="LaserBase2" parent="moving_platform/platform" index="1" instance=ExtResource("20_jgfow")]
 
 [node name="Turret" parent="moving_platform/platform/LaserBase2" instance=ExtResource("21_5myhf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
@@ -124,26 +123,23 @@ mesh = SubResource("QuadMesh_ruug7")
 skeleton = NodePath("../Environment")
 
 [node name="push_cube" parent="." instance=ExtResource("23_l2y1k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, 1.5)
-mass = 6.0
-physics_material_override = SubResource("PhysicsMaterial_nuxhu")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, 4.5)
 
 [node name="push_cube2" parent="." instance=ExtResource("23_l2y1k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 1, 0.5)
-mass = 6.0
-physics_material_override = SubResource("PhysicsMaterial_nuxhu")
 
 [node name="constantTurret" parent="." instance=ExtResource("24_mvh1c")]
-transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 0.5, 0.6, -2.5)
+transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 4.5, 0.6, -1)
+rotation_speed = 0
 
 [node name="KillFloor" parent="." instance=ExtResource("25_e2uth")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2.5)
 
 [node name="KillFloor2" parent="." instance=ExtResource("25_e2uth")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, -2.5)
 
 [node name="KillFloor3" parent="." instance=ExtResource("25_e2uth")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -2.5)
 
 [connection signal="level_up" from="." to="LevelUp" method="_level_up"]
 [connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]

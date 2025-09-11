@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1cw6uo34p0x7"]
+[gd_scene load_steps=5 format=3 uid="uid://b1cw6uo34p0x7"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qxexs"]
-friction = 5.0
+[ext_resource type="Script" uid="uid://3g7ly11wy3d1" path="res://Scenes/push_cube.gd" id="1_hpxy5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hpxy5"]
+friction = 4.0
+rough = true
+absorbent = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qxexs"]
 size = Vector3(0.9, 1, 0.9)
@@ -9,9 +13,13 @@ size = Vector3(0.9, 1, 0.9)
 [sub_resource type="BoxMesh" id="BoxMesh_nuxhu"]
 
 [node name="push_cube" type="RigidBody3D"]
-mass = 5.0
-physics_material_override = SubResource("PhysicsMaterial_qxexs")
+collision_mask = 7
+axis_lock_linear_y = true
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_hpxy5")
 lock_rotation = true
+linear_damp = 10.0
+script = ExtResource("1_hpxy5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_qxexs")

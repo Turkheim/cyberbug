@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bt6ig0yo1w2j6"]
+[gd_scene load_steps=28 format=3 uid="uid://bt6ig0yo1w2j6"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_dgrua"]
 [ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_7n2l3"]
@@ -25,9 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://b1cw6uo34p0x7" path="res://Scenes/push_cube.tscn" id="23_era8m"]
 [ext_resource type="PackedScene" uid="uid://dmn5qqxwkj58w" path="res://Scenes/constant_turret.tscn" id="24_ok5tm"]
 [ext_resource type="PackedScene" uid="uid://dy7qfoq1jqbvh" path="res://Scenes/kill_floor.tscn" id="25_71kyp"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nuxhu"]
-friction = 20.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ab63w"]
 albedo_color = Color(0, 1, 0, 1)
@@ -103,8 +100,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0.5, -9.5)
 
 [node name="push_cube" parent="level_design" instance=ExtResource("23_era8m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1, -1.5)
-mass = 6.0
-physics_material_override = SubResource("PhysicsMaterial_nuxhu")
 
 [node name="constantTurret" parent="level_design" instance=ExtResource("24_ok5tm")]
 transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 10.5, 0.6, 0.500001)
