@@ -18,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://bkf5tgeuv57s6" path="res://Scenes/Heatsink.tscn" id="16_boaer"]
 [ext_resource type="PackedScene" uid="uid://di6jug457l4fu" path="res://Scenes/switch.tscn" id="17_nulck"]
 [ext_resource type="PackedScene" uid="uid://cajd4tl3cp1v3" path="res://Scenes/door.tscn" id="18_gmju5"]
-[ext_resource type="PackedScene" uid="uid://b778r3cvdpapi" path="res://Scenes/moving_platform.tscn" id="19_7qkl0"]
 [ext_resource type="Texture2D" uid="uid://c26fhe60u5ehp" path="res://Assets/GridSmall.png" id="22_7c5r6"]
+[ext_resource type="PackedScene" uid="uid://ovetpaulfpm" path="res://Assets/LaserBase.glb" id="23_nuxhu"]
 [ext_resource type="PackedScene" uid="uid://b1cw6uo34p0x7" path="res://Scenes/push_cube.tscn" id="23_sfeex"]
 [ext_resource type="PackedScene" uid="uid://dmn5qqxwkj58w" path="res://Scenes/constant_turret.tscn" id="24_id6mo"]
 [ext_resource type="PackedScene" uid="uid://dy7qfoq1jqbvh" path="res://Scenes/kill_floor.tscn" id="25_qbi2l"]
@@ -78,28 +78,35 @@ autoplay = false
 
 [node name="groundLevelDesign" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.02, 0)
+visible = false
 mesh = SubResource("QuadMesh_ruug7")
 skeleton = NodePath("../Environment")
 
 [node name="level_design" type="Node3D" parent="."]
 
 [node name="WallLong2" parent="level_design" instance=ExtResource("13_5bkyw")]
-transform = Transform3D(-0.00397949, 0, -0.999992, 0, 1, 0, 0.999992, 0, -0.00397949, -0.5, 0, -2)
+transform = Transform3D(0.999992, 0, -0.00397945, 0, 1, 0, 0.00397945, 0, 0.999992, 0, 0, -1.5)
 
 [node name="WallLong" parent="level_design" instance=ExtResource("13_5bkyw")]
 transform = Transform3D(-0.999975, 0, -0.00703356, 0, 1, 0, 0.00703356, 0, -0.999975, -4, 0, -2.5)
 
 [node name="WallLong4" parent="level_design" instance=ExtResource("13_5bkyw")]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1, 0, 3.5)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -0.5, 0, 3.04)
 
 [node name="WallA3" parent="level_design" instance=ExtResource("14_mt8x5")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5152, 0, -0.391703)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5, 0, -0.5)
+
+[node name="WallA4" parent="level_design" instance=ExtResource("14_mt8x5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.5, 0, 7)
 
 [node name="WallB3" parent="level_design" instance=ExtResource("15_eecp8")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.51094, 0, -1.54051)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.5, 0, -1.5)
 
 [node name="WallB6" parent="level_design" instance=ExtResource("15_eecp8")]
-transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 4.49451, 1, 1.5044)
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 5.5, 0, 1.5)
+
+[node name="WallB8" parent="level_design" instance=ExtResource("15_eecp8")]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -1.5, 0, 7)
 
 [node name="WallB5" parent="level_design" instance=ExtResource("15_eecp8")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 3.51544, 0, -5.54356)
@@ -108,46 +115,43 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 3.51544,
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 5.36305, 0, -10.6096)
 
 [node name="WallB7" parent="level_design" instance=ExtResource("15_eecp8")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.5565, 0, -0.54945)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3.5, 0, -0.5)
 
 [node name="Disipador7" parent="level_design" instance=ExtResource("16_boaer")]
-transform = Transform3D(0.999966, 0, -0.00822041, 0, 1, 0, 0.00822041, 0, 0.999966, 3.5193, 0.5, -4.47078)
+transform = Transform3D(0.999966, 0, -0.00822041, 0, 1, 0, 0.00822041, 0, 0.999966, 3.5, 0.5, -4.5)
 
 [node name="Disipador8" parent="level_design" instance=ExtResource("16_boaer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.548873, 0.5, -0.410761)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.5)
 
 [node name="Disipador9" parent="level_design" instance=ExtResource("16_boaer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45989, 0.5, -2.5022)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, -2.5)
 
 [node name="Disipador10" parent="level_design" instance=ExtResource("16_boaer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46047, 0.5, -1.52004)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, -1.5)
 
 [node name="Switch" parent="level_design" instance=ExtResource("17_nulck")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0.5, 1.5)
 
 [node name="Door" parent="level_design" instance=ExtResource("18_gmju5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01558, 0.5, -2.52443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -2.5)
 
 [node name="Capacitor3" parent="level_design" instance=ExtResource("10_nq5d3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.485855, 0.5, -6.49989)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -6.5)
 
 [node name="WallLong3" parent="level_design" instance=ExtResource("13_5bkyw")]
-transform = Transform3D(0.999887, 0, -0.0149921, 0, 1, 0, 0.0149921, 0, 0.999887, -2.00957, 0, -6.4887)
-
-[node name="moving_platform" parent="level_design" instance=ExtResource("19_7qkl0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -5.5)
+transform = Transform3D(0.999887, 0, -0.0149921, 0, 1, 0, 0.0149921, 0, 0.999887, -2, 0, -6.5)
 
 [node name="push_cube" parent="level_design" instance=ExtResource("23_sfeex")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1818, 0.56864, 3.43969)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 3.5)
 mass = 6.0
 physics_material_override = SubResource("PhysicsMaterial_nuxhu")
 
 [node name="constantTurret" parent="level_design" instance=ExtResource("24_id6mo")]
-transform = Transform3D(-0.00443289, 0, 0.99999, 0, 1, 0, -0.99999, 0, -0.00443289, 4.42192, 0.6, 0.511869)
+transform = Transform3D(-0.00443289, 0, 0.99999, 0, 1, 0, -0.99999, 0, -0.00443289, 4.5, 0.6, 0.5)
 rotation_speed = 0
 
 [node name="constantTurret2" parent="level_design" instance=ExtResource("24_id6mo")]
-transform = Transform3D(-0.00443289, 0, 0.99999, 0, 1, 0, -0.99999, 0, -0.00443289, 1.42481, 0.6, -7.45936)
+transform = Transform3D(-0.00443289, 0, 0.99999, 0, 1, 0, -0.99999, 0, -0.00443289, 1.5, 0.6, -7.5)
 
 [node name="KillFloor" parent="level_design" instance=ExtResource("25_qbi2l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50032, 0, 2.5)
@@ -159,17 +163,24 @@ transform = Transform3D(1, 0, 0, 0, 0.999547, -0.0301024, 0, 0.0301024, 0.999547
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 1.5)
 
 [node name="KillFloor4" parent="level_design" instance=ExtResource("25_qbi2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.52068, 0, -2.52606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -2.5)
 
 [node name="KillFloor5" parent="level_design" instance=ExtResource("25_qbi2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.51641, 0, -8.50138)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0, -8.5)
+
+[node name="LaserBase2" parent="." instance=ExtResource("23_nuxhu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.05, -7.5)
+
+[node name="LaserBase3" parent="." instance=ExtResource("23_nuxhu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.05, 0.5)
 
 [connection signal="level_up" from="." to="LevelUp" method="_level_up"]
 [connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]
 [connection signal="_win_menu" from="LevelUp" to="WinMenu" method="_win_menu"]
 [connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]
 [connection signal="body_entered" from="level_design/Switch" to="level_design/Door" method="_on_body_entered"]
+[connection signal="turret_killed" from="level_design/constantTurret" to="." method="_on_turret_killed"]
+[connection signal="turret_killed" from="level_design/constantTurret2" to="." method="_on_turret_killed"]
 
 [editable path="CapacitorDebug"]
 [editable path="CapacitorDebug/BlastArea"]
-[editable path="level_design/moving_platform"]

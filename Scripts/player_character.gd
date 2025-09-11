@@ -59,24 +59,23 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		var collision_normal = collision.get_normal()
-		print(collision_normal)
-		
+
 		if collider is RigidBody3D:
 				# You can use the normal to determine the collision direction
 			if collision_normal.dot(Vector3.BACK) > 0.5: # Example: Checking if the collision is from above
-				print("Hit from back!")
+
 				var push_force = Vector3.BACK * -1 * push_strength # Push away from player
 				collider.apply_central_impulse(push_force)
 			elif collision_normal.dot(Vector3.LEFT) > 0.5: # Example: Checking if the collision is from below
-				print("Hit from LEFT!")
+
 				var push_force = Vector3.LEFT * -1 * push_strength # Push away from player
 				collider.apply_central_impulse(push_force)
 			elif collision_normal.dot(Vector3.RIGHT) > 0.5: # Example: Checking if the collision is from below
-				print("Hit from right!")
+
 				var push_force = Vector3.RIGHT * -1 * push_strength # Push away from player
 				collider.apply_central_impulse(push_force)
 			elif collision_normal.dot(Vector3.FORWARD) > 0.5: # Example: Checking if the collision is from the front
-				print("Hit from the front!")
+
 				var push_force = Vector3.FORWARD* -1 * push_strength # Push away from player
 				collider.apply_central_impulse(push_force)
 			# Add more directional checks as needed
