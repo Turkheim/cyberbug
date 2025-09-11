@@ -90,7 +90,7 @@ transform = Transform3D(-0.00397949, 0, -0.999992, 0, 1, 0, 0.999992, 0, -0.0039
 transform = Transform3D(-0.999975, 0, -0.00703356, 0, 1, 0, 0.00703356, 0, -0.999975, -4, 0, -2.5)
 
 [node name="WallLong4" parent="level_design" instance=ExtResource("13_5bkyw")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2, 0, 6.5)
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1, 0, 3.5)
 
 [node name="WallA3" parent="level_design" instance=ExtResource("14_mt8x5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5152, 0, -0.391703)
@@ -99,7 +99,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.515
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.51094, 0, -1.54051)
 
 [node name="WallB6" parent="level_design" instance=ExtResource("15_eecp8")]
-transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 4.49451, 0, 1.5044)
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 4.49451, 1, 1.5044)
 
 [node name="WallB5" parent="level_design" instance=ExtResource("15_eecp8")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 3.51544, 0, -5.54356)
@@ -138,12 +138,7 @@ transform = Transform3D(0.999887, 0, -0.0149921, 0, 1, 0, 0.0149921, 0, 0.999887
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -5.5)
 
 [node name="push_cube" parent="level_design" instance=ExtResource("23_sfeex")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1818, 0.56864, -3.56031)
-mass = 6.0
-physics_material_override = SubResource("PhysicsMaterial_nuxhu")
-
-[node name="push_cube2" parent="level_design" instance=ExtResource("23_sfeex")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.726213, 1, 3.54181)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1818, 0.56864, 3.43969)
 mass = 6.0
 physics_material_override = SubResource("PhysicsMaterial_nuxhu")
 
@@ -155,7 +150,7 @@ rotation_speed = 0
 transform = Transform3D(-0.00443289, 0, 0.99999, 0, 1, 0, -0.99999, 0, -0.00443289, 1.42481, 0.6, -7.45936)
 
 [node name="KillFloor" parent="level_design" instance=ExtResource("25_qbi2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50032, 0, 2.5)
 
 [node name="KillFloor2" parent="level_design" instance=ExtResource("25_qbi2l")]
 transform = Transform3D(1, 0, 0, 0, 0.999547, -0.0301024, 0, 0.0301024, 0.999547, -4.5, 0, 2.5)
