@@ -3,7 +3,7 @@ extends Area3D
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") or body.is_in_group("Box"):
 		$SwitchOff.visible = false
 		$SwitchOn.visible = true
 		$CollisionShape3D.queue_free()

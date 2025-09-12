@@ -5,6 +5,6 @@ extends StaticBody3D
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") or body.is_in_group("Box"):
 		$AnimationPlayer.play("doordown")
 		$Door.play()
