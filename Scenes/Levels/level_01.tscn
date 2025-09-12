@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cgj2lq42nx04c"]
+[gd_scene load_steps=19 format=3 uid="uid://cgj2lq42nx04c"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_bmcj7"]
 [ext_resource type="PackedScene" uid="uid://c03wxnu2ofknh" path="res://Scenes/camera_node.tscn" id="2_flehy"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://btc14mw3f5o28" path="res://Scenes/UI/UI.tscn" id="11_fj6kk"]
 [ext_resource type="PackedScene" uid="uid://c1x8kt3rd6c21" path="res://Scenes/UI/WinMenu.tscn" id="11_j0t0u"]
 [ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="13_ge2ro"]
+[ext_resource type="VideoStream" uid="uid://dmsils14ac61e" path="res://Assets/GIF 9-12-2025 10-45-15 AM.ogv" id="13_md046"]
 [ext_resource type="Texture2D" uid="uid://d3bp2u8sngl0d" path="res://Assets/UI/red_button.png" id="16_uvcnl"]
 
 [node name="Level01" type="Node3D"]
@@ -103,9 +104,22 @@ script = ExtResource("11_6ag6h")
 metadata/_edit_use_anchors_ = true
 
 [node name="RedButton" type="Sprite2D" parent="Tutorial"]
-position = Vector2(320, 352)
+position = Vector2(320, 320)
 scale = Vector2(4, 4)
 texture = ExtResource("16_uvcnl")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Tutorial"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.363636
+anchor_top = 0.15
+anchor_right = 0.882102
+anchor_bottom = 0.417969
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("13_md046")
+autoplay = true
+loop = true
+metadata/_edit_use_anchors_ = true
 
 [node name="UI" parent="." instance=ExtResource("11_fj6kk")]
 

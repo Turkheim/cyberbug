@@ -1,0 +1,189 @@
+[gd_scene load_steps=33 format=3 uid="uid://bt6ig0yo1w2j6"]
+
+[ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_h885s"]
+[ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_mnk5w"]
+[ext_resource type="PackedScene" uid="uid://bu736srt4cyr4" path="res://Scenes/environment.tscn" id="3_be1i4"]
+[ext_resource type="PackedScene" uid="uid://cylst2gpaimub" path="res://Scenes/level_up.tscn" id="4_52g0d"]
+[ext_resource type="PackedScene" uid="uid://btc14mw3f5o28" path="res://Scenes/UI/UI.tscn" id="5_6tlxj"]
+[ext_resource type="PackedScene" uid="uid://tdg1kfe8onid" path="res://Scenes/UI/pause_menu.tscn" id="6_hjafl"]
+[ext_resource type="PackedScene" uid="uid://j38wnr2kxoaw" path="res://Scenes/UI/LoseMenu.tscn" id="7_3yb12"]
+[ext_resource type="PackedScene" uid="uid://c1x8kt3rd6c21" path="res://Scenes/UI/WinMenu.tscn" id="8_it3cd"]
+[ext_resource type="AudioStream" uid="uid://bjkjp7ciw7s5n" path="res://Assets/Sounds/TurretDead.wav" id="9_xqwts"]
+[ext_resource type="PackedScene" uid="uid://ciukhcxkmbhud" path="res://Scenes/capacitor.tscn" id="10_1rr0i"]
+[ext_resource type="PackedScene" uid="uid://iwahnyaabkrj" path="res://Scenes/blast_area.tscn" id="11_w56v8"]
+[ext_resource type="PackedScene" uid="uid://c03wxnu2ofknh" path="res://Scenes/camera_node.tscn" id="12_nygi6"]
+[ext_resource type="PackedScene" uid="uid://c4des1o4sspp7" path="res://Scenes/wall_long.tscn" id="13_a8lfb"]
+[ext_resource type="PackedScene" uid="uid://u05x500bowe6" path="res://Scenes/wall_a.tscn" id="14_673kn"]
+[ext_resource type="PackedScene" uid="uid://pg8287wb4urq" path="res://Scenes/wall_b.tscn" id="15_1kyk3"]
+[ext_resource type="PackedScene" uid="uid://bkf5tgeuv57s6" path="res://Scenes/Heatsink.tscn" id="16_qdd4q"]
+[ext_resource type="PackedScene" uid="uid://di6jug457l4fu" path="res://Scenes/switch.tscn" id="17_8t0k3"]
+[ext_resource type="PackedScene" uid="uid://cajd4tl3cp1v3" path="res://Scenes/door.tscn" id="18_xr2hv"]
+[ext_resource type="PackedScene" uid="uid://b1cw6uo34p0x7" path="res://Scenes/push_cube.tscn" id="19_tq5vv"]
+[ext_resource type="PackedScene" uid="uid://dmn5qqxwkj58w" path="res://Scenes/constant_turret.tscn" id="20_51dij"]
+[ext_resource type="PackedScene" uid="uid://dy7qfoq1jqbvh" path="res://Scenes/kill_floor.tscn" id="21_yimuu"]
+[ext_resource type="PackedScene" uid="uid://d0brvqlhys372" path="res://Scenes/turret.tscn" id="22_vfiuq"]
+[ext_resource type="PackedScene" uid="uid://ovetpaulfpm" path="res://Assets/LaserBase.glb" id="23_ctonv"]
+[ext_resource type="PackedScene" uid="uid://b778r3cvdpapi" path="res://Scenes/moving_platform.tscn" id="24_evgjk"]
+[ext_resource type="Texture2D" uid="uid://c26fhe60u5ehp" path="res://Assets/GridSmall.png" id="25_iyb38"]
+[ext_resource type="Script" uid="uid://ch5gihca7ra1b" path="res://Scenes/Levels/boss.gd" id="26_mnk5w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ab63w"]
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("25_iyb38")
+uv1_scale = Vector3(10, 10, 5)
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ruug7"]
+material = SubResource("StandardMaterial3D_ab63w")
+size = Vector2(20, 20)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_dgrua"]
+vertices = PackedVector3Array(-6.5, 4.5, -10.581, -6.5, 4.5, -9.581, -6, 4.5, -10.331, -3.5, 4.5, -10.331, 6.75, 4.5, -10.581, -0.5, 4.5, -10.581, 6, 4.5, -10.331, 6.25, 4.5, -9.581, 6.75, 4.5, -9.581, -5.25, 0.5, -0.581, -4.5, 0.5, -0.581, -4.25, 0.5, -1.581, -4.25, 0.5, -5.331, -4.5, 0.5, -7.331, -5.25, 0.5, -9.331, 4.25, 0.5, -1.581, 4.5, 0.5, -0.581, 5.5, 0.5, -0.581, 5.25, 0.5, -5.081, 2.5, 0.5, -7.331, 4, 0.5, -7.581, 4.25, 0.5, -9.331, -2.75, 0.5, -7.581, 4, 0.5, -5.331, 2.5, 0.5, -5.581, 2.75, 0.5, -1.581, -2.5, 0.5, -0.581, 2.5, 0.5, -0.581, -2.5, 0.5, -5.581, -2.75, 0.5, -1.581, -9.5, 0.5, -9.331, -9.5, 0.5, 9.419, -7.5, 0.5, 9.419, -7.5, 0.5, -9.331, 4.5, 0.5, -5.581, 4.5, 0.5, -7.331, 5.5, 0.5, -9.081, 9.5, 0.5, -8.081, 10.75, 0.5, -8.331, 10.5, 0.5, -9.331, 7.75, 0.5, -9.331, 7.75, 0.5, 9.419, 9.5, 0.5, 9.419, 6.25, 4.5, -6.581, 6.75, 4.5, -5.581, 6.75, 4.5, -6.831, 6.25, 4.5, -2.581, 6.75, 4.5, -1.581, 6.75, 4.5, -2.831, -5.25, 0.5, 5.419, -4.5, 0.5, 5.419, -4.25, 0.5, 4.419, -4.25, 0.5, 0.669, 4.25, 0.5, 4.419, 4.5, 0.5, 5.669, 5.25, 0.5, 5.669, 4.25, 0.5, 0.669, 2.75, 0.5, 0.669, 2.75, 0.5, 4.419, -2.75, 0.5, 0.669, -2.5, 0.5, 4.919, 2.5, 0.5, 4.919, -2.75, 0.5, 4.419, 6.25, 4.5, 1.419, 6.75, 4.5, 2.419, 6.75, 4.5, 1.169, 4.25, 0.5, 6.669, 5.25, 0.5, 9.419, -4.25, 0.5, 6.669, -5.25, 0.5, 9.419, 2.75, 0.5, 6.669, -2.75, 0.5, 6.669, 6.25, 4.5, 5.419, 6.75, 4.5, 6.419, 6.75, 4.5, 5.169)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Array(6, 5, 4), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 4), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(12, 9, 13), PackedInt32Array(13, 9, 14), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 18), PackedInt32Array(20, 19, 21), PackedInt32Array(21, 19, 22), PackedInt32Array(21, 22, 14), PackedInt32Array(23, 18, 24), PackedInt32Array(24, 18, 15), PackedInt32Array(24, 15, 25), PackedInt32Array(22, 13, 14), PackedInt32Array(29, 28, 26), PackedInt32Array(26, 28, 24), PackedInt32Array(26, 24, 25), PackedInt32Array(26, 25, 27), PackedInt32Array(24, 28, 19), PackedInt32Array(19, 28, 22), PackedInt32Array(11, 12, 29), PackedInt32Array(29, 12, 28), PackedInt32Array(33, 32, 30), PackedInt32Array(30, 32, 31), PackedInt32Array(18, 23, 34), PackedInt32Array(20, 21, 35), PackedInt32Array(35, 21, 36), PackedInt32Array(34, 35, 18), PackedInt32Array(18, 35, 36), PackedInt32Array(38, 37, 39), PackedInt32Array(39, 37, 40), PackedInt32Array(42, 41, 37), PackedInt32Array(37, 41, 40), PackedInt32Array(44, 43, 45), PackedInt32Array(47, 46, 48), PackedInt32Array(50, 49, 51), PackedInt32Array(51, 49, 52), PackedInt32Array(52, 49, 10), PackedInt32Array(10, 49, 9), PackedInt32Array(54, 53, 55), PackedInt32Array(55, 53, 56), PackedInt32Array(55, 56, 16), PackedInt32Array(55, 16, 17), PackedInt32Array(53, 58, 56), PackedInt32Array(56, 58, 57), PackedInt32Array(57, 61, 27), PackedInt32Array(27, 61, 60), PackedInt32Array(27, 60, 59), PackedInt32Array(27, 59, 26), PackedInt32Array(60, 62, 59), PackedInt32Array(57, 58, 61), PackedInt32Array(62, 51, 59), PackedInt32Array(59, 51, 52), PackedInt32Array(64, 63, 65), PackedInt32Array(54, 55, 66), PackedInt32Array(66, 55, 67), PackedInt32Array(50, 68, 49), PackedInt32Array(49, 68, 69), PackedInt32Array(61, 70, 60), PackedInt32Array(60, 70, 71), PackedInt32Array(71, 70, 69), PackedInt32Array(69, 70, 67), PackedInt32Array(70, 66, 67), PackedInt32Array(69, 68, 71), PackedInt32Array(73, 72, 74)]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7n2l3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wafo1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_be1i4"]
+radius = 3.0
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_h885s")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_mnk5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 9)
+FORWARD_SPEED = 4.0
+
+[node name="LevelUp" parent="." instance=ExtResource("4_52g0d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -10.5)
+
+[node name="UI" parent="." instance=ExtResource("5_6tlxj")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_hjafl")]
+visible = false
+
+[node name="LoseMenu" parent="." instance=ExtResource("7_3yb12")]
+visible = false
+
+[node name="WinMenu" parent="." instance=ExtResource("8_it3cd")]
+visible = false
+next_scene = "res://Scenes/UI/EndMenu.tscn"
+
+[node name="DeadTimer" type="Timer" parent="."]
+
+[node name="TurretDead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_xqwts")
+
+[node name="CapacitorDebug" parent="." instance=ExtResource("10_1rr0i")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -6.5, 0.5, -10.8)
+
+[node name="BlastArea" parent="CapacitorDebug" instance=ExtResource("11_w56v8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 4.5, 1)
+
+[node name="Explosion" parent="CapacitorDebug/BlastArea" index="4"]
+autoplay = false
+
+[node name="CameraNode" parent="." instance=ExtResource("12_nygi6")]
+
+[node name="groundLevelDesign" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.02, 0)
+mesh = SubResource("QuadMesh_ruug7")
+skeleton = NodePath("../NavigationRegion3D/Environment")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_dgrua")
+
+[node name="Environment" parent="NavigationRegion3D" instance=ExtResource("3_be1i4")]
+
+[node name="level_design" type="Node3D" parent="NavigationRegion3D"]
+
+[node name="WallLong" parent="NavigationRegion3D/level_design" instance=ExtResource("13_a8lfb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.5, 0, -4)
+
+[node name="WallA" parent="NavigationRegion3D/level_design" instance=ExtResource("14_673kn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.5, 0, -6.5)
+
+[node name="WallB" parent="NavigationRegion3D/level_design" instance=ExtResource("15_1kyk3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.5, 0, -6.5)
+
+[node name="Disipador" parent="NavigationRegion3D/level_design" instance=ExtResource("16_qdd4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.5, 0)
+
+[node name="Switch" parent="NavigationRegion3D/level_design" instance=ExtResource("17_8t0k3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 0.5, -4.5)
+
+[node name="Door" parent="NavigationRegion3D/level_design" instance=ExtResource("18_xr2hv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0.5, -2.5)
+
+[node name="Capacitor" parent="NavigationRegion3D/level_design" instance=ExtResource("10_1rr0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 0.5, -9.5)
+
+[node name="Capacitor2" parent="NavigationRegion3D/level_design" instance=ExtResource("10_1rr0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.5, 5.5)
+
+[node name="Capacitor3" parent="NavigationRegion3D/level_design" instance=ExtResource("10_1rr0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.5, -0.5)
+
+[node name="Capacitor4" parent="NavigationRegion3D/level_design" instance=ExtResource("10_1rr0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.5, -6.5)
+
+[node name="Capacitor5" parent="NavigationRegion3D/level_design" instance=ExtResource("10_1rr0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 5.5)
+
+[node name="Capacitor6" parent="NavigationRegion3D/level_design" instance=ExtResource("10_1rr0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, -0.5)
+
+[node name="Capacitor7" parent="NavigationRegion3D/level_design" instance=ExtResource("10_1rr0i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, -6.5)
+
+[node name="push_cube" parent="NavigationRegion3D/level_design" instance=ExtResource("19_tq5vv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1, -1.5)
+
+[node name="constantTurret" parent="NavigationRegion3D/level_design" instance=ExtResource("20_51dij")]
+transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 10.5, 0.6, 0.500001)
+
+[node name="KillFloor" parent="NavigationRegion3D/level_design" instance=ExtResource("21_yimuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -4.5)
+
+[node name="Turret" parent="NavigationRegion3D/level_design" instance=ExtResource("22_vfiuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.6, -10)
+
+[node name="LaserBase2" parent="NavigationRegion3D/level_design" instance=ExtResource("23_ctonv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -6.5)
+
+[node name="moving_platform" parent="NavigationRegion3D/level_design" instance=ExtResource("24_evgjk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -8.5)
+
+[node name="MeshInstance3D" parent="NavigationRegion3D/level_design/moving_platform/platform" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="Boss" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5.5)
+script = ExtResource("26_mnk5w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boss"]
+shape = SubResource("CapsuleShape3D_7n2l3")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Boss"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boss"]
+mesh = SubResource("CapsuleMesh_wafo1")
+
+[node name="aggro" type="Area3D" parent="Boss"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boss/aggro"]
+shape = SubResource("CylinderShape3D_be1i4")
+
+[connection signal="level_up" from="." to="LevelUp" method="_level_up"]
+[connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]
+[connection signal="_win_menu" from="LevelUp" to="WinMenu" method="_win_menu"]
+[connection signal="timeout" from="DeadTimer" to="." method="_on_dead_timer_timeout"]
+[connection signal="body_entered" from="NavigationRegion3D/level_design/Switch" to="NavigationRegion3D/level_design/Door" method="_on_body_entered"]
+[connection signal="turret_killed" from="NavigationRegion3D/level_design/constantTurret" to="." method="_on_turret_killed"]
+[connection signal="turret_killed" from="NavigationRegion3D/level_design/Turret" to="." method="_on_turret_killed"]
+[connection signal="body_entered" from="Boss/aggro" to="Boss" method="_on_aggro_body_entered"]
+
+[editable path="CapacitorDebug"]
+[editable path="CapacitorDebug/BlastArea"]
+[editable path="NavigationRegion3D/level_design/moving_platform"]

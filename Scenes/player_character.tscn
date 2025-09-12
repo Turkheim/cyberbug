@@ -97,5 +97,7 @@ autoplay = true
 [node name="PlayerDead" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_ajo0r")
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
 [editable path="SK_Moth2"]
 [editable path="Moth2"]
