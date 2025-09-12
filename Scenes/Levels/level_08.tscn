@@ -42,7 +42,6 @@ turrets = 2
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_2y5wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 9)
-FORWARD_SPEED = 4.0
 push_strength = 20.0
 
 [node name="Environment" parent="." instance=ExtResource("3_y33n0")]
