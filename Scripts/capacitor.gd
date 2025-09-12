@@ -4,14 +4,13 @@ extends Area3D
 const BLAST_AREA = preload("res://Scenes/blast_area.tscn")
 
 func _on_body_entered(body: Node3D) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") or body.is_in_group("Box"):
 		$CapacitorOn.visible = true
 		$CapacitorOff.visible = false
 		var animation_player: AnimationPlayer = $AnimationPlayer
 		animation_player.play("Blink")
 		bomb_timer.start()
 
-	
 func _on_bomb_timer_timeout() -> void:
 
 	if BLAST_AREA:
