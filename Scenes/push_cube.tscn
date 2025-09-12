@@ -12,7 +12,7 @@ size = Vector3(0.9, 1, 0.9)
 
 [sub_resource type="BoxMesh" id="BoxMesh_nuxhu"]
 
-[node name="push_cube" type="RigidBody3D"]
+[node name="push_cube" type="RigidBody3D" groups=["Box"]]
 collision_mask = 7
 axis_lock_linear_y = true
 mass = 2.0
