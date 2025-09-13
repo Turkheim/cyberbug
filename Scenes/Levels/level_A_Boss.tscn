@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=33 format=3 uid="uid://d4mrf3ydyi2ix"]
+=======
+[gd_scene load_steps=34 format=3 uid="uid://bt6ig0yo1w2j6"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_h885s"]
 [ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_mnk5w"]
@@ -48,12 +52,14 @@ polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Arr
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_be1i4"]
 radius = 3.0
 
-[node name="Level" type="Node3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mnk5w"]
+radius = 0.65
+
+[node name="Level" type="Node3D" groups=["Enemy"]]
 script = ExtResource("1_h885s")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_mnk5w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 9)
-FORWARD_SPEED = 4.0
 
 [node name="LevelUp" parent="." instance=ExtResource("4_52g0d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -10.5)
@@ -158,8 +164,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -8.5)
 [node name="MeshInstance3D" parent="NavigationRegion3D/level_design/moving_platform/platform" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
-[node name="Boss" type="CharacterBody3D" parent="."]
+[node name="Boss" type="CharacterBody3D" parent="." groups=["Enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5.5)
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("26_mnk5w")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boss"]
@@ -175,6 +183,11 @@ mesh = SubResource("CapsuleMesh_wafo1")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boss/aggro"]
 shape = SubResource("CylinderShape3D_be1i4")
 
+[node name="Area3D" type="Area3D" parent="Boss"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boss/Area3D"]
+shape = SubResource("CylinderShape3D_mnk5w")
+
 [connection signal="level_up" from="." to="LevelUp" method="_level_up"]
 [connection signal="player_killed" from="PlayerCharacter" to="." method="_player_killed"]
 [connection signal="_win_menu" from="LevelUp" to="WinMenu" method="_win_menu"]
@@ -183,6 +196,7 @@ shape = SubResource("CylinderShape3D_be1i4")
 [connection signal="turret_killed" from="NavigationRegion3D/level_design/constantTurret" to="." method="_on_turret_killed"]
 [connection signal="turret_killed" from="NavigationRegion3D/level_design/Turret" to="." method="_on_turret_killed"]
 [connection signal="body_entered" from="Boss/aggro" to="Boss" method="_on_aggro_body_entered"]
+[connection signal="body_entered" from="Boss/Area3D" to="Boss" method="_on_area_3d_body_entered"]
 
 [editable path="CapacitorDebug"]
 [editable path="CapacitorDebug/BlastArea"]

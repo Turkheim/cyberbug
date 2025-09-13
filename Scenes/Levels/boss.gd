@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-var speed = 8
+var speed = 4
 var gravity = 9.8
-var health = 50
+var health = 100
 var state = "Idle"
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 #@onready var knight: Node3D = $Knight
@@ -34,16 +34,19 @@ func _physics_process(delta):
 	elif state == "escape":
 		velocity.y = 0
 		var next_location = nav.get_next_path_position()
-		print(next_location)
+
 		var current_location = global_transform.origin
 		var new_velocity = (next_location - current_location). normalized() * speed
-		velocity = velocity.move_toward(-new_velocity,delta * 5)
+		velocity = velocity.move_toward(new_velocity,delta * 5)
 	
 	move_and_slide()
 	
 	
 	#
-
+func _kill_turret():
+	health = health - 25
+	if health <= 0:
+		queue_free()
 #
 #func _on_aggro_body_entered(body: Node3D) -> void:
 	#if body.is_in_group("player"):
@@ -76,3 +79,8 @@ func _on_aggro_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		state = "escape"
 		#$Knight/AnimationPlayer.play("Walkcycle")
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Player"):
+		body._kill_player()

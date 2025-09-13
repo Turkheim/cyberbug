@@ -15,7 +15,7 @@ func _on_body_entered(body: Node3D) -> void:
 		body._kill_player()
 	elif body.is_in_group("Enemy"):
 		body._kill_turret()
-
+		print("KilledEnemy")
 
 func _on_area_entered(area: Area3D) -> void:
 	if area.is_in_group("Enemy"):
