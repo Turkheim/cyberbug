@@ -1,12 +1,15 @@
 extends CharacterBody3D
 
-var speed = 4
-var gravity = 9.8
-var health = 100
-var state = "Idle"
+@export var speed = 5
+@export var gravity = 9.8
+@export var health = 100
+@export var state = "Idle"
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 #@onready var knight: Node3D = $Knight
 @onready var player_character: CharacterBody3D = $"../PlayerCharacter"
+@onready var explotion: GPUParticles3D = $Explotion
+
+signal turret_killed
 
 func _ready() -> void:
 	state = "Idle"
@@ -44,8 +47,14 @@ func _physics_process(delta):
 	
 	#
 func _kill_turret():
+	
+	if !explotion.emitting:
+		explotion.emitting = true
+	explotion.amount = explotion.amount*2
+	
 	health = health - 25
 	if health <= 0:
+		turret_killed.emit()
 		queue_free()
 #
 #func _on_aggro_body_entered(body: Node3D) -> void:

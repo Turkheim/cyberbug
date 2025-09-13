@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=3 uid="uid://7qgbf8r5ngdx"]
+
+[ext_resource type="Script" uid="uid://ch5gihca7ra1b" path="res://Scenes/Levels/boss.gd" id="1_0154r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7n2l3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wafo1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_be1i4"]
+radius = 3.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mnk5w"]
+radius = 0.65
+
+[sub_resource type="Gradient" id="Gradient_rf0wk"]
+offsets = PackedFloat32Array(0, 0.43956, 1)
+colors = PackedColorArray(2, 2, 2, 1, 2, 0.68, 0.337, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fgscc"]
+gradient = SubResource("Gradient_rf0wk")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_opq6n"]
+_data = [Vector2(0, 0.443614), 0.0, 0.0, 0, 0, Vector2(0.230769, 0.973505), 0.0, 0.0, 0, 0, Vector2(0.768262, 0.987379), 0.0, 0.0, 0, 0, Vector2(1, 0.122815), -6.1257, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_labbc"]
+curve = SubResource("Curve_opq6n")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0154r"]
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 3.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, 9, 0)
+scale_curve = SubResource("CurveTexture_labbc")
+color_ramp = SubResource("GradientTexture1D_fgscc")
+hue_variation_min = -0.02
+hue_variation_max = 0.11
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nu5x1"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_sci5w"]
+material = SubResource("StandardMaterial3D_nu5x1")
+radial_segments = 8
+rings = 5
+
+[node name="Boss" type="CharacterBody3D" groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("1_0154r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_7n2l3")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_wafo1")
+
+[node name="aggro" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="aggro"]
+shape = SubResource("CylinderShape3D_be1i4")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_mnk5w")
+
+[node name="Explotion" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 5
+lifetime = 0.5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_0154r")
+draw_pass_1 = SubResource("SphereMesh_sci5w")
+
+[connection signal="body_entered" from="aggro" to="." method="_on_aggro_body_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
