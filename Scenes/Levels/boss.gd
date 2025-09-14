@@ -7,7 +7,7 @@ extends CharacterBody3D
 @onready var nav: NavigationAgent3D = $NavigationAgent3D
 #@onready var knight: Node3D = $Knight
 @onready var player_character: CharacterBody3D = $"../PlayerCharacter"
-@onready var explotion: GPUParticles3D = $Explotion
+@onready var fire_damage: GPUParticles3D = $FireDamage
 
 signal turret_killed
 
@@ -48,9 +48,9 @@ func _physics_process(delta):
 	#
 func _kill_turret():
 	
-	if !explotion.emitting:
-		explotion.emitting = true
-	explotion.amount = explotion.amount*2
+	if !fire_damage.emitting:
+		fire_damage.emitting = true
+	fire_damage.amount = fire_damage.amount*2
 	
 	health = health - 25
 	if health <= 0:
