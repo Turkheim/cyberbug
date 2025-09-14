@@ -65,7 +65,7 @@ stream = ExtResource("9_151ix")
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.20549e-07, 0, 6.5)
 
 [node name="WallLong3" parent="level_design" instance=ExtResource("13_syms2")]
-transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -3, 0, -2.5)
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -3, 0, -3.5)
 
 [node name="WallLong2" parent="level_design" instance=ExtResource("13_syms2")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 3, 0, 3.5)
@@ -82,6 +82,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5, 
 [node name="WallA4" parent="level_design" instance=ExtResource("14_usvjj")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 1.5)
 
+[node name="WallA5" parent="level_design" instance=ExtResource("14_usvjj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.5, 0, -3.5)
+
 [node name="WallB4" parent="level_design" instance=ExtResource("15_gtoq5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.5, 0, 2.5)
 
@@ -89,16 +92,22 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.5, 0
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 2.5)
 
 [node name="WallB6" parent="level_design" instance=ExtResource("15_gtoq5")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.5, 0, -5.5)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.5, 0, -4.5)
 
 [node name="WallB7" parent="level_design" instance=ExtResource("15_gtoq5")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.5, 0, -2.5)
+
+[node name="WallB9" parent="level_design" instance=ExtResource("15_gtoq5")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.5, 0, -3.5)
 
 [node name="Disipador" parent="level_design" instance=ExtResource("16_xpc6s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.5, 9.5)
 
 [node name="Disipador2" parent="level_design" instance=ExtResource("16_xpc6s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, 0.5)
+
+[node name="Disipador5" parent="level_design" instance=ExtResource("16_xpc6s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -0.5)
 
 [node name="Disipador3" parent="level_design" instance=ExtResource("16_xpc6s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, -7.5)
@@ -111,7 +120,7 @@ transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, 2.5, 0.6
 rotation_speed = 45
 
 [node name="constantTurret2" parent="level_design" instance=ExtResource("20_7qo50")]
-transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -2.5, 0.6, -7.5)
+transform = Transform3D(-1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, -1, -2.5, 0.6, -6.5)
 
 [node name="Turret" parent="level_design" instance=ExtResource("22_615ek")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.6, 0.5)
