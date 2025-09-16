@@ -20,6 +20,7 @@ config/icon="uid://i02v7tiip3im"
 
 window/size/viewport_width=704
 window/size/viewport_height=1280
+window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="viewport"
 window/handheld/orientation=1
@@ -93,6 +94,18 @@ NextLevel={
 ]
 }
 
+[physics]
+
+3d/size/mode=3
+3d/directional_shadow/soft_shadow_filter_quality.mobile=1
+3d/directional_shadow/soft_shadow_filter_quality=1
+3d/directional_shadow/size=1024
+3d/directional_shadow/size.mobile=1024
+3d/positional_shadow/atlas_size.mobile=2048
+3d/positional_shadow/soft_shadow_filter_quality.mobile=1
+3d/positional_shadow/soft_shadow_filter_quality=1
+3d/quality/msaa_3d=1
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
@@ -101,14 +114,16 @@ renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 textures/vram_compression/compress_with_gpu=false
 textures/vram_compression/cache_gpu_compressor=false
-lights_and_shadows/directional_shadow/size=512
-lights_and_shadows/directional_shadow/size.mobile=256
-lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
-lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
+lights_and_shadows/directional_shadow/size=1024
+lights_and_shadows/directional_shadow/size.mobile=1024
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=1
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality.mobile=1
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=1
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile=1
 shading/overrides/force_lambert_over_burley=true
 environment/ssao/quality=0
+anti_aliasing/quality/msaa_3d=1
 environment/glow/upscale_mode=0
 environment/screen_space_reflection/roughness_quality=0
 environment/subsurface_scattering/subsurface_scattering_quality=0
 lights_and_shadows/positional_shadow/atlas_size=2048
-lights_and_shadows/positional_shadow/atlas_size.mobile=1024

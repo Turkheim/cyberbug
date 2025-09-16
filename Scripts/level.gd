@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var turrets = 3
+@export var turrets = 2
 
 signal level_up
 

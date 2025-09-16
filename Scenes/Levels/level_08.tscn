@@ -38,7 +38,6 @@ friction = 20.0
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_ruug7")
-turrets = 2
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_2y5wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 9)
