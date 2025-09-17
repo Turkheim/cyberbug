@@ -21,15 +21,11 @@
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_34g67")
-turrets = 2
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_5qict")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 9)
 
 [node name="Environment" parent="." instance=ExtResource("3_lshqn")]
-
-[node name="MeshInstance3D" parent="Environment/StaticBody3D" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
 
 [node name="LevelUp" parent="." instance=ExtResource("4_0yyqy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -10.5)
@@ -110,6 +106,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 5.5)
 
 [node name="Disipador8" parent="." instance=ExtResource("13_lr23y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.5, -1.5)
+
+[node name="Disipador9" parent="." instance=ExtResource("13_lr23y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, -9.5)
+
+[node name="Disipador10" parent="." instance=ExtResource("13_lr23y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, -3.5)
+
+[node name="Disipador11" parent="." instance=ExtResource("13_lr23y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -5.5)
 
 [node name="Disipador2" parent="." instance=ExtResource("13_lr23y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.5, 3.5)

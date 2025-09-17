@@ -4,7 +4,7 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-@onready var collision: CollisionShape3D = $CollisionShape3D
+#@onready var collision: CollisionShape3D = $CollisionShape3D
 @export var FORWARD_SPEED = 5.0
 @export var BACK_SPEED = 1.0
 @export var TURN_SPEED = 0.1
