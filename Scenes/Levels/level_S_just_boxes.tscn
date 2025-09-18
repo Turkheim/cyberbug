@@ -103,16 +103,25 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -3, 0,
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.5, 0, -2.5)
 
 [node name="WallA2" parent="level_design" instance=ExtResource("14_pngos")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5, 0, -1.5)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 4.5, 0, -1.5)
+
+[node name="WallA2" parent="level_design/WallA2" instance=ExtResource("14_pngos")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1, 0, 4.7683716e-07)
+
+[node name="WallA5" parent="level_design" instance=ExtResource("14_pngos")]
+transform = Transform3D(-4.3711204e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711204e-08, 1.5000002, 0, -3.4999995)
 
 [node name="WallA3" parent="level_design" instance=ExtResource("14_pngos")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -1.5, 0, -2)
 
-[node name="WallA3" parent="level_design/WallA3" instance=ExtResource("14_pngos")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.5, 0, 3.5)
-
 [node name="WallB" parent="level_design" instance=ExtResource("15_2hmba")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.5, 0, -6.5)
+
+[node name="Disipador5" parent="level_design" instance=ExtResource("16_qsn4j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0.5, 1.5)
+
+[node name="Disipador4" parent="level_design" instance=ExtResource("16_qsn4j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 1.5)
 
 [node name="Disipador3" parent="level_design" instance=ExtResource("16_qsn4j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 1.5)
@@ -124,7 +133,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, 1.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, -6.5)
 
 [node name="Switch" parent="level_design" instance=ExtResource("17_wiai5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -5.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, -2.5)
 
 [node name="Door" parent="level_design" instance=ExtResource("18_ch6i7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.5, -2.5)
