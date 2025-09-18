@@ -100,7 +100,7 @@ shape = SubResource("CylinderShape3D_2y5wm")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ac13d")
-volume_db = 6.63
+volume_db = 0.563
 autoplay = true
 
 [connection signal="body_entered" from="KillSwitch" to="." method="_on_area_3d_body_entered"]
