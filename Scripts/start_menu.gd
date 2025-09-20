@@ -1,4 +1,5 @@
 extends ColorRect
+#const CURRENT_LEVEL = preload("uid://crhjo7ccsigol")
 
 const LEVELS = preload("uid://erybpn5qg1mq")
 
@@ -12,7 +13,7 @@ func _ready() -> void:
 	visible = true
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+	#ResourceSaver.save(CURRENT_LEVEL,"user://CurrentLevel.tres")
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 

@@ -7,7 +7,7 @@ signal level_up
 
 	
 func _on_turret_killed() -> void:
-	print(turrets)
+	#print(turrets)
 	$TurretDead.play()
 	turrets = turrets - 1
 	if turrets <= 0:

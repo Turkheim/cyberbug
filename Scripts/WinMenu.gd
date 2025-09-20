@@ -1,8 +1,17 @@
 extends ColorRect
+var CURRENT_LEVEL = preload("uid://crhjo7ccsigol")
 
 const LEVELS = preload("uid://erybpn5qg1mq")
-@export var next_scene  = 1
 
+var this_level = 0
+
+func _ready():
+	this_level = LEVELS.level_list.find($"..".scene_file_path)
+	if ResourceLoader.exists("user://CurrentLevel.tres"):
+		CURRENT_LEVEL = ResourceLoader.load("user://CurrentLevel.tres")
+	else:
+		#CURRENT_LEVEL.current_level = this_level
+		ResourceSaver.save(CURRENT_LEVEL,"user://CurrentLevel.tres")
 func _unpause():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
@@ -20,5 +29,12 @@ func _on_quit_button_pressed() -> void:
 
 func _on_next_level_button_pressed() -> void:
 	_unpause()
+	#print()
+	#print(CURRENT_LEVEL.current_level)
+	if CURRENT_LEVEL.current_level <= this_level:
+		CURRENT_LEVEL.current_level = this_level +1
+		print("saving " , CURRENT_LEVEL.current_level)
+		ResourceSaver.save(CURRENT_LEVEL,"user://CurrentLevel.tres")
+		
 
-	get_tree().change_scene_to_file(LEVELS.level_list[next_scene])
+	get_tree().change_scene_to_file(LEVELS.level_list[this_level+1])
