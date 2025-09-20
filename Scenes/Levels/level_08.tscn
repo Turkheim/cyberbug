@@ -58,7 +58,7 @@ visible = false
 
 [node name="WinMenu" parent="." instance=ExtResource("8_hec0i")]
 visible = false
-next_scene = "res://Scenes/Levels/level_A_Boss.tscn"
+next_scene = 13
 
 [node name="DeadTimer" type="Timer" parent="."]
 

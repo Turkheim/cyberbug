@@ -18,7 +18,6 @@
 
 [node name="Level01" type="Node3D"]
 script = ExtResource("1_r71vb")
-turrets = 2
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_273s6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, 9)
@@ -89,7 +88,7 @@ visible = false
 
 [node name="WinMenu" parent="." instance=ExtResource("12_lcdi7")]
 visible = false
-next_scene = "res://Scenes/Levels/level_03.tscn"
+next_scene = 3
 
 [node name="DeadTimer" type="Timer" parent="."]
 

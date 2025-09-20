@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc81o0g60qmul"]
+
+[ext_resource type="Script" uid="uid://bqj433ixthjrl" path="res://Scenes/quit_button.gd" id="1_rniq8"]
+
+[node name="Quit_Button" type="Button"]
+anchor_left = 0.8181818
+anchor_top = 0.025
+anchor_right = 0.90909094
+anchor_bottom = 0.075
+flat = true
+script = ExtResource("1_rniq8")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]

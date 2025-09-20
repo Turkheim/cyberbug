@@ -1,5 +1,6 @@
 extends ColorRect
 
+const LEVELS = preload("uid://erybpn5qg1mq")
 
 func _unpause():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -18,4 +19,4 @@ func _on_quit_button_pressed() -> void:
 
 func _on_start_button_pressed() -> void:
 	_unpause()
-	get_tree().change_scene_to_file("res://Scenes/Levels/level_01.tscn")
+	get_tree().change_scene_to_file(LEVELS.level_list[0])
