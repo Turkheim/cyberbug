@@ -263,8 +263,8 @@ anchor_right = 0.8636364
 anchor_bottom = 0.65625
 grow_horizontal = 1
 grow_vertical = 1
-disabled = true
 texture_disabled = SubResource("AtlasTexture_kb5mc")
+level = 16
 
 [node name="ButtonLevel17" parent="." instance=ExtResource("2_nkys2")]
 layout_mode = 1
@@ -272,8 +272,8 @@ anchor_top = 0.675
 anchor_bottom = 0.80625
 grow_horizontal = 1
 grow_vertical = 1
-disabled = true
 texture_disabled = SubResource("AtlasTexture_r2u0r")
+level = 17
 
 [node name="ButtonLevel18" parent="." instance=ExtResource("2_nkys2")]
 layout_mode = 1
@@ -283,8 +283,8 @@ anchor_right = 0.5
 anchor_bottom = 0.80625
 grow_horizontal = 1
 grow_vertical = 1
-disabled = true
 texture_disabled = SubResource("AtlasTexture_h2rck")
+level = 18
 
 [node name="ButtonLevel19" parent="." instance=ExtResource("2_nkys2")]
 layout_mode = 1
@@ -294,8 +294,8 @@ anchor_right = 0.6818182
 anchor_bottom = 0.80625
 grow_horizontal = 1
 grow_vertical = 1
-disabled = true
 texture_disabled = SubResource("AtlasTexture_y1k4n")
+level = 19
 
 [node name="ButtonLevel20" parent="." instance=ExtResource("2_nkys2")]
 layout_mode = 1
@@ -305,8 +305,8 @@ anchor_right = 0.8636364
 anchor_bottom = 0.80625
 grow_horizontal = 1
 grow_vertical = 1
-disabled = true
 texture_disabled = SubResource("AtlasTexture_y5eva")
+level = 20
 
 [node name="ButtonLevel21" parent="." instance=ExtResource("2_nkys2")]
 layout_mode = 1
@@ -314,8 +314,8 @@ anchor_top = 0.825
 anchor_bottom = 0.95625
 grow_horizontal = 1
 grow_vertical = 1
-disabled = true
 texture_disabled = SubResource("AtlasTexture_l15rd")
+level = 21
 
 [node name="ButtonLevel22" parent="." instance=ExtResource("2_nkys2")]
 layout_mode = 1
@@ -325,8 +325,8 @@ anchor_right = 0.5
 anchor_bottom = 0.95625
 grow_horizontal = 1
 grow_vertical = 1
-disabled = true
 texture_disabled = SubResource("AtlasTexture_gfib2")
+level = 22
 
 [node name="ButtonLevel23" parent="." instance=ExtResource("2_nkys2")]
 layout_mode = 1
@@ -336,8 +336,8 @@ anchor_right = 0.6818182
 anchor_bottom = 0.95625
 grow_horizontal = 1
 grow_vertical = 1
-disabled = true
 texture_disabled = SubResource("AtlasTexture_gqox3")
+level = 23
 
 [node name="ButtonLevel24" parent="." instance=ExtResource("2_nkys2")]
 layout_mode = 1
@@ -347,8 +347,8 @@ anchor_right = 0.8636364
 anchor_bottom = 0.95625
 grow_horizontal = 1
 grow_vertical = 1
-disabled = true
 texture_disabled = SubResource("AtlasTexture_ps72n")
+level = 24
 
 [node name="Quit_Button" parent="." instance=ExtResource("3_lx4vd")]
 layout_mode = 1

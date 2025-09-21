@@ -65,7 +65,7 @@ skeleton = NodePath("../KillSwitch/CollisionShape3D")
 
 [node name="Laser" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6spbj")
-volume_db = -39.322
+volume_db = -11.714
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 2
