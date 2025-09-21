@@ -2,10 +2,16 @@ extends ColorRect
 var CURRENT_LEVEL = preload("uid://crhjo7ccsigol")
 
 const LEVELS = preload("uid://erybpn5qg1mq")
+@onready var stopwatch_label = $Control/StopwatchLabel
 
 var this_level = 0
 
+var stopwatch : Stopwatch
+
 func _ready():
+	
+	stopwatch = get_tree().get_first_node_in_group("Stopwatch")
+	
 	this_level = LEVELS.level_list.find($"..".scene_file_path)
 	if ResourceLoader.exists("user://CurrentLevel.tres"):
 		CURRENT_LEVEL = ResourceLoader.load("user://CurrentLevel.tres")
@@ -21,7 +27,11 @@ func _unpause():
 func _win_menu():
 	visible = true
 	get_tree().paused = true
+	
+	stopwatch_label.text = stopwatch.time_to_string()
+	
 	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 	$SongWin.play()
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()

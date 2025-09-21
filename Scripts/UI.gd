@@ -5,6 +5,17 @@ var is_muted = false
 
 @onready var ui_rotate_left: Sprite2D = $UiRotateLeft
 @onready var ui_rotate_right: Sprite2D = $UiRotateRight
+@onready var stopwatch_label = $StopwatchLabel
+
+var stopwatch : Stopwatch
+
+func _ready():
+	stopwatch = $Stopwatch
+func _process(delta):
+	update_stopwatch_label()
+	
+func update_stopwatch_label():
+	stopwatch_label.text = stopwatch.time_to_string()
 
 
 func _on_left_button_button_down() -> void:
@@ -37,11 +48,7 @@ func _on_mute_pressed() -> void:
 		AudioServer.set_bus_mute(bus_idx, false) # or false
 		is_muted = false
 
-#
-#func _on_settings_button_down() -> void:
-	#Pause_menu.instance._pause()
-	#print("arggg")
+
 
 func _on_settings_pressed() -> void:
 	Pause_menu.instance._pause()
-	print("arggg")

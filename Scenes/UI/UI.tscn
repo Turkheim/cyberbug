@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://btc14mw3f5o28"]
+[gd_scene load_steps=9 format=3 uid="uid://btc14mw3f5o28"]
 
 [ext_resource type="Script" uid="uid://bin2wtwti8qci" path="res://Scripts/UI.gd" id="1_w371h"]
 [ext_resource type="Texture2D" uid="uid://7h0p1bqqapqc" path="res://Assets/Sprites/audio_off.png" id="2_b83rk"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://31bktvjyp3b" path="res://Assets/Sprites/main_menu.png" id="4_oqha6"]
 [ext_resource type="Texture2D" uid="uid://d0obkiabgnhtw" path="res://Assets/UI/UI_rotate_left.png" id="5_7tgkj"]
 [ext_resource type="Texture2D" uid="uid://dqqxiikak3jcx" path="res://Assets/UI/UI_rotate_right.png" id="6_jevvu"]
+[ext_resource type="FontFile" uid="uid://cy7jjqs6ldk33" path="res://Assets/fusion-pixel-10px-monospaced-sc-latin-400-normal.ttf" id="7_jevvu"]
+[ext_resource type="PackedScene" uid="uid://jdwmrjg0vr1d" path="res://Scenes/UI/stopwatch.tscn" id="8_w8wei"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -82,6 +84,22 @@ visible = false
 position = Vector2(608, 1184)
 scale = Vector2(4, 4)
 texture = ExtResource("6_jevvu")
+
+[node name="StopwatchLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_right = 224.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_jevvu")
+theme_override_font_sizes/font_size = 80
+text = "12:34:567"
+vertical_alignment = 1
+
+[node name="Stopwatch" parent="." instance=ExtResource("8_w8wei")]
 
 [connection signal="button_down" from="VSplitContainer/HSplitContainer/LeftButton" to="." method="_on_left_button_button_down"]
 [connection signal="button_up" from="VSplitContainer/HSplitContainer/LeftButton" to="." method="_on_left_button_button_up"]

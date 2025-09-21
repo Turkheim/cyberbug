@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0.237285, 0.48821, 0.281427, 1)
 config/icon="uid://i02v7tiip3im"
 
+[debug]
+
+gdscript/warnings/unused_parameter=0
+
 [display]
 
 window/size/viewport_width=704
@@ -30,6 +34,7 @@ window/handheld/orientation=1
 Player=""
 Enemy=""
 Box=""
+Stopwatch=""
 
 [importer_defaults]
 

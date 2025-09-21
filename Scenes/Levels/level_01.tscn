@@ -137,7 +137,6 @@ visible = false
 
 [node name="WinMenu" parent="." instance=ExtResource("11_j0t0u")]
 visible = false
-next_scene = 2
 
 [node name="DeadTimer" type="Timer" parent="."]
 
