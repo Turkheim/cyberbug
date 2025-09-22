@@ -3,6 +3,7 @@ var CURRENT_LEVEL = preload("uid://crhjo7ccsigol")
 
 const LEVELS = preload("uid://erybpn5qg1mq")
 @onready var stopwatch_label = $Control/StopwatchLabel
+@onready var level = $Control/Level
 
 var this_level = 0
 
@@ -27,7 +28,7 @@ func _unpause():
 func _win_menu():
 	visible = true
 	get_tree().paused = true
-	
+	level.text = "lvl" + str(this_level)
 	stopwatch_label.text = stopwatch.time_to_string()
 	
 	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

@@ -35,7 +35,6 @@ shadow_offset = Vector2(2, 2)
 
 [node name="WinMenu" type="ColorRect"]
 process_mode = 3
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -76,6 +75,21 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_lsugt")
 text = "YOU WIN"
+label_settings = SubResource("LabelSettings_y2c35")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Level" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.1182
+anchor_top = -1.221261
+anchor_right = 8.945506
+anchor_bottom = -0.7150078
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_lsugt")
+text = "LVL00"
 label_settings = SubResource("LabelSettings_y2c35")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true

@@ -59,6 +59,15 @@ texture_normal = ExtResource("2_b83rk")
 texture_pressed = ExtResource("3_b83rk")
 stretch_mode = 5
 
+[node name="Next" type="TextureButton" parent="."]
+layout_mode = 1
+offset_left = 192.0
+offset_top = 160.0
+offset_right = 320.0
+offset_bottom = 288.0
+toggle_mode = true
+stretch_mode = 5
+
 [node name="Settings" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(128, 128)
 layout_direction = 2
@@ -106,5 +115,5 @@ vertical_alignment = 1
 [connection signal="button_down" from="VSplitContainer/HSplitContainer/RightButton" to="." method="_on_right_button_button_down"]
 [connection signal="button_up" from="VSplitContainer/HSplitContainer/RightButton" to="." method="_on_right_button_button_up"]
 [connection signal="pressed" from="Mute" to="." method="_on_mute_pressed"]
-[connection signal="button_down" from="Settings" to="." method="_on_settings_button_down"]
+[connection signal="button_down" from="Next" to="." method="_on_next_button_down"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
