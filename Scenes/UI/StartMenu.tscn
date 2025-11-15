@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmt07lr676os1"]
+[gd_scene load_steps=9 format=3 uid="uid://bmt07lr676os1"]
 
 [ext_resource type="Script" uid="uid://dtqtt5wylhxo5" path="res://Scripts/start_menu.gd" id="1_dvnd1"]
 [ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="2_ujd4t"]
 [ext_resource type="AudioStream" uid="uid://cm3xi6psupm4h" path="res://Assets/Sounds/SongMenu.wav" id="2_xtte2"]
-[ext_resource type="Texture2D" uid="uid://cbnge4s5ot841" path="res://Assets/Sprites/startbutton.png" id="5_dibtv"]
-[ext_resource type="Texture2D" uid="uid://i02v7tiip3im" path="res://Assets/Sprites/titlecyberbugv4.png" id="6_ql1sk"]
+[ext_resource type="Texture2D" uid="uid://c35x00jkhkbts" path="res://Assets/UI/NewUI/CyberbugTitle.png" id="4_kit3o"]
+[ext_resource type="Texture2D" uid="uid://ckyb4s0ltws2w" path="res://Assets/UI/NewUI/Levels.png" id="5_f3otk"]
+[ext_resource type="Texture2D" uid="uid://c0wu85ng10hka" path="res://Assets/UI/NewUI/Start.png" id="6_u4h61"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_jeo11"]
 action = &"Accept"
@@ -34,55 +35,65 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Menu" type="Sprite2D" parent="Control"]
+visible = false
 position = Vector2(11.2499, 16.5553)
 scale = Vector2(0.394893, 0.394893)
 texture = ExtResource("2_ujd4t")
+
+[node name="CyberbugTitle" type="Sprite2D" parent="Control"]
+position = Vector2(12.222137, 23.50592)
+scale = Vector2(4, 4)
+texture = ExtResource("4_kit3o")
 
 [node name="SongMenu" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("2_xtte2")
 autoplay = true
 
 [node name="StartButton" type="Button" parent="Control"]
-layout_mode = 2
-offset_left = -57.7501
-offset_top = 117.555
-offset_right = 148.25
-offset_bottom = 193.555
+layout_mode = 0
+offset_left = -147.77786
+offset_top = 231.50592
+offset_right = 12.222137
+offset_bottom = 295.50592
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
 shortcut = SubResource("Shortcut_kit3o")
 flat = true
 
+[node name="Start" type="Sprite2D" parent="Control/StartButton"]
+position = Vector2(80, 32)
+scale = Vector2(4, 4)
+texture = ExtResource("6_u4h61")
+
+[node name="Levels" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 76.22214
+offset_top = 231.50592
+offset_right = 236.22214
+offset_bottom = 295.50592
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+action_mode = 0
+shortcut = SubResource("Shortcut_kit3o")
+flat = true
+
+[node name="LevelSprite" type="Sprite2D" parent="Control/Levels"]
+position = Vector2(80, 32)
+scale = Vector2(4, 4)
+texture = ExtResource("5_f3otk")
+
 [node name="QuitButton" type="Button" parent="Control"]
-layout_mode = 2
-offset_left = 264.25
-offset_top = -86.4447
-offset_right = 317.25
-offset_bottom = -34.4447
+layout_mode = 0
+anchor_left = 9.663701
+anchor_top = -2.7400208
+anchor_right = 12.281901
+anchor_bottom = -1.9806409
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
 flat = true
-
-[node name="Label" type="Label" parent="Control"]
-visible = false
-layout_mode = 2
-offset_left = 496.0
-offset_top = 252.0
-offset_right = 580.0
-offset_bottom = 275.0
-text = "CYBERBUG"
-horizontal_alignment = 1
-
-[node name="Startbutton" type="Sprite2D" parent="Control"]
-position = Vector2(45.2499, 160.555)
-scale = Vector2(0.618056, 0.618056)
-texture = ExtResource("5_dibtv")
-
-[node name="Titlecyberbug" type="Sprite2D" parent="Control"]
-position = Vector2(36.2499, 43.5553)
-scale = Vector2(0.455357, 0.455357)
-texture = ExtResource("6_ql1sk")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Control/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/Levels" to="." method="_on_levels_pressed"]

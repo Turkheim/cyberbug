@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bqj433ixthjrl" path="res://Scenes/quit_button.gd" id="1_rniq8"]
 
 [node name="Quit_Button" type="Button"]
+anchors_preset = -1
 anchor_left = 0.8181818
 anchor_top = 0.025
 anchor_right = 0.90909094

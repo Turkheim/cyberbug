@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://tdg1kfe8onid"]
+[gd_scene load_steps=12 format=3 uid="uid://tdg1kfe8onid"]
 
 [ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="1_bpi0q"]
 [ext_resource type="AudioStream" uid="uid://cm3xi6psupm4h" path="res://Assets/Sounds/SongMenu.wav" id="1_emv3i"]
 [ext_resource type="Script" uid="uid://bdf8akb0wwk1l" path="res://Scripts/pause_menu.gd" id="1_vmyb1"]
+[ext_resource type="Texture2D" uid="uid://cfu6r3xqa8f4a" path="res://Assets/UI/NewUI/Pause.png" id="2_nqqw2"]
 [ext_resource type="Texture2D" uid="uid://c4nvjwkokaj5l" path="res://Assets/Sprites/restart.png" id="3_vmyb1"]
 [ext_resource type="Texture2D" uid="uid://bvet1viec0ii8" path="res://Assets/Sprites/resumebutton.png" id="4_myy0f"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_y2c35"]
-font_size = 56
-shadow_color = Color(0, 0, 0, 0.435294)
-shadow_offset = Vector2(4.89, 7.18)
+[ext_resource type="Texture2D" uid="uid://ct6g23k5e5lef" path="res://Assets/UI/NewUI/Resume.png" id="7_hanoc"]
+[ext_resource type="Texture2D" uid="uid://dd641a2g0xj3m" path="res://Assets/UI/NewUI/Restart.png" id="8_kxh81"]
+[ext_resource type="Texture2D" uid="uid://bcm2o00cnhqfr" path="res://Assets/UI/NewUI/Mute.png" id="9_my6iw"]
+[ext_resource type="Texture2D" uid="uid://ckyb4s0ltws2w" path="res://Assets/UI/NewUI/Levels.png" id="10_svk1p"]
+[ext_resource type="Texture2D" uid="uid://36d74nx7lf5a" path="res://Assets/UI/NewUI/Muted.png" id="11_rmfd2"]
 
 [node name="PauseMenu" type="ColorRect"]
 process_mode = 3
@@ -35,7 +36,13 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Pause" type="Sprite2D" parent="Control"]
+position = Vector2(0, 32)
+scale = Vector2(4, 4)
+texture = ExtResource("2_nqqw2")
+
 [node name="Menu" type="Sprite2D" parent="Control"]
+visible = false
 position = Vector2(-3.12519, -41.0835)
 scale = Vector2(0.356047, 0.356047)
 texture = ExtResource("1_bpi0q")
@@ -43,58 +50,98 @@ texture = ExtResource("1_bpi0q")
 [node name="SongMenu" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("1_emv3i")
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 2
-offset_left = -100.0
-offset_top = -67.0
-offset_right = 188.0
-offset_bottom = 59.0
-text = "PAUSE"
-label_settings = SubResource("LabelSettings_y2c35")
-horizontal_alignment = 1
-
 [node name="ResumeButton" type="Button" parent="Control"]
-layout_mode = 2
-offset_left = -188.0
-offset_top = 24.0
-offset_right = 50.0
-offset_bottom = 137.0
+layout_mode = 0
+offset_left = -160.0
+offset_top = 32.0
+offset_bottom = 96.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Levels" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 224.0
+offset_bottom = 96.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 flat = true
 
+[node name="Levels" type="Sprite2D" parent="Control/Levels"]
+position = Vector2(80, 32)
+scale = Vector2(4, 4)
+texture = ExtResource("10_svk1p")
+
+[node name="Mute" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 128.0
+offset_right = 224.0
+offset_bottom = 192.0
+size_flags_vertical = 3
+texture_normal = ExtResource("9_my6iw")
+texture_pressed = ExtResource("11_rmfd2")
+stretch_mode = 0
+
+[node name="Mute" type="Sprite2D" parent="Control/Mute"]
+visible = false
+position = Vector2(80, 32)
+scale = Vector2(4, 4)
+texture = ExtResource("9_my6iw")
+
 [node name="RestartButton" type="Button" parent="Control"]
-layout_mode = 2
-offset_left = 37.0
-offset_top = 36.0
-offset_right = 262.0
-offset_bottom = 133.0
+layout_mode = 0
+offset_left = -160.0
+offset_top = 128.0
+offset_bottom = 192.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
 flat = true
 
 [node name="QuitButton" type="Button" parent="Control"]
-layout_mode = 2
-offset_left = 214.0
-offset_top = -130.0
-offset_right = 270.0
-offset_bottom = -70.0
+layout_mode = 0
+offset_left = 224.0
+offset_top = -64.0
+offset_right = 288.0
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
 flat = true
 
 [node name="Restart" type="Sprite2D" parent="Control"]
+visible = false
 position = Vector2(156, 82)
 scale = Vector2(0.631757, 0.631757)
 texture = ExtResource("3_vmyb1")
 
 [node name="Resumebutton" type="Sprite2D" parent="Control"]
+visible = false
 position = Vector2(-62, 80)
 scale = Vector2(0.635811, 0.635811)
 texture = ExtResource("4_myy0f")
 
+[node name="Resume" type="Sprite2D" parent="Control"]
+position = Vector2(-80, 64)
+scale = Vector2(4, 4)
+texture = ExtResource("7_hanoc")
+
+[node name="Restart2" type="Sprite2D" parent="Control"]
+position = Vector2(-80, 160)
+scale = Vector2(4, 4)
+texture = ExtResource("8_kxh81")
+
+[node name="Muted" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(496, 800)
+scale = Vector2(4, 4)
+texture = ExtResource("11_rmfd2")
+
 [connection signal="pressed" from="Control/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Control/Levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="Control/Mute" to="." method="_on_mute_pressed"]
 [connection signal="pressed" from="Control/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]

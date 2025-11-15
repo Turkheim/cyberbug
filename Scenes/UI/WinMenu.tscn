@@ -1,24 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1x8kt3rd6c21"]
+[gd_scene load_steps=14 format=3 uid="uid://c1x8kt3rd6c21"]
 
 [ext_resource type="Script" uid="uid://cjlyiyw7pcl8m" path="res://Scripts/WinMenu.gd" id="1_l763u"]
 [ext_resource type="AudioStream" uid="uid://bawghljfwfwou" path="res://Assets/Sounds/SongWin.wav" id="2_q7l2s"]
 [ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="2_rnswt"]
+[ext_resource type="Texture2D" uid="uid://bx4ohhpt3xd6e" path="res://Assets/UI/NewUI/YouWin.png" id="4_bhene"]
 [ext_resource type="Texture2D" uid="uid://5gf1utgqp40t" path="res://Assets/Sprites/nextbutton.png" id="4_fu86e"]
 [ext_resource type="FontFile" uid="uid://cy7jjqs6ldk33" path="res://Assets/fusion-pixel-10px-monospaced-sc-latin-400-normal.ttf" id="4_lsugt"]
+[ext_resource type="Texture2D" uid="uid://ckyb4s0ltws2w" path="res://Assets/UI/NewUI/Levels.png" id="7_y6f08"]
+[ext_resource type="Texture2D" uid="uid://eiecbmfoogtm" path="res://Assets/UI/NewUI/Next.png" id="8_n2w3l"]
+[ext_resource type="Texture2D" uid="uid://dyssu0kfoa68d" path="res://Assets/UI/NewUI/BlackStar.png" id="9_lswm1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_y2c35"]
 font_size = 40
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 0
-shadow_color = Color(0, 0, 0, 0.498039)
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="LabelSettings" id="LabelSettings_c4mkh"]
-font_size = 30
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 0
-shadow_color = Color(0, 0, 0, 0.498039)
-shadow_offset = Vector2(2, 2)
 
 [sub_resource type="InputEventAction" id="InputEventAction_8737j"]
 action = &"Accept"
@@ -27,15 +20,10 @@ action = &"Accept"
 events = [SubResource("InputEventAction_8737j")]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2irj5"]
-font_size = 30
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 0
-shadow_color = Color(0, 0, 0, 0.498039)
-shadow_offset = Vector2(2, 2)
+font_size = 40
 
 [node name="WinMenu" type="ColorRect"]
 process_mode = 3
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -61,32 +49,25 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Sprite2D" parent="Control"]
+visible = false
 position = Vector2(-2, -17)
 scale = Vector2(0.325188, 0.325188)
 texture = ExtResource("2_rnswt")
 
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -1.7272812
-anchor_top = -0.59484756
-anchor_right = 4.100025
-anchor_bottom = -0.08859432
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_lsugt")
-text = "YOU WIN"
-label_settings = SubResource("LabelSettings_y2c35")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
+[node name="YouWin" type="Sprite2D" parent="Control"]
+position = Vector2(12, -8.5)
+scale = Vector2(4, 4)
+texture = ExtResource("4_bhene")
 
 [node name="Level" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 3.1182
-anchor_top = -1.221261
-anchor_right = 8.945506
-anchor_bottom = -0.7150078
+anchor_left = 4.4272943
+anchor_top = -2.2805316
+anchor_right = 8.518231
+anchor_bottom = -1.7742783
+offset_top = 1.5258789e-05
+offset_right = 1.5258789e-05
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_lsugt")
@@ -95,58 +76,64 @@ label_settings = SubResource("LabelSettings_y2c35")
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Your time" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -6.35232
-anchor_top = -0.0062532346
-anchor_right = 2.2386484
-anchor_bottom = 0.5
-offset_left = 7.5
-offset_right = -7.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_lsugt")
-text = "your time is:"
-label_settings = SubResource("LabelSettings_c4mkh")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="NextLevelButton" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = -89.0
-offset_top = 32.0
-offset_right = 129.0
-offset_bottom = 126.0
+offset_left = -147.77786
+offset_top = 167.50592
+offset_right = 12.222137
+offset_bottom = 229.50592
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
 shortcut = SubResource("Shortcut_lsugt")
 flat = true
 
+[node name="Next" type="Sprite2D" parent="Control/NextLevelButton"]
+position = Vector2(80, 32)
+scale = Vector2(4, 4)
+texture = ExtResource("8_n2w3l")
+
+[node name="Levels" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 76.22214
+offset_top = 167.50592
+offset_right = 236.22214
+offset_bottom = 229.50592
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+action_mode = 0
+shortcut = SubResource("Shortcut_lsugt")
+flat = true
+
+[node name="Levels" type="Sprite2D" parent="Control/Levels"]
+position = Vector2(80, 32)
+scale = Vector2(4, 4)
+texture = ExtResource("7_y6f08")
+
 [node name="QuitButton" type="Button" parent="Control"]
 layout_mode = 0
-offset_left = 197.0
-offset_top = -93.0
-offset_right = 253.0
-offset_bottom = -40.0
+offset_left = 236.22217
+offset_top = -184.49408
+offset_right = 300.22217
+offset_bottom = -120.49408
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
 flat = true
 
 [node name="Nextbutton" type="Sprite2D" parent="Control"]
-position = Vector2(24, 77)
+visible = false
+position = Vector2(-83.777855, 199.50592)
 scale = Vector2(0.533784, 0.533784)
 texture = ExtResource("4_fu86e")
 
 [node name="StopwatchLabel" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 2.46365
-anchor_top = -0.0062532346
-anchor_right = 8.027325
-anchor_bottom = 0.3734367
+anchor_left = 3.4454749
+anchor_top = 1.2087545
+anchor_right = 10.809162
+anchor_bottom = 1.7150078
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("4_lsugt")
 text = "12:34:567"
@@ -154,5 +141,21 @@ label_settings = SubResource("LabelSettings_2irj5")
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="BlackStar" type="Sprite2D" parent="."]
+position = Vector2(384, 560)
+scale = Vector2(4, 4)
+texture = ExtResource("9_lswm1")
+
+[node name="BlackStar2" type="Sprite2D" parent="."]
+position = Vector2(256, 560)
+scale = Vector2(4, 4)
+texture = ExtResource("9_lswm1")
+
+[node name="BlackStar3" type="Sprite2D" parent="."]
+position = Vector2(512, 560)
+scale = Vector2(4, 4)
+texture = ExtResource("9_lswm1")
+
 [connection signal="pressed" from="Control/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="Control/Levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]

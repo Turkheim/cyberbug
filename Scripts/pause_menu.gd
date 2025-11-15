@@ -2,6 +2,10 @@ class_name Pause_menu
 
 extends ColorRect
 
+var bus_idx = AudioServer.get_bus_index("Master")
+var is_muted = false
+
+const LEVELS = preload("uid://erybpn5qg1mq")
 static var instance: Pause_menu
 
 func _init() -> void:
@@ -43,3 +47,17 @@ func _pausing():
 	else:
 		_pause()
 		print("poniendo pausa")
+
+
+func _on_levels_pressed():
+	_unpause()
+	get_tree().change_scene_to_file(LEVELS.level_list[0])
+
+
+func _on_mute_pressed():
+	if !is_muted :
+		AudioServer.set_bus_mute(bus_idx, true) # or false
+		is_muted = true
+	else:
+		AudioServer.set_bus_mute(bus_idx, false) # or false
+		is_muted = false

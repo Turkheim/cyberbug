@@ -1,6 +1,6 @@
 extends ColorRect
 
-
+const LEVELS = preload("uid://erybpn5qg1mq")
 func _unpause():
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
@@ -19,3 +19,8 @@ func _on_quit_button_pressed() -> void:
 func _on_reload_button_pressed() -> void:
 	_unpause()
 	get_tree().reload_current_scene()
+
+
+func _on_levels_pressed():
+	_unpause()
+	get_tree().change_scene_to_file(LEVELS.level_list[0])

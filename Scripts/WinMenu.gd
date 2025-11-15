@@ -49,3 +49,8 @@ func _on_next_level_button_pressed() -> void:
 		
 
 	get_tree().change_scene_to_file(LEVELS.level_list[this_level+1])
+
+
+func _on_levels_pressed():
+	_unpause()
+	get_tree().change_scene_to_file(LEVELS.level_list[0])

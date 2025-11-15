@@ -1,98 +1,14 @@
-[gd_scene load_steps=27 format=3 uid="uid://umbsf4lethmh"]
+[gd_scene load_steps=7 format=3 uid="uid://umbsf4lethmh"]
 
 [ext_resource type="Texture2D" uid="uid://qxpy5ftxmq2g" path="res://Assets/UI/levelLayout.png" id="1_nkys2"]
+[ext_resource type="Texture2D" uid="uid://bnqtj2t8sf8oq" path="res://Assets/UI/NewUI/LevelSelectBackground.png" id="2_2sqnl"]
 [ext_resource type="PackedScene" uid="uid://umlw1wphqsyt" path="res://Scenes/button_level.tscn" id="2_nkys2"]
 [ext_resource type="PackedScene" uid="uid://bc81o0g60qmul" path="res://Scenes/UI/quit_button.tscn" id="3_lx4vd"]
+[ext_resource type="AudioStream" uid="uid://b7dmsyicwjjsp" path="res://Assets/Sounds/01. Cyberbug - Menu.wav" id="5_72w8f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lx4vd"]
 atlas = ExtResource("1_nkys2")
 region = Rect2(24, 24, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2sqnl"]
-atlas = ExtResource("1_nkys2")
-region = Rect2(56, 24, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_72w8f"]
-atlas = ExtResource("1_nkys2")
-region = Rect2(120, 24, 32, 40)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s6o25"]
-load_path = "res://.godot/imported/levelLayout.png-5caea63599c9b3fab1f7eb329c78ed5f.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kb5mc"]
-atlas = SubResource("CompressedTexture2D_s6o25")
-region = Rect2(120, 168, 32, 40)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qnihq"]
-load_path = "res://.godot/imported/levelLayout.png-5caea63599c9b3fab1f7eb329c78ed5f.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tgoug"]
-atlas = SubResource("CompressedTexture2D_qnihq")
-region = Rect2(88, 72, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x038j"]
-atlas = SubResource("CompressedTexture2D_qnihq")
-region = Rect2(120, 72, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mlwxk"]
-atlas = SubResource("CompressedTexture2D_qnihq")
-region = Rect2(24, 120, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_npf18"]
-atlas = SubResource("CompressedTexture2D_qnihq")
-region = Rect2(56, 120, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bpfon"]
-atlas = SubResource("CompressedTexture2D_qnihq")
-region = Rect2(88, 120, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_07bvh"]
-atlas = SubResource("CompressedTexture2D_qnihq")
-region = Rect2(120, 120, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ciagn"]
-atlas = SubResource("CompressedTexture2D_qnihq")
-region = Rect2(24, 168, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yx562"]
-atlas = SubResource("CompressedTexture2D_qnihq")
-region = Rect2(56, 168, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wn3si"]
-atlas = SubResource("CompressedTexture2D_qnihq")
-region = Rect2(88, 168, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r2u0r"]
-atlas = SubResource("CompressedTexture2D_s6o25")
-region = Rect2(24, 216, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h2rck"]
-atlas = SubResource("CompressedTexture2D_s6o25")
-region = Rect2(56, 216, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y1k4n"]
-atlas = SubResource("CompressedTexture2D_s6o25")
-region = Rect2(88, 216, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y5eva"]
-atlas = SubResource("CompressedTexture2D_s6o25")
-region = Rect2(120, 216, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l15rd"]
-atlas = SubResource("CompressedTexture2D_s6o25")
-region = Rect2(24, 264, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gfib2"]
-atlas = SubResource("CompressedTexture2D_s6o25")
-region = Rect2(56, 264, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gqox3"]
-atlas = SubResource("CompressedTexture2D_s6o25")
-region = Rect2(88, 264, 32, 40)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ps72n"]
-atlas = SubResource("CompressedTexture2D_s6o25")
-region = Rect2(120, 264, 32, 40)
 
 [node name="Level Select" type="Control"]
 layout_mode = 3
@@ -103,253 +19,260 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(352, 640)
 scale = Vector2(4, 4)
 texture = ExtResource("1_nkys2")
 
+[node name="LevelSelectBackground" type="Sprite2D" parent="."]
+position = Vector2(352, 640)
+scale = Vector2(4, 4)
+texture = ExtResource("2_2sqnl")
+
 [node name="ButtonLevel" parent="." instance=ExtResource("2_nkys2")]
 modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
+anchor_left = 0.13636364
+anchor_top = 0.075
+anchor_right = 0.3181818
+anchor_bottom = 0.2
 grow_horizontal = 1
 grow_vertical = 1
 texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 1
 
 [node name="ButtonLevel2" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.3181818
+anchor_top = 0.075
 anchor_right = 0.5
+anchor_bottom = 0.2
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_2sqnl")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 2
 
 [node name="ButtonLevel3" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.5
+anchor_top = 0.075
 anchor_right = 0.6818182
+anchor_bottom = 0.2
 grow_horizontal = 1
 grow_vertical = 1
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 3
 
 [node name="ButtonLevel4" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.6818182
+anchor_top = 0.075
 anchor_right = 0.8636364
+anchor_bottom = 0.2
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_72w8f")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 4
 
 [node name="ButtonLevel5" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
+anchor_left = 0.13636364
 anchor_top = 0.225
-anchor_bottom = 0.35625
+anchor_right = 0.3181818
+anchor_bottom = 0.35
 grow_horizontal = 1
 grow_vertical = 1
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 5
 
 [node name="ButtonLevel6" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.3181818
 anchor_top = 0.225
 anchor_right = 0.5
-anchor_bottom = 0.35625
+anchor_bottom = 0.35
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_kb5mc")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 6
 
 [node name="ButtonLevel7" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.5
 anchor_top = 0.225
 anchor_right = 0.6818182
-anchor_bottom = 0.35625
+anchor_bottom = 0.35
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_tgoug")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 7
 
 [node name="ButtonLevel8" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.6818182
 anchor_top = 0.225
 anchor_right = 0.8636364
-anchor_bottom = 0.35625
+anchor_bottom = 0.35
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_x038j")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 8
 
 [node name="ButtonLevel9" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
+anchor_left = 0.13636364
 anchor_top = 0.375
-anchor_bottom = 0.50625
+anchor_right = 0.3181818
+anchor_bottom = 0.5
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_mlwxk")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 9
 
 [node name="ButtonLevel10" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.3181818
 anchor_top = 0.375
 anchor_right = 0.5
-anchor_bottom = 0.50625
+anchor_bottom = 0.5
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_npf18")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 10
 
 [node name="ButtonLevel11" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.5
 anchor_top = 0.375
 anchor_right = 0.6818182
-anchor_bottom = 0.50625
+anchor_bottom = 0.5
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_bpfon")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 11
 
 [node name="ButtonLevel12" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.6818182
 anchor_top = 0.375
 anchor_right = 0.8636364
-anchor_bottom = 0.50625
+anchor_bottom = 0.5
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_07bvh")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 12
 
 [node name="ButtonLevel13" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
+anchor_left = 0.13636364
 anchor_top = 0.525
-anchor_bottom = 0.65625
+anchor_right = 0.3181818
+anchor_bottom = 0.65
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_ciagn")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 13
 
 [node name="ButtonLevel14" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.3181818
 anchor_top = 0.525
 anchor_right = 0.5
-anchor_bottom = 0.65625
+anchor_bottom = 0.65
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_yx562")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 14
 
 [node name="ButtonLevel15" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.5
 anchor_top = 0.525
 anchor_right = 0.6818182
-anchor_bottom = 0.65625
+anchor_bottom = 0.65
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_wn3si")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 15
 
 [node name="ButtonLevel16" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.6818182
 anchor_top = 0.525
 anchor_right = 0.8636364
-anchor_bottom = 0.65625
+anchor_bottom = 0.65
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_kb5mc")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 16
 
 [node name="ButtonLevel17" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
+anchor_left = 0.13636364
 anchor_top = 0.675
-anchor_bottom = 0.80625
+anchor_right = 0.3181818
+anchor_bottom = 0.8
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_r2u0r")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 17
 
 [node name="ButtonLevel18" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.3181818
 anchor_top = 0.675
 anchor_right = 0.5
-anchor_bottom = 0.80625
+anchor_bottom = 0.8
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_h2rck")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 18
 
 [node name="ButtonLevel19" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.5
 anchor_top = 0.675
 anchor_right = 0.6818182
-anchor_bottom = 0.80625
+anchor_bottom = 0.8
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_y1k4n")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 19
 
 [node name="ButtonLevel20" parent="." instance=ExtResource("2_nkys2")]
+modulate = Color(3.4751832, 0, 0, 1)
 layout_mode = 1
 anchor_left = 0.6818182
 anchor_top = 0.675
 anchor_right = 0.8636364
-anchor_bottom = 0.80625
+anchor_bottom = 0.8
 grow_horizontal = 1
 grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_y5eva")
+texture_disabled = SubResource("AtlasTexture_lx4vd")
 level = 20
-
-[node name="ButtonLevel21" parent="." instance=ExtResource("2_nkys2")]
-layout_mode = 1
-anchor_top = 0.825
-anchor_bottom = 0.95625
-grow_horizontal = 1
-grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_l15rd")
-level = 21
-
-[node name="ButtonLevel22" parent="." instance=ExtResource("2_nkys2")]
-layout_mode = 1
-anchor_left = 0.3181818
-anchor_top = 0.825
-anchor_right = 0.5
-anchor_bottom = 0.95625
-grow_horizontal = 1
-grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_gfib2")
-level = 22
-
-[node name="ButtonLevel23" parent="." instance=ExtResource("2_nkys2")]
-layout_mode = 1
-anchor_left = 0.5
-anchor_top = 0.825
-anchor_right = 0.6818182
-anchor_bottom = 0.95625
-grow_horizontal = 1
-grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_gqox3")
-level = 23
-
-[node name="ButtonLevel24" parent="." instance=ExtResource("2_nkys2")]
-layout_mode = 1
-anchor_left = 0.6818182
-anchor_top = 0.825
-anchor_right = 0.8636364
-anchor_bottom = 0.95625
-grow_horizontal = 1
-grow_vertical = 1
-texture_disabled = SubResource("AtlasTexture_ps72n")
-level = 24
 
 [node name="Quit_Button" parent="." instance=ExtResource("3_lx4vd")]
 layout_mode = 1
 anchors_preset = -1
+
+[node name="01_CyberbugMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_72w8f")
+autoplay = true

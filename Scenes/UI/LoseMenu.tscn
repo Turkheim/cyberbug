@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://j38wnr2kxoaw"]
+[gd_scene load_steps=10 format=3 uid="uid://j38wnr2kxoaw"]
 
 [ext_resource type="Script" uid="uid://imkij5f1044l" path="res://Scripts/lose_menu.gd" id="1_0jnk0"]
 [ext_resource type="Texture2D" uid="uid://drw870fkykhia" path="res://Assets/Sprites/menu.png" id="2_78sj7"]
 [ext_resource type="AudioStream" uid="uid://d25xcni23o2oc" path="res://Assets/Sounds/SongLose.wav" id="2_b3kgp"]
-[ext_resource type="Texture2D" uid="uid://ckq0g1f45t02o" path="res://Assets/UI/failmenu.png" id="2_wov3g"]
-[ext_resource type="Texture2D" uid="uid://c4nvjwkokaj5l" path="res://Assets/Sprites/restart.png" id="4_wov3g"]
+[ext_resource type="Texture2D" uid="uid://bg7fgppjk38u1" path="res://Assets/UI/NewUI/YouLose.png" id="2_nnck7"]
+[ext_resource type="Texture2D" uid="uid://dd641a2g0xj3m" path="res://Assets/UI/NewUI/Restart.png" id="4_y27yv"]
+[ext_resource type="Texture2D" uid="uid://ckyb4s0ltws2w" path="res://Assets/UI/NewUI/Levels.png" id="5_cni11"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_b6tpt"]
 action = &"Accept"
@@ -31,20 +32,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
-anchor_left = 0.436111
-anchor_top = 0.486719
-anchor_right = 0.456945
-anchor_bottom = 0.517969
-offset_right = -6.10352e-05
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.824086, 0.824086)
 metadata/_edit_use_anchors_ = true
 
-[node name="Failmenu" type="Sprite2D" parent="Control"]
-position = Vector2(52.6645, 20.9926)
-scale = Vector2(0.424307, 0.424307)
-texture = ExtResource("2_wov3g")
+[node name="YouLose" type="Sprite2D" parent="Control"]
+position = Vector2(352, 592)
+scale = Vector2(4, 4)
+texture = ExtResource("2_nnck7")
 
 [node name="Menu" type="Sprite2D" parent="Control"]
 visible = false
@@ -52,15 +50,14 @@ position = Vector2(983, 616)
 texture = ExtResource("2_78sj7")
 
 [node name="ReloadButton" type="Button" parent="Control"]
-layout_mode = 2
-anchor_left = 1.73146
-anchor_top = -0.664727
-anchor_right = 1.73146
-anchor_bottom = -0.664727
-offset_left = -177.0
-offset_top = 142.0
-offset_right = 296.0
-offset_bottom = 270.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.27272728
+anchor_top = 0.575
+anchor_right = 0.5
+anchor_bottom = 0.625
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 action_mode = 0
@@ -68,12 +65,34 @@ shortcut = SubResource("Shortcut_nnck7")
 flat = true
 metadata/_edit_use_anchors_ = true
 
+[node name="Levels" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.59090906
+anchor_top = 0.575
+anchor_right = 0.8181818
+anchor_bottom = 0.625
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 96
+action_mode = 0
+shortcut = SubResource("Shortcut_nnck7")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Levels" type="Sprite2D" parent="Control/Levels"]
+position = Vector2(80.00003, 32)
+scale = Vector2(4, 4)
+texture = ExtResource("5_cni11")
+
 [node name="QuitButton" type="Button" parent="Control"]
-layout_mode = 2
-anchor_left = 22.2373
-anchor_top = -2.61907
-anchor_right = 29.0519
-anchor_bottom = 0.0753708
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8181818
+anchor_top = 0.35
+anchor_right = 0.90909094
+anchor_bottom = 0.4
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 96
 flat = true
@@ -90,12 +109,13 @@ text = "You Lose"
 label_settings = SubResource("LabelSettings_l1hfb")
 
 [node name="Restart" type="Sprite2D" parent="Control"]
-position = Vector2(80.5742, 184.81)
-scale = Vector2(0.587189, 0.587189)
-texture = ExtResource("4_wov3g")
+position = Vector2(272, 768)
+scale = Vector2(4.0000005, 4)
+texture = ExtResource("4_y27yv")
 
 [node name="SongLose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_b3kgp")
 
 [connection signal="pressed" from="Control/ReloadButton" to="." method="_on_reload_button_pressed"]
+[connection signal="pressed" from="Control/Levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="Control/QuitButton" to="." method="_on_quit_button_pressed"]
