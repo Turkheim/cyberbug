@@ -47,7 +47,6 @@ texture = ExtResource("4_kit3o")
 
 [node name="SongMenu" type="AudioStreamPlayer" parent="Control"]
 stream = ExtResource("2_xtte2")
-autoplay = true
 
 [node name="StartButton" type="Button" parent="Control"]
 layout_mode = 0
