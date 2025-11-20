@@ -54,11 +54,11 @@ func _on_settings_pressed() -> void:
 	Pause_menu.instance._pause()
 
 
-func _on_next_button_down():
-
-	var win_menu = get_node("../WinMenu")
-	if win_menu:
-		win_menu._win_menu()
+#func _on_next_button_down():
+#
+	#var win_menu = get_node("../WinMenu")
+	#if win_menu:
+		#win_menu._win_menu()
 		
 		
 		

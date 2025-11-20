@@ -123,20 +123,20 @@ metadata/_edit_use_anchors_ = true
 
 [node name="UI" parent="." instance=ExtResource("11_fj6kk")]
 
-[node name="UiRotateLeft" parent="UI" index="3"]
+[node name="Next" parent="UI" index="2"]
+disabled = true
+
+[node name="UiRotateLeft" parent="UI" index="4"]
 visible = true
 
-[node name="UiRotateRight" parent="UI" index="4"]
+[node name="UiRotateRight" parent="UI" index="5"]
 visible = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_qelns")]
-visible = false
 
 [node name="LoseMenu" parent="." instance=ExtResource("10_j0t0u")]
-visible = false
 
 [node name="WinMenu" parent="." instance=ExtResource("11_j0t0u")]
-visible = false
 
 [node name="DeadTimer" type="Timer" parent="."]
 
