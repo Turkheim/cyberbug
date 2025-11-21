@@ -10,7 +10,7 @@ func _unpause():
 	
 	
 func _ready() -> void:
-	$Control/SongMenu.play()
+	#$Control/SongMenu.play()
 	visible = true
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
