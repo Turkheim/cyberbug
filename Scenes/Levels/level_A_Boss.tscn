@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d4mrf3ydyi2ix"]
+[gd_scene load_steps=25 format=3 uid="uid://d4mrf3ydyi2ix"]
 
 [ext_resource type="Script" uid="uid://cshks5b3ok4yw" path="res://Scripts/level.gd" id="1_h885s"]
 [ext_resource type="PackedScene" uid="uid://bx75p5vjbt2jd" path="res://Scenes/player_character.tscn" id="2_mnk5w"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c03wxnu2ofknh" path="res://Scenes/camera_node.tscn" id="12_nygi6"]
 [ext_resource type="PackedScene" uid="uid://c4des1o4sspp7" path="res://Scenes/wall_long.tscn" id="13_a8lfb"]
 [ext_resource type="PackedScene" uid="uid://u05x500bowe6" path="res://Scenes/wall_a.tscn" id="14_673kn"]
+[ext_resource type="AudioStream" uid="uid://ckquo5sn7xhxs" path="res://Assets/Sounds/02. Cyberbug - Boss.wav" id="14_c73cc"]
 [ext_resource type="PackedScene" uid="uid://pg8287wb4urq" path="res://Scenes/wall_b.tscn" id="15_1kyk3"]
 [ext_resource type="PackedScene" uid="uid://bkf5tgeuv57s6" path="res://Scenes/Heatsink.tscn" id="16_qdd4q"]
 [ext_resource type="PackedScene" uid="uid://dy7qfoq1jqbvh" path="res://Scenes/kill_floor.tscn" id="21_yimuu"]
@@ -48,13 +49,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -10.5)
 [node name="UI" parent="." instance=ExtResource("5_6tlxj")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_hjafl")]
-visible = false
 
 [node name="LoseMenu" parent="." instance=ExtResource("7_3yb12")]
-visible = false
 
 [node name="WinMenu" parent="." instance=ExtResource("8_it3cd")]
-visible = false
 
 [node name="DeadTimer" type="Timer" parent="."]
 
@@ -82,6 +80,11 @@ skeleton = NodePath("../NavigationRegion3D/Environment")
 navigation_mesh = SubResource("NavigationMesh_dgrua")
 
 [node name="Environment" parent="NavigationRegion3D" instance=ExtResource("3_be1i4")]
+
+[node name="SongGameplay" parent="NavigationRegion3D/Environment" index="21"]
+stream = ExtResource("14_c73cc")
+volume_db = 5.498
+pitch_scale = 1.0
 
 [node name="level_design" type="Node3D" parent="NavigationRegion3D"]
 
@@ -156,4 +159,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5.5)
 
 [editable path="CapacitorDebug"]
 [editable path="CapacitorDebug/BlastArea"]
+[editable path="NavigationRegion3D/Environment"]
 [editable path="NavigationRegion3D/level_design/moving_platform"]
